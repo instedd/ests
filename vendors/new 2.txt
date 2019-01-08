@@ -1,0 +1,38 @@
+Array ( [totalFilteredRecords] => 2 
+[pageItems] => Array ( [0] => Array ( [id] => 2 [accountNo] => 000000002
+[depositType] => Array ( [id] => 100 [code] => depositAccountType.savingsDeposit [value] => Savings )
+ [clientId] => 11 [clientName] => Nduhukire Medard [savingsProductId] => 2 [savingsProductName] => Root wallet [fieldOfficerId] => 0 
+ [status] => Array ( [id] => 300 [code] => savingsAccountStatusType.active [value] => Active [submittedAndPendingApproval] => [approved] => [rejected] => [withdrawnByApplicant] => [active] => 1 [closed] => [prematureClosed] => [transferInProgress] => [transferOnHold] => [matured] => ) 
+ [subStatus] => Array ( [id] => 0 [code] => SavingsAccountSubStatusEnum.none [value] => None [none] => 1 [inactive] => [dormant] => [escheat] => [block] => [blockCredit] => [blockDebit] => )
+ [timeline] => Array ( [submittedOnDate] => Array ( [0] => 2018 [1] => 9 [2] => 6 ) [submittedByUsername] => mifos [submittedByFirstname] => App [submittedByLastname] => Administrator 
+ [approvedOnDate] => Array ( [0] => 2018 [1] => 9 [2] => 6 ) 
+ [approvedByUsername] => mifos [approvedByFirstname] => App 
+ [approvedByLastname] => Administrator 
+ [activatedOnDate] => Array ( [0] => 2018 [1] => 9 [2] => 6 ) 
+ [activatedByUsername] => mifos [activatedByFirstname] => App [activatedByLastname] => Administrator ) 
+ [currency] => Array ( [code] => UGX [name] => Uganda Shilling [decimalPlaces] => 2 [inMultiplesOf] => 100 [displaySymbol] => USh [nameCode] => currency.UGX [displayLabel] => Uganda Shilling (USh) )
+ [nominalAnnualInterestRate] => 0 
+ [interestCompoundingPeriodType] => Array ( [id] => 4 [code] => savings.interest.period.savingsCompoundingInterestPeriodType.monthly [value] => Monthly ) 
+ [interestPostingPeriodType] => Array ( [id] => 4 [code] => savings.interest.posting.period.savingsPostingInterestPeriodType.monthly [value] => Monthly ) 
+ [interestCalculationType] => Array ( [id] => 1 [code] => savingsInterestCalculationType.dailybalance [value] => Daily Balance ) 
+ [interestCalculationDaysInYearType] => Array ( [id] => 365 [code] => savingsInterestCalculationDaysInYearType.days365 [value] => 365 Days )
+ [withdrawalFeeForTransfers] => [allowOverdraft] => [enforceMinRequiredBalance] => [withHoldTax] => 
+ [lastActiveTransactionDate] => Array ( [0] => 2018 [1] => 9 [2] => 6 ) 
+ [isDormancyTrackingActive] => [summary] => Array ( [currency] => Array ( [code] => UGX [name] => Uganda Shilling [decimalPlaces] => 2 [inMultiplesOf] => 100 [displaySymbol] => USh [nameCode] => currency.UGX [displayLabel] => Uganda Shilling (USh) ) [totalInterestPosted] => 0 [accountBalance] => 0 [totalOverdraftInterestDerived] => 0 [interestNotPosted] => 0 [availableBalance] => 0 ) )
+ 
+ [1] => Array ( [id] => 1 [accountNo] => 000000001 
+ [depositType] => Array ( [id] => 100 [code] => depositAccountType.savingsDeposit [value] => Savings ) 
+ [clientId] => 10 [clientName] => Nduhukire Medard [savingsProductId] => 4 [savingsProductName] => WT - 2 [fieldOfficerId] => 0 
+ [status] => Array ( [id] => 300 [code] => savingsAccountStatusType.active [value] => Active [submittedAndPendingApproval] => [approved] => [rejected] => [withdrawnByApplicant] => [active] => 1 [closed] => [prematureClosed] => [transferInProgress] => [transferOnHold] => [matured] => ) 
+ [subStatus] => Array ( [id] => 0 [code] => SavingsAccountSubStatusEnum.none [value] => None [none] => 1 [inactive] => [dormant] => [escheat] => [block] => [blockCredit] => [blockDebit] => ) 
+ [timeline] => Array ( [submittedOnDate] => Array ( [0] => 2018 [1] => 9 [2] => 5 ) [submittedByUsername] => mifos [submittedByFirstname] => App [submittedByLastname] => Administrator 
+ [approvedOnDate] => Array ( [0] => 2018 [1] => 9 [2] => 5 ) [approvedByUsername] => mifos [approvedByFirstname] => App [approvedByLastname] => Administrator 
+ [activatedOnDate] => Array ( [0] => 2018 [1] => 9 [2] => 5 ) [activatedByUsername] => mifos [activatedByFirstname] => App [activatedByLastname] => Administrator ) 
+ [currency] => Array ( [code] => UGX [name] => Uganda Shilling [decimalPlaces] => 2 [inMultiplesOf] => 100 [displaySymbol] => USh [nameCode] => currency.UGX [displayLabel] => Uganda Shilling (USh) ) [nominalAnnualInterestRate] => 0
+ [interestCompoundingPeriodType] => Array ( [id] => 4 [code] => savings.interest.period.savingsCompoundingInterestPeriodType.monthly [value] => Monthly ) 
+ [interestPostingPeriodType] => Array ( [id] => 4 [code] => savings.interest.posting.period.savingsPostingInterestPeriodType.monthly [value] => Monthly )
+ [interestCalculationType] => Array ( [id] => 1 [code] => savingsInterestCalculationType.dailybalance [value] => Daily Balance )
+ [interestCalculationDaysInYearType] => Array ( [id] => 365 [code] => savingsInterestCalculationDaysInYearType.days365 [value] => 365 Days )
+ [withdrawalFeeForTransfers] => [allowOverdraft] => [enforceMinRequiredBalance] => [withHoldTax] => [lastActiveTransactionDate] => Array ( [0] => 2018 [1] => 9 [2] => 5 ) 
+ [isDormancyTrackingActive] => [summary] => Array ( [currency] => Array ( [code] => UGX [name] => Uganda Shilling [decimalPlaces] => 2 [inMultiplesOf] => 100 [displaySymbol] => USh [nameCode] => currency.UGX [displayLabel] => Uganda Shilling (USh) ) 
+ [totalDeposits] => 1000000 [totalWithdrawals] => 200000 [totalInterestPosted] => 0 [accountBalance] => 800000 [totalOverdraftInterestDerived] => 0 [interestNotPosted] => 0 [availableBalance] => 800000 ) ) ) )

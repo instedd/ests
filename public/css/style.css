@@ -1,0 +1,465 @@
+body {
+    background-color: #FFFFFF;
+   	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 12px;
+}
+.clearFix {
+	clear: both;
+}
+h3 {
+	margin-bottom: 0;
+	text-decoration: underline;
+}
+td {
+	vertical-align:middle; 
+}
+
+/*
+ * Header section
+ */
+#contentHeader {
+	background: url("top_bg.png") repeat-x;
+	padding: 0;
+	margin: 0;
+	height: 110px;
+	width: 100%;
+	border-bottom: 1px #AFAFAF solid;
+}
+#header-wrapper {
+	width: 920px;
+	margin: 0 auto;
+}
+#nslogo {
+	padding: 0;
+	float: left;
+	background:url("logo.png") no-repeat;
+	height:100px;
+	width: 90px;
+	margin-top: 10px;
+}
+#appTitle {
+	float: left;
+	padding: 0;
+	margin-top: 35px;
+	font-size: 18px;
+	color: #5F0C0F;
+}
+#greeting {
+	float: right;
+	font-size: 13px;
+	color: #FFFFFF;
+	font-weight: 900;
+	margin-right: 10px;
+}
+
+
+
+/*
+ * Menu section
+ */
+ #navMenu {
+ 	padding: 0;
+ 	margin: 10px auto;
+ 	width: 920px;
+ }
+ #navMenu #location {
+ 	float: left;
+ 	padding: 8px;
+ 	font-weight: 900;
+ }
+ #navMenu ul {
+/*  	list-style: none; */
+ 	margin: 0 0 10px -2px;
+ 	float: right;
+ 	border-right: #AFAFAF 1px solid;
+ }
+ #navMenu ul li {
+ 	display: inline;
+ 	padding: 8px;
+ 	margin: 0;
+ 	float: right;
+ 	border-left: #AFAFAF 1px solid;
+ 	border-bottom: #AFAFAF 1px solid;
+ }
+ #navMenu li:HOVER {
+ 	background-color: #E0E0E0;
+ }
+ #navMenu a {
+ 	text-decoration: none;
+ 	color: #5F0C0F;
+ }
+ 
+ 
+ 
+/*
+ * Body section
+ */
+.contentBody {
+	margin: 0 auto;
+    width: 920px;
+	border: #AFAFAF 1px solid;
+ /*   
+	width: 818px;
+	border: #AFAFAF 1px solid;
+	margin-left: 200px;
+	margin-bottom: 20px;
+*/
+}
+
+.contentBody .contentTitle {
+	font-size: 18px;
+	padding: 10px 0;
+	float: left;
+	background: #a90329; /* old browsers */
+	background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* ie */
+	color: WHITE;
+	min-width: 210px;
+	text-align: center;
+}
+
+.leftcontentBody {
+	width: 180px;
+	margin: 20px 10px 20px 10px;
+	float: left;
+	padding: 0 0 20px 0;
+}
+	
+
+.rightcontentBody {
+	width: 690px;
+	margin: 20px 5px;
+	float: right;
+	border-left: #AFAFAF 1px solid;
+	padding-left: 15px;
+}
+
+.rightcontentBody a {
+	text-decoration: none; 
+	font-size: 12px; 
+	color: #191970; 
+	font-weight: 900;
+}
+
+.midcontentBody {
+	margin: 20px 0 20px 20px;
+}
+
+.error {
+	color: #BF0030;
+	font-style: italic;
+	font-size: 11px;
+}
+
+.lbutton {
+	width: 20px;
+	height: 20px;
+}
+
+#calculator table{
+	margin-left: 20px;
+}
+
+.frm_container {
+	margin: 10px 0;
+}
+.frm_heading {
+	font-size: 14px;
+	width: 400px;
+	border-bottom: 1px solid #F0F0F0;
+	font-weight: 900;
+}
+
+.frm_inputs {
+	padding-left: 15px;
+}
+
+.info_view tr td:first-child {
+	font-size: 12px;
+	padding-right: 10px;
+	text-align: right;
+	width: 120px; 
+	font-style: italic;
+	color: #6D6D6D;
+}
+
+.info_view tr td:nth-child(2) {
+	font-size: 13px;
+	color: #6D6D6D;
+}
+
+.manage_menu {
+	margin-right: 50px;
+	padding: 0 10px;
+	float: right;
+	border-left: 2px solid #284276;
+	border-right: 2px solid #284276;
+}
+
+.manage_menu span{
+	font-size: 12px;
+	margin-right: 5px;
+}
+
+
+/*
+ * Search tool bar
+ */
+.contentSearch {
+	overflow: hidden;
+	font-size: 11px;
+	background: #87e0fd;
+	background: -moz-linear-gradient(top,  #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#87e0fd), color-stop(40%,#53cbf1), color-stop(100%,#05abe0));
+	background: -webkit-linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+	background: -o-linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+	background: -ms-linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+	background: linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 );
+	margin-left: 1px;
+	border: #AFAFAF 1px solid;
+	border-bottom: none;
+	padding: 1px;
+}
+	.contentSearch #search_label {
+		float: left;
+		font-size: 16px;
+		color: #FFFFFF;
+		margin: 4px 0 0 20px;
+	}
+	.contentSearch input[type=text] {
+		padding: 0;
+		margin: 0;
+		height: 15px;
+		font-size: 11px;
+	}
+	
+	.contentSearch input[type=submit] {
+		padding: 1px;
+		height: 22px;
+		font-size: 11px;
+	}
+	
+	.contentSearch td {
+		padding-left: 20px;
+		
+	}
+	
+	.contentSearch table {
+		float: right;
+		
+	}
+
+	#searchwrapper {
+	width:310px; /*follow your image's size*/
+	height:40px;/*follow your image's size*/
+	background-image: url("searchbox.jpg");
+	background-repeat:no-repeat; /*important*/
+	margin-left:612px;
+	margin-top: 10px;
+	position:absolute; /*important*/
+	}
+	 
+	#searchwrapper form { display:inline ; }
+	 
+	.searchbox {
+	border:0px; /*important*/
+	background-color:transparent; /*important*/
+	position:absolute; /*important*/
+	top:4px;
+	left:9px;
+	width:256px;
+	height:28px;
+	color: #FFFFFF;
+	}
+	 
+	.searchbox_submit {
+	border:0px; /*important*/
+	background-color: transparent; /*important*/
+	position:absolute; /*important*/
+	top:4px;
+	left:265px;
+	width:32px;
+	height:28px;
+	}
+
+	.searchbox_submit:hover {
+		cursor: pointer;
+	}
+
+/*
+ * Form Table
+ */
+.form_tbl tr {
+	padding: 5px;
+	height: 40px;
+}
+
+.form_tbl input, .form_tbl select {
+	width: 200px;
+	margin-left: 20px;
+}
+
+/*
+ * Footer section
+ */
+ #contentFooter {
+ 	width: 920px;
+	margin: 0 auto;
+	padding: 8px 0;
+	border-bottom: 1px #AFAFAF solid;
+	text-align: center;
+ }
+ 
+ /*
+  * Widths
+  */
+  .w400 {
+ 	width: 400px;
+ }
+ 
+ .w500 {
+ 	width: 500px;
+ }
+ 
+ .w800 {
+ 	width: 800px;
+ }
+ 
+
+/* css menu */
+#cssmenu > ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	line-height: 1;
+}
+
+/* The container */
+#cssmenu > ul {
+	display: block;
+	position: relative;
+	width: 180px;
+}
+
+	/* The list elements which contain the links */
+	#cssmenu > ul li {
+		display: block;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		width: 180px;	
+	}
+
+		/* General link styling */
+		#cssmenu > ul li a {
+			/* Layout */
+			display: block;
+			position: relative;
+			margin: 0;
+			border-top: 1px dotted #fff;
+			border-bottom: 1px dotted #d9d9d9;
+			padding: 11px 20px;
+			width: 140px;
+
+			/* Typography */
+			font-family:  Helvetica, Arial, sans-serif;
+			color: #3dafea;
+			text-decoration: none;
+			text-transform: uppercase;
+			text-shadow: 0 1px 0 #fff;
+			font-size: 13px;
+			font-weight: 300;
+
+			/* Background & effects */
+			background: #eaeaea;
+		}
+
+		/* Rounded corners for the first link of the menu/submenus */
+		#cssmenu > ul li:first-child>a {
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			border-top: 0;
+		}
+
+		/* Rounded corners for the last link of the menu/submenus */
+		#cssmenu > ul li:last-child>a {
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			border-bottom: 0;
+		}
+
+
+		/* The hover state of the menu/submenu links */
+		#cssmenu > ul li>a:hover, #cssmenu > ul li:hover>a {
+			color: #fff;
+			text-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+			background: #54cdf1;
+			background: -webkit-linear-gradient(bottom, #54cdf1, #74d7f3);
+			background: -ms-linear-gradient(bottom, #54cdf1, #74d7f3); 
+			background: -moz-linear-gradient(bottom, #54cdf1, #74d7f3);
+			background: -o-linear-gradient(bottom, #54cdf1, #74d7f3);
+			border-color: transparent;
+		}
+
+		/* The arrow indicating a submenu */
+		#cssmenu > ul .has-sub>a::after {
+			content: '';
+			position: absolute;
+			top: 16px;
+			right: 10px;
+			width: 0px;
+			height: 0px;
+
+			/* Creating the arrow using borders */
+			border: 4px solid transparent;
+			border-left: 4px solid #3dafea; 
+		}
+
+		/* The same arrow, but with a darker color, to create the shadow effect */
+		#cssmenu > ul .has-sub>a::before {
+			content: '';
+			position: absolute;
+			top: 17px;
+			right: 10px;
+			width: 0px;
+			height: 0px;
+
+			/* Creating the arrow using borders */
+			border: 4px solid transparent;
+			border-left: 4px solid #fff;
+		}
+
+		/* Changing the color of the arrow on hover */
+		#cssmenu > ul li>a:hover::after, #cssmenu > ul li:hover>a::after {
+			border-left: 4px solid #fff;
+		}
+
+		#cssmenu > ul li>a:hover::before, #cssmenu > ul li:hover>a::before {
+			border-left: 4px solid rgba(0, 0, 0, .25);
+		}
+
+	
+		/* THE SUBMENUS */
+		#cssmenu > ul ul {
+			position: absolute;
+			left: 180px;
+			top: -9999px;
+			padding-left: 5px;
+			opacity: 0;
+			/* The fade effect, created using an opacity transition */
+			-webkit-transition: opacity .3s ease-in;
+			-moz-transition: opacity .3s ease-in;
+			-o-transition: opacity .3s ease-in;
+			-ms-transition: opacity .3s ease-in;
+		}
+
+		/* Showing the submenu when the user is hovering the parent link */
+		#cssmenu > ul li:hover>ul {
+			top: 0px;
+			opacity: 1;
+		}

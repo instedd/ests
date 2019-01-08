@@ -1,0 +1,21 @@
+body{
+background-color:#fef7eb; 
+width:100%;
+margin-top: 0;
+margin-left: 0;
+margin-right: 0;
+
+}
+
+#container {
+    /**/
+	
+     min-width: 800px; 
+    max-width: 1000px; 
+    margin: 0 auto;height:1000px;  
+}
+.loading {
+     margin-top: 10em;
+    text-align: center;
+    color: grey; 
+}
