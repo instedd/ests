@@ -68,7 +68,7 @@
                                 echo $this->reverselookups_model->get_transporter($row_receieved_samples->delivered_by);
                             }?>
                           </td>
-                            <td><?= date('d,M Y',strtotime($row_receieved_samples->date_received)); ?></td>
+                            <td><?= date('d,M Y H:i:s',strtotime($row_receieved_samples->date_received)); ?></td>
                             <td>
                                 <button type="button" data-record_id="<?= $row_receieved_samples->id; ?>"
                                         class="btn btn-add btn-xs edit-ReceivedSample" data-toggle="modal"

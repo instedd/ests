@@ -14,6 +14,7 @@ class SampleTracking extends CI_Controller
         $this->load->library(array('session','notification','form_validation', 'email', 'pagination'));
         $this->load->helper(array('utility', 'html', 'url', 'form', 'notification'));
         $this->load->model('Lookups_model');
+        $this->load->model('Dashboard_model');
         $this->load->model('Setups_model');
         $this->load->model('reverselookups_model');
         $this->load->model('Useradministration_model');
@@ -85,24 +86,21 @@ class SampleTracking extends CI_Controller
           $current_method = $this->router->fetch_method();
           $location = $this->session->userdata['location'];
           $user_id = $this->session->userdata['user_id'];
+          $created_by=$this->reverselookups_model->get_user_name($user_id);
           //file upload
             $path = 'uploads/';
             $config['upload_path'] = $path;
-            $config['allowed_types'] = 'png|PNG|jpg|JPG|JPEG|jpeg|GIF|gif';
+            $config['allowed_types'] = 'png|PNG|jpg|JPG|JPEG|jpeg|GIF|gif|PDF|pdf|docx';
             $config['remove_spaces'] = TRUE;
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
             if (!$this->upload->do_upload('uploadFile')){
                 $error = array('error' => $this->upload->display_errors());
-                $upload_file=0;
+                $inputFileName = "N/A"; 
             } else {
                 $data = array('upload_data' => $this->upload->data());
                 $upload_file = $data['upload_data']['file_name'];
-            }
-            if($upload_file=0){
-              $inputFileName = NULL;  
-          }else{
-            $inputFileName = $path . $upload_file;
+               $inputFileName = $path . $upload_file;
             }
           $initialSampleDate=$this->input->post('initialSampleDate');
           $initialDate=date('Y-m-d',strtotime($initialSampleDate));
@@ -135,7 +133,7 @@ class SampleTracking extends CI_Controller
         $this->load->view('footer', $data);
         }else{
               $id=$this->input->post('facility_code');
-              $district=$this->reverselookups_model->get_district($id);
+              $district=$this->reverselookups_model->get_district_code($id);
               $health_facility=$this->reverselookups_model->get_health_facility($id);
              $data_to_insert = array(
                 'id' => NULL,
@@ -146,7 +144,7 @@ class SampleTracking extends CI_Controller
                 'destination_id'=> $this->reverselookups_model->get_destinations($this->input->post('destination')),
                 'clinical_notes'=> $this->input->post('notes'),
                 'districtCode'=> $district,
-                'initialSampleDate' =>$initialDate ,
+                'initialSampleDate' =>date('Y-m-d H:i:s'),
                 'finalDestinationDate' => $finalDate,
                 'entered_by' =>$this->session->userdata['user_full_name'],
                 'created_at' => date('Y-m-d H:i:s'),
@@ -156,7 +154,7 @@ class SampleTracking extends CI_Controller
              $this->update_insert('tbl_registered_samples', $data_to_insert);
              $sample_id=$this->input->post('barcode');
              $message='Sample id'." ".$sample_id." ".'was registered at'." ".$health_facility;
-             $notification=$this->notification->notify($message,$user_id);
+             $notification=$this->notification->notify($message,$created_by, $registered_by="");
         $this->session->set_flashdata('sample_add_success_msg', '
                                     <div class="col-sm-offset-1 col-sm-10 alert alert-success text-center fadeIn" style="color:#0C2B2D;">
                                     <p>Sample successfully added</p></div>
@@ -260,10 +258,11 @@ public function receive_sample()
         $current_class = $this->router->fetch_class();
         $current_method = $this->router->fetch_method();
         $user_id = $this->session->userdata['user_id'];
-        $date_received = $this->input->post('dateReceived');
+        $created_by=$this->reverselookups_model->get_user_name($user_id);
+       // $date_received = $this->input->post('dateReceived');
         $sample_id = $this->input->post('barcode');
         $destination_id = $this->input->post('final_destination');
-        $dateReceived=date('Y-m-d',strtotime($date_received));
+        //$dateReceived=date('Y-m-d',strtotime($date_received));
        $receive_sample = $this->Useradministration_model->check_sample($sample_id, $destination_id);
         if ($receive_sample > 0) {
         $fm_name = $this->session->userdata['user_org_name'];
@@ -286,6 +285,7 @@ public function receive_sample()
             'sample_id' => $this->Setups_model->get_sample_id(),
             'sample_status' => $this->Setups_model->get_sample_status(),
             'is_destination' => $this->Setups_model->get_is_destination(),
+            'transporter_name' => $this->Setups_model->get_transporter_name()
         );
         $this->load->view('header', $data);
         $this->load->view('sample_tracking/receive_sample', $data);
@@ -322,7 +322,7 @@ public function receive_sample()
                 'sample_status'=> $this->input->post('sample_status'),
                 'is_destination'=> $is_destination,
                 'received_status'=> $received_status,
-                'date_received' => $dateReceived,
+                'date_received' => date('Y-m-d H:i:s'),
                 'facility_code_id'=> $health_facility,
                 'districtCode'=> $district,
                 'entered_by' =>$this->session->userdata['user_full_name'],
@@ -347,10 +347,10 @@ public function receive_sample()
                   $message =  "
                         <html>
                         <head>
-                            <title><b>Sample Notfication</b></title>
+                            <title><b>Sample Notification</b></title>
                         </head>
                         <body>
-                            <h2>Received Sample Notication</h2>
+                            <h2>Received Sample Notification</h2>
                             <p>Sample with the following details has been received</p>
                             <p>Sample ID: ".$sample_id."</p>
                             <p>Received at: ".$health_facility." Transit Point Located in ".$district." district</p>
@@ -363,16 +363,16 @@ public function receive_sample()
                         ";
                // store notification
               $sample_id=$this->input->post('barcode');
-              $notification=$this->notification->notify($message,$user_id);
+              $notification=$this->notification->notify($message,$created_by,$received_by);
 
               $this->email->from("sampletracker18@gmail.com","Sample Tracker");
               $this->email->bcc("medardnduhukire@gmail.com"); 
               $this->email->to($email);
-              $this->email->subject("Sample Tracking Notfication");
+              $this->email->subject("Sample Tracking Notification");
               $this->email->message($message);
             //sending email
             if($this->email->send()){
-                $this->session->set_flashdata('message','Notfication email sent');
+                $this->session->set_flashdata('message','Notification email sent');
              
             redirect('' . $current_class . '/received_samples');
              }
@@ -529,7 +529,7 @@ public function received_samples()
         $user_id = $this->session->userdata['user_id'];
         if (($record_id) !== '') {
            $dateReceived=$this->input->post('dateReceived');
-           $Date=date('Y-m-d',strtotime($dateReceived));
+           $Date=date('Y-m-d H:i:s',strtotime($dateReceived));
              $data_to_update = array(
                 'sample_id' => $this->input->post('barcode'),
                 'destination_id'=> $this->input->post('destination'),
@@ -612,6 +612,13 @@ public function received_samples()
           echo $this->Setups_model->fetch_destination($this->input->post('sample_id'));
         }
        }
+       function fetch_disease()
+        {
+        if($this->input->post('sample_id'))
+        {
+          echo $this->Setups_model->fetch_disease($this->input->post('sample_id'));
+        }
+       }
        public function notifications()
         {
         $current_class = $this->router->fetch_class();
@@ -631,6 +638,7 @@ public function received_samples()
             'facility_code' => $this->Setups_model->get_facility_codes($this->session->userdata['location']),
             'destination' => $this->Setups_model->get_destination(),
             'sample_type' => $this->Setups_model->get_sample_type(),
+            'total_notifications' => $this->Dashboard_model->get_total_notifications(),
        );
         $data['get_all_notifications'] = $this->notification->get_all_notifications($id = '');
         $this->load->view('header', $data);
@@ -667,5 +675,118 @@ public function received_samples()
         $this->load->view('header', $data);
         $this->load->view('sample_tracking/received_samples', $data);
         $this->load->view('footer', $data);
+    }
+    public function results()
+        {
+        $current_class = $this->router->fetch_class();
+        $current_method = $this->router->fetch_method();
+        $fm_name = $this->session->userdata['user_org_name'];
+        $data = array(
+            'page_protection' => $this->protected_page(),
+            'page_title' => title_ext . clean_menu_item_name($current_method),
+            'menu_name' => $this->Lookups_model->get_menu_name($current_class),
+            'awesome_icon' => $this->Lookups_model->get_menu_icon($current_class),
+            'sub_menu_item' => $this->Lookups_model->get_sub_menu_item($current_method),
+            'sub_menu_description' => ucfirst(strtolower(substr($current_class, 2))),
+            'data_menu_category' => $this->Lookups_model->get_menu_category($this->session->userdata['user_group_id']),
+            'data_fm_name' => $fm_name,
+            'boolean_response' => $this->Lookups_model->get_boolean_response(),
+            'diseases' => $this->Setups_model->get_disease_names(),
+            'sample_id' => $this->Setups_model->fetch_sample_id()
+        );
+        $this->load->view('header', $data);
+        $this->load->view('sample_tracking/confirm_results', $data);
+        $this->load->view('footer', $data);
+
+    }
+    public function confirm_results()
+    {
+         
+          $current_class = $this->router->fetch_class();
+          $current_method = $this->router->fetch_method();
+          $user_id = $this->session->userdata['user_id'];
+          //file upload
+            $path = 'uploads/';
+            $config['upload_path'] = $path;
+            $config['allowed_types'] = 'png|PNG|jpg|JPG|JPEG|jpeg|GIF|gif|pdf|PDF|docx';
+            $config['remove_spaces'] = TRUE;
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if (!$this->upload->do_upload('uploadFile')){
+                $error = array('error' => $this->upload->display_errors());
+                $inputFileName = "N/A"; 
+            } else {
+                $data = array('upload_data' => $this->upload->data());
+                $upload_file = $data['upload_data']['file_name'];
+               $inputFileName = $path . $upload_file;
+            }
+          $sample_id=$this->input->post('barcode');
+          $test_result = $this->Setups_model->check_registered_sample($sample_id);
+        if ($test_result > 0) {
+        $this->session->set_flashdata('message','The record already exists');
+         $fm_name = $this->session->userdata['user_org_name'];
+         $register_sample='register_sample';
+        $data = array(
+            'page_protection' => $this->protected_page(),
+            'page_title' => title_ext . clean_menu_item_name($current_method),
+            'menu_name' => $this->Lookups_model->get_menu_name($current_class),
+            'awesome_icon' => $this->Lookups_model->get_menu_icon($current_class),
+            'sub_menu_item' => $this->Lookups_model->get_sub_menu_item($register_sample),
+            'sub_menu_description' => ucfirst(strtolower(substr($current_class, 2))),
+            'data_menu_category' => $this->Lookups_model->get_menu_category($this->session->userdata['user_group_id']),
+            'data_fm_name' => $fm_name,
+            'boolean_response' => $this->Lookups_model->get_boolean_response(),
+            'diseases' => $this->Setups_model->get_disease_names(),
+            'sample_id' => $this->Setups_model->fetch_sample_id()
+        );
+        $this->load->view('header', $data);
+        $this->load->view('sample_tracking/confirm_results', $data);
+        $this->load->view('footer', $data);
+        }else{
+             $data_to_insert = array(
+                'id' => NULL,
+                'sample_id' => $this->input->post('barcode'),
+                'disease'=> $this->input->post('disease'),
+                'result'=> $this->input->post('result'),
+                'note'=> $this->input->post('notes'),
+                'updated_by'=> $user_id,
+                'created_at' =>date('Y-m-d H:i:s'),
+                'photo'=> $inputFileName,
+            );
+             $created_by=$this->reverselookups_model->get_user_name($user_id);
+             $this->update_insert('tbl_test_results', $data_to_insert);
+             $sample_id=$this->input->post('barcode');
+             $message='Sample id'." ".$sample_id." ".'was successfully tested'." ".$this->input->post('result')." ".'of'." ".$this->input->post('disease');
+             $notification=$this->notification->notify($message,$created_by, $registered_by="");
+        $this->session->set_flashdata('sample_add_success_msg', '
+                                    <div class="col-sm-offset-1 col-sm-10 alert alert-success text-center fadeIn" style="color:#0C2B2D;">
+                                    <p>Sample results successfully added</p></div>
+                                    ');
+        redirect('' . $current_class . '/test_results');
+      }
+    }
+    public function test_results()
+        {
+        $current_class = $this->router->fetch_class();
+        $current_method = $this->router->fetch_method();
+        $fm_name = $this->session->userdata['user_org_name'];
+        $data = array(
+            'page_protection' => $this->protected_page(),
+            'page_title' => title_ext . clean_menu_item_name($current_method),
+            'menu_name' => $this->Lookups_model->get_menu_name($current_class),
+            'awesome_icon' => $this->Lookups_model->get_menu_icon($current_class),
+            'sub_menu_item' => $this->Lookups_model->get_sub_menu_item($current_method),
+            'sub_menu_description' => ucfirst(strtolower(substr($current_class, 2))),
+            'data_menu_category' => $this->Lookups_model->get_menu_category($this->session->userdata['user_group_id']),
+            'data_fm_name' => $fm_name,
+            'boolean_response' => $this->Lookups_model->get_boolean_response(),
+            'diseases' => $this->Setups_model->get_disease_names(),
+            'sample_id' => $this->Setups_model->fetch_sample_id(),
+            'sample_results'=>$this->Setups_model->get_all_sample_results()
+        );
+        $this->load->view('header', $data);
+        $this->load->view('sample_tracking/test_results', $data);
+        $this->load->view('footer', $data);
+
     }
 }

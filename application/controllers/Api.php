@@ -44,12 +44,11 @@ class Api extends REST_Controller {
     {
        if(isset($this->session->userdata['user_id']))
         {
-        $this->form_validation->set_rules('initialSampleDate', 'First Name', 'trim|required|xss_clean');
         $this->form_validation->set_rules('finalDestinationDate', 'Date to reach final destination', 'trim|required|xss_clean');
         $this->form_validation->set_rules('facility_code', 'Health Facility', 'trim|xss_clean|required');
         $this->form_validation->set_rules('barcode', 'Bar code', 'trim|xss_clean|required');
-        $this->form_validation->set_rules('destination', 'Address', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('sample_type', 'Phone / Cellphone', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('destination', 'Destination', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('sample_type', 'Sample Type', 'trim|required|xss_clean');
         if($this->form_validation->run()==false){
            $this->response([
                 'status' => FALSE,
@@ -60,6 +59,7 @@ class Api extends REST_Controller {
         {
           //$location = $this->session->userdata['location'];
           $user_id = $this->session->userdata['user_id'];
+          $created_by=$this->reverselookups_model->get_user_name($user_id);
           //file upload
             $path = 'uploads/';
             $config['upload_path'] = $path;
@@ -100,7 +100,7 @@ class Api extends REST_Controller {
                 'destination_id'=> $this->reverselookups_model->get_destinations($this->input->post('destination')),
                 'clinical_notes'=> $this->input->post('notes'),
                 'districtCode'=> $district,
-                'initialSampleDate' =>$initialDate ,
+                'initialSampleDate' =>date('Y-m-d H:i:s'),
                 'finalDestinationDate' => $finalDate,
                 'entered_by' =>$this->session->userdata['user_full_name'],
                 'created_at' => date('Y-m-d H:i:s'),
@@ -112,7 +112,7 @@ class Api extends REST_Controller {
                 //send notification
              $sample_id=$this->input->post('barcode');
              $message='Sample id'." ".$sample_id." ".'was registered at'." ".$health_facility;
-             $notification=$this->notification->notify($message,$user_id);
+             $notification=$this->notification->notify($message,$created_by,$this->session->userdata['user_full_name']);
                 //set the response and exit
                 $this->response([
                     'status' => TRUE,
@@ -248,7 +248,7 @@ public function appData_get($id=''){
     {
        if(isset($this->session->userdata['user_id']))
         {
-        $this->form_validation->set_rules('dateReceived', 'Date received', 'trim|required|xss_clean');
+        //$this->form_validation->set_rules('dateReceived', 'Date received', 'trim|required|xss_clean');
         $this->form_validation->set_rules('barcode', 'Sample ID', 'trim|required|xss_clean');
         $this->form_validation->set_rules('facility_code', 'Health Facility', 'trim|xss_clean|required');
         $this->form_validation->set_rules('final_destination', 'Destinatin', 'trim|required|xss_clean');
@@ -261,10 +261,10 @@ public function appData_get($id=''){
         else
         {
         $user_id = $this->session->userdata['user_id'];
-        $date_received = $this->input->post('dateReceived');
+       // $date_received = $this->input->post('dateReceived');
         $sample_id = $this->input->post('barcode');
         $destination_id = $this->input->post('final_destination');
-        $dateReceived=date('Y-m-d',strtotime($date_received));
+        //$dateReceived=date('Y-m-d',strtotime($date_received));
        $receive_sample = $this->useradministration_model->check_sample($sample_id, $destination_id);
         if ($receive_sample > 0) {
            $this->response([
@@ -304,7 +304,7 @@ public function appData_get($id=''){
                 'sample_status'=> $this->input->post('sample_status'),
                 'is_destination'=> $is_destination,
                 'received_status'=> $received_status,
-                'date_received' => $dateReceived,
+                'date_received' => date('Y-m-d H:i:s'),
                 'facility_code_id'=> $health_facility,
                 'districtCode'=> $district,
                 'entered_by' =>$this->session->userdata['user_full_name'],
@@ -315,6 +315,7 @@ public function appData_get($id=''){
              $delivered_by=$this->reverselookups_model->get_transporter_name($this->input->post('transporter'));
              $tel=$this->reverselookups_model->get_transporter_contact($this->input->post('transporter'));
              $received_by=$this->session->userdata['user_full_name'];
+             $created_by=$this->session->userdata['user_full_name'];
              $update= array('isSampleAtFinal' =>$is_destination);
              $this->db->where('sample_id', $this->input->post('barcode'));
              $this->db->update('tbl_registered_samples',$update);
@@ -326,10 +327,10 @@ public function appData_get($id=''){
                   $message =  "
                         <html>
                         <head>
-                            <title><b>Sample Notfication</b></title>
+                            <title><b>Sample Notification</b></title>
                         </head>
                         <body>
-                            <h2>Received Sample Notication</h2>
+                            <h2>Received Sample Notification</h2>
                             <p>Sample with the following details has been received</p>
                             <p>Sample ID: ".$sample_id."</p>
                             <p>Received at: ".$health_facility." Transit Point Located in ".$district." district</p>
@@ -342,12 +343,11 @@ public function appData_get($id=''){
                         ";
                // store notification
               $sample_id=$this->input->post('barcode');
-              $notification=$this->notification->notify($message,$user_id);
-
+              $notification=$this->notification->notify($message,$created_by,$received_by);
               $this->email->from("sampletracker18@gmail.com","Sample Tracker");
               $this->email->bcc("medardnduhukire@gmail.com"); 
               $this->email->to($email);
-              $this->email->subject("Sample Tracking Notfication");
+              $this->email->subject("Sample Tracking Notification");
               $this->email->message($message);
             //sending email
             if($this->email->send())

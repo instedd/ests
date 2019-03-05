@@ -60,7 +60,7 @@ class Dashboard extends CI_Controller
         $data['received_intact'] = $this->Dashboard_model->get_received_intact();
         $data['received_open'] = $this->Dashboard_model->get_received_open();
         $data['outbreaks']=$this->Dashboard_model->get_outbreaks();
-        
+        $data['registered_samples_thisYear']=$this->Dashboard_model->get_registered_samples_thisYear();
         $this->load->view('header', $data);
         $this->load->view('home', $data);
         $this->load->view('footer', $data);

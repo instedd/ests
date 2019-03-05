@@ -66,6 +66,14 @@ class Dashboard_model extends CI_Model
         return $this->db->get()->row()->total_registered_samples;
 
     }
+    
+    function get_total_notifications()
+    {
+
+        $this->db->select("count(*)as `total_notifications` FROM `tbl_notifications` where 1", FALSE);
+        return $this->db->get()->row()->total_notifications;
+
+    }
     function get_total_sample_cphl()
     {
 

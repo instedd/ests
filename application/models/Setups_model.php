@@ -581,6 +581,18 @@ class Setups_model extends CI_Model
   }
   return $output;
  }
+ function fetch_disease($sample_id)
+ {
+  $this->db->where('sample_id', $sample_id);
+  $this->db->order_by('id', 'ASC');
+  $query = $this->db->get('tbl_registered_samples');
+  $output='';
+  foreach($query->result() as $row)
+  {
+   $output .= '<option value="'.$row->disease_id.'">'.$row->disease_id.'</option>';
+  }
+  return $output;
+ }
 function delete_user($id)
     {
 
@@ -698,5 +710,47 @@ function get_disease_names()
             array_push($sample_type_name, $result[$i]->name);
         }
         return $sample_type_result = array_combine($sample_type_id, $sample_type_name);
+    }
+    function fetch_sample_id()
+    {
+        $this->db->select('id');
+        $this->db->select('sample_id');
+        $this->db->from('tbl_received_sample');
+        $this->db->where('is_destination', 'YES');
+        $this->db->order_by('id', 'asc');
+        $query = $this->db->get();
+        $result = $query->result();
+        $sample_id = array('');
+        $sample_name = array('-Select Sample ID-');
+
+        for ($i = 0; $i < count($result); $i++) {
+            array_push($sample_id, $result[$i]->sample_id);
+            array_push($sample_name, $result[$i]->sample_id);
+        }
+        return $status_result = array_combine($sample_id, $sample_name);
+    }
+    public function check_registered_sample($sample_id)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_test_results');
+        $this->db->where(array('sample_id'=>$sample_id));
+        $db_rows = $this->db->get();
+        return $db_rows->num_rows();
+    }
+    function get_all_sample_results()
+    {
+
+        $this->db->select("*
+        FROM `tbl_test_results`
+        WHERE 1
+        order by id asc", FALSE);
+
+        $db_rows = $this->db->get();
+        if ($db_rows->num_rows() > 0) {
+            foreach ($db_rows->result() as $data) {
+                $db_data_fetched_array[] = $data;
+            }
+            return $db_data_fetched_array;
+        }
     }
 }

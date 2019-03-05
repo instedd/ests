@@ -1,5 +1,9 @@
  <header class="main-header">
-
+<?php 
+  $ci =& get_instance();
+$ci->load->model('Dashboard_model');
+ $notifications=$ci->Dashboard_model->get_total_notifications();
+   ?>
     <!-- Logo -->
     <a href="<?=base_url();?>Dashboard/index" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -106,8 +110,14 @@
         <li class="treeview">
           <a href="<?=$dashboard_link;?>">
             <i class="<?= $menu_category_icon; ?>"></i>
-            <span><?= $menu_category; ?></span>
-			<?php if (intval($menu_category_id) !== 1) { ?>
+            <span><?php if($menu_category_id==9)
+            {
+              echo $menu_category.'('.$notifications.')';
+            }else {
+              echo $menu_category;
+            }?>
+          </span>
+			       <?php if (intval($menu_category_id) !== 1) { ?>
                <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -118,21 +128,21 @@
 		  <?php if (intval($menu_category_id) !== 1) { ?>
           <ul class="treeview-menu">
 		  <?php
-                                    $html = '';
-                                    if ($db_rows_menu_items->num_rows() > 0) {
-                                        foreach ($db_rows_menu_items->result() as $row_sub_menu) {
-                                            $sub_item_name = $row_sub_menu->name;
-                                            $sub_item_controller = $row_sub_menu->sub_controller;
+                      $html = '';
+                      if ($db_rows_menu_items->num_rows() > 0) {
+                          foreach ($db_rows_menu_items->result() as $row_sub_menu) {
+                              $sub_item_name = $row_sub_menu->name;
+                              $sub_item_controller = $row_sub_menu->sub_controller;
 
-                                            $html .= '<li><a id="menu_item"  href="' . site_url('' . trim($menu_category_controller) . '/' . trim($sub_item_controller) . '') . '">' . $sub_item_name . '</a></li>';
-                                        }
-                                        echo $html;
-                                    }
-                                    ?>
-                                </ul>
-                            <?php } else {
-                            } ?>
-                        </li>
+                              $html .= '<li><a id="menu_item"  href="' . site_url('' . trim($menu_category_controller) . '/' . trim($sub_item_controller) . '') . '">' . $sub_item_name . '</a></li>';
+                          }
+                          echo $html;
+                      }
+                      ?>
+                  </ul>
+              <?php } else {
+              } ?>
+          </li>
 
                     <?php } ?>
 

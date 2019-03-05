@@ -5,12 +5,9 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Dashboard
-      </h1>
+      <h1>Dashboard</h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active"><a href="<?=base_url();?>Reports/map"><button class="btn btn-danger" >Map of outbreaks</button></a></li>
       </ol>
     </section>
 

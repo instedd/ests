@@ -1074,7 +1074,7 @@ public function system_permissions()
         $this->load->view('footer', $data);
     }
 
-public function passwordChange(){
+public function pwd_change(){
     $this->form_validation->set_rules('old_password', 'Password', 'trim|required|xss_clean');
     $this->form_validation->set_rules('new_password', 'New Password', 'required|matches[conf_password]');
     $this->form_validation->set_rules('conf_password', 'Retype Password', 'required');

@@ -33,7 +33,7 @@
                             "role" => "form", "data-toggle" => "validator",
                             "enctype"=>"multipart/form-data"
                         );
-                        echo form_open("Api/receiveSample", $attributes); ?>
+                        echo form_open("SampleTracking/receiveSample", $attributes); ?>
                         <fieldset>
                             <div class="col-md-6 form-group">
                                 <label class="control-label" for="destination">Sample Id</label>
@@ -85,7 +85,7 @@
                                  <option value=""></option>
                                 </select>
                               </div>
-                              <div class="col-md-6 form-group">
+                             <!-- <div class="col-md-6 form-group">
                                 <label class="control-label" for="dateReceived"> Received On:</label>
                                  <div class="input-group date">
                                 <input name="dateReceived" id="dateReceived"
@@ -96,7 +96,7 @@
                                             <?= form_error('dateReceived'); ?>
                                  </span>
                                     </div>
-                            </div>
+                            </div>-->
 
                             <div class="col-md-6 form-group">
                                 <label class="control-label" for="destination">Delivered by </label>

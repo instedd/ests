@@ -21,6 +21,11 @@ class Reverselookups_model extends CI_Model
     }
     function get_district($id)
     {
+        $this->db->select("district FROM `tbl_facility_codes` WHERE 1 and id=" . $id . "", FALSE);
+        return $this->db->get()->row()->district;
+    }
+    function get_district_code($id)
+    {
         $this->db->select("code FROM `tbl_facility_codes` WHERE 1 and id=" . $id . "", FALSE);
         return $this->db->get()->row()->code;
     }

@@ -7,7 +7,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        System Notifications
+        System Notifications(<?=$total_notifications;?>)
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?=base_url();?>/Dashboard/index"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -27,7 +27,8 @@
             </li>
             <!-- /.timeline-label -->
             <!-- timeline item -->
-            <?php foreach($get_all_notifications as $notifications):
+            <?php if(isset($get_all_notifications)):
+              foreach($get_all_notifications as $notifications):
             $user_id=$notifications->created_by;
             //$this->CI =& get_instance();
             ?>
@@ -37,7 +38,7 @@
               <div class="timeline-item">
                 <span class="time"><i class="fa fa-clock-o"></i><?=$this->reverselookups_model->time_elapsed_string($notifications->date_created);?></span>
 
-                <h3 class="timeline-header"><a href="#"><?=$this->reverselookups_model->get_user_name($user_id);?></a> trigered a notification</h3>
+                <h3 class="timeline-header"><a href="#"><?=$notifications->created_by;?></a> trigered a notification</h3>
 
                 <div class="timeline-body">
                   <?=$notifications->message;?>
@@ -45,6 +46,7 @@
               </div>
             </li>
             <?php endforeach;?>
+          <?php endif;?>
           </ul>
         </div>
         <!-- /.col -->

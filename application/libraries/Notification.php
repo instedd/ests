@@ -8,15 +8,15 @@ class Notification{
 		$this->CI =& get_instance();
 	}
 
-	public function notify($message,$user_id)
+	public function notify($message,$user_id,$received_by)
 	{
-         $result =$this->CI->db->insert('tbl_notifications',array('message'=>$message,'created_by'=>$user_id));
+    $result =$this->CI->db->insert('tbl_notifications',array('message'=>$message,'created_by'=>$user_id,'received_by'=>$received_by));
 				
 	}
       function get_all_notifications($id)
     {
         $append_id=($id!=='')?'and id='.$id.'':'';
-        $this->CI->db->select("* FROM `tbl_notifications` 
+        $this->CI->db->select("id,message,date_created,created_by,received_by FROM `tbl_notifications` 
         WHERE 1
          " . $append_id . " 
           order by `id` desc LIMIT 10", FALSE);
@@ -27,6 +27,7 @@ class Notification{
             }
             return $db_data_fetched_array;
         }
+        else return '';
 
     }
 }

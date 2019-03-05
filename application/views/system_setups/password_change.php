@@ -29,7 +29,7 @@
                             "role" => "form", "data-toggle" => "validator",
                             "enctype"=>"multipart/form-data"
                         );
-                        echo form_open("Systemsetups/passwordChange", $attributes); ?>
+                        echo form_open("SystemSetups/pwd_change", $attributes); ?>
                         <fieldset>
                               <div class="col-md-6 form-group">
                                 <label class="control-label" for="old_password"> Enter Old Password</label>

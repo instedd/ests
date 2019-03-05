@@ -92,7 +92,7 @@
                                     <?= form_error('transporter'); ?>
                                 </span>
                             </div>
-                            <div class="col-md-6 form-group">
+                            <!--<div class="col-md-6 form-group">
                                 <label class="control-label" for="initialSampleDatee">Date of Sample Taking</label>
                           
                                 <div class="input-group date">
@@ -104,7 +104,7 @@
                                             <?= form_error('initialSampleDate'); ?>
                                         </span>
                                </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-md-6 form-group">
                                 <label class="control-label" for="finalDestinationDate"> Expected date to reach final destination</label>

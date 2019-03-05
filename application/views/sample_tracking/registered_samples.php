@@ -64,7 +64,7 @@
                                 echo $this->reverselookups_model->get_transporter($row_registered_samples->transporter);
                             }?>
                           </td>
-                            <td><?= date('d,M Y',strtotime($row_registered_samples->initialSampleDate)); ?></td>
+                            <td><?= date('d,M Y',strtotime($row_registered_samples->initialSampleDate)); ?> at <?= date('H:i:s',strtotime($row_registered_samples->initialSampleDate)); ?> </td>
                             <td><?= date('d,M Y',strtotime($row_registered_samples->finalDestinationDate)); ?></td>
                             <td>
                                 <button type="button" data-record_id="<?= $row_registered_samples->id; ?>"
@@ -105,12 +105,14 @@
                     $app = 1;
                     if(isset($data_get_all_registered_samples)){
                     foreach ($data_get_all_registered_samples as $row_registered_samples) {
-                      if(!empty($row_registered_samples->file_path)){
+                    $str=substr($row_registered_samples->file_path,8);
+                    $photo=!empty($str)?$str:"N/A";
+                      if(!empty($str)){
                         ?>
                         <tr>
                             <td><?= $app; ?>.</td>
                             <td><?= $row_registered_samples->sample_id; ?></td>
-                            <td><?= $row_registered_samples->file_path; ?></td>
+                            <td><?= $photo; ?></td>
                             <td>
                                 <button type="button" data-record_id="<?= $row_registered_samples->id; ?>"
                                         class="btn btn-add btn-xs edit-registeredSample" data-toggle="modal"

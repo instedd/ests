@@ -155,21 +155,35 @@
             };
             var series =  [{
                   name: 'Registered Samples',
-                  data: [<?=$monthly_registered_samples[0]->registered_samples;?>, <?=$monthly_registered_samples[1]->registered_samples;?>, <?=$monthly_registered_samples[2]->registered_samples;?>,
-                  <?=$monthly_registered_samples[3]->registered_samples;?>, <?=$monthly_registered_samples[4]->registered_samples;?>,
-                  <?=$monthly_registered_samples[5]->registered_samples;?>, <?=$monthly_registered_samples[6]->registered_samples;?>,
-                  <?=$monthly_registered_samples[7]->registered_samples;?>, <?=$monthly_registered_samples[8]->registered_samples;?>, <?=$monthly_registered_samples[9]->registered_samples;?>,
-                   <?=$monthly_registered_samples[10]->registered_samples;?>, <?=$monthly_registered_samples[11]->registered_samples;?>]
+                  data: [<?php if(isset($monthly_registered_samples[0]->registered_samples) && $monthly_registered_samples[0]->registered_samples!= '') echo $monthly_registered_samples[0]->registered_samples;?>, 
+                  <?php if(isset($monthly_registered_samples[1]->registered_samples) && $monthly_registered_samples[1]->registered_samples!= '') echo $monthly_registered_samples[1]->registered_samples;?>, 
+                  <?php if(isset($monthly_registered_samples[2]->registered_samples) && $monthly_registered_samples[2]->registered_samples!= '') echo $monthly_registered_samples[2]->registered_samples;?>,
+                  <?php if(isset($monthly_registered_samples[3]->registered_samples) && $monthly_registered_samples[3]->registered_samples!= '') echo $monthly_registered_samples[3]->registered_samples;?>, 
+                  <?php if(isset($monthly_registered_samples[4]->registered_samples) && $monthly_registered_samples[4]->registered_samples!= '') echo $monthly_registered_samples[4]->registered_samples;?>,
+                  <?php if(isset($monthly_registered_samples[5]->registered_samples) && $monthly_registered_samples[5]->registered_samples!= '') echo $monthly_registered_samples[5]->registered_samples;?>, 
+                  <?php if(isset($monthly_registered_samples[6]->registered_samples) && $monthly_registered_samples[6]->registered_samples!= '') echo $monthly_registered_samples[6]->registered_samples;?>,
+                  <?php if(isset($monthly_registered_samples[7]->registered_samples) && $monthly_registered_samples[7]->registered_samples!= '') echo $monthly_registered_samples[7]->registered_samples;?>, 
+                  <?php if(isset($monthly_registered_samples[8]->registered_samples) && $monthly_registered_samples[8]->registered_samples!= '') echo $monthly_registered_samples[8]->registered_samples;?>, 
+                  <?php if(isset($monthly_registered_samples[9]->registered_samples) && $monthly_registered_samples[9]->registered_samples!= '') echo $monthly_registered_samples[9]->registered_samples;?>,
+                  <?php if(isset($monthly_registered_samples[10]->registered_samples) && $monthly_registered_samples[10]->registered_samples!= '') echo $monthly_registered_samples[10]->registered_samples;?>,
+                  <?php if(isset($monthly_registered_samples[11]->registered_samples) && $monthly_registered_samples[11]->registered_samples!= '') echo $monthly_registered_samples[11]->registered_samples;?>
+                  ]
                },
                {
                   name: 'Received Samples',
-                  data: [
-                  <?=$monthly_received_samples[0]->received_samples;?>, <?=$monthly_received_samples[1]->received_samples;?>, 
-                  <?=$monthly_received_samples[2]->received_samples;?>,<?=$monthly_received_samples[3]->received_samples;?>, 
-                  <?=$monthly_received_samples[4]->received_samples;?>,<?=$monthly_received_samples[5]->received_samples;?>,
-                  <?=$monthly_received_samples[6]->received_samples;?>,<?=$monthly_received_samples[7]->received_samples;?>,
-                  <?=$monthly_received_samples[8]->received_samples;?>,<?=$monthly_received_samples[9]->received_samples;?>,
-                  <?=$monthly_received_samples[10]->received_samples;?>,<?=$monthly_received_samples[11]->received_samples;?>]
+                  data: [<?php if(isset($monthly_received_samples[0]->received_samples) && $monthly_received_samples[0]->received_samples!= '') echo $monthly_received_samples[0]->received_samples;?>, 
+                  <?php if(isset($monthly_received_samples[1]->received_samples) && $monthly_received_samples[1]->received_samples!= '') echo $monthly_received_samples[1]->received_samples;?>, 
+                  <?php if(isset($monthly_received_samples[2]->received_samples) && $monthly_received_samples[2]->received_samples!= '') echo $monthly_received_samples[2]->received_samples;?>,
+                  <?php if(isset($monthly_received_samples[3]->received_samples) && $monthly_received_samples[3]->received_samples!= '') echo $monthly_received_samples[3]->received_samples;?>, 
+                  <?php if(isset($monthly_received_samples[4]->received_samples) && $monthly_received_samples[4]->received_samples!= '') echo $monthly_received_samples[4]->received_samples;?>,
+                  <?php if(isset($monthly_received_samples[5]->received_samples) && $monthly_received_samples[5]->received_samples!= '') echo $monthly_received_samples[5]->received_samples;?>, 
+                  <?php if(isset($monthly_received_samples[6]->received_samples) && $monthly_received_samples[6]->received_samples!= '') echo $monthly_received_samples[6]->received_samples;?>,
+                  <?php if(isset($monthly_received_samples[7]->received_samples) && $monthly_received_samples[7]->received_samples!= '') echo $monthly_received_samples[7]->received_samples;?>, 
+                  <?php if(isset($monthly_received_samples[8]->received_samples) && $monthly_received_samples[8]->received_samples!= '') echo $monthly_received_samples[8]->received_samples;?>, 
+                  <?php if(isset($monthly_received_samples[9]->received_samples) && $monthly_received_samples[9]->received_samples!= '') echo $monthly_received_samples[9]->received_samples;?>,
+                  <?php if(isset($monthly_received_samples[10]->received_samples) && $monthly_received_samples[10]->received_samples!= '') echo $monthly_received_samples[10]->received_samples;?>,
+                  <?php if(isset($monthly_received_samples[11]->received_samples) && $monthly_received_samples[11]->received_samples!= '') echo $monthly_received_samples[11]->received_samples;?>
+                  ]
               }
             ];
              
@@ -407,5 +421,29 @@ $(document).ready(function(){
         });
 
     </script>
+    <script>
+$(document).ready(function(){
+ $('#sampleId').change(function(){
+  var sample_id = $('#sampleId').val();
+  if(sample_id != '')
+  {
+   $.ajax({
+    url:"<?php echo base_url(); ?>SampleTracking/fetch_disease",
+    method:"POST",
+    data:{sample_id:sample_id},
+    success:function(data)
+    {
+     $('#disease_name').html(data);
+    }
+   });
+  }
+  else
+  {
+   $('#disease_name').html('<option value=""></option>');
+  }
+ }); 
+});
+</script>
+
 </body>
 </html>
