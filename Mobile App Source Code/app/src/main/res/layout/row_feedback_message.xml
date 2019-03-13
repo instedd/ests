@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/padding_eight"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="1dp"
+        app:cardBackgroundColor="@color/teal"
+        android:elevation="@dimen/padding_five"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/layout_message_body"
+            android:paddingLeft="@dimen/padding_sixteen"
+            android:paddingRight="@dimen/padding_five"
+            android:paddingTop="@dimen/padding_five"
+            android:paddingBottom="@dimen/padding_five"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txvMessage"
+                android:padding="@dimen/padding_five"
+                android:textColor="#212121"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello User"/>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/padding_five"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="@dimen/padding_five"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txvleadName"
+                    android:text="By: "/>
+
+                <TextView
+                    android:layout_toEndOf="@id/txvleadName"
+                    android:padding="@dimen/padding_five"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txvName"
+                    android:text="Timothy Kasaga"
+                    android:layout_toRightOf="@id/txvleadName" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:padding="@dimen/padding_five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txvDate"
+                android:text="09th January 2019"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/padding_five"
+                android:layout_marginBottom="2dp"
+                android:background="#e0e0e0"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:background="@color/colorDefaultBg"
+    android:focusableInTouchMode="true"
+    android:focusedByDefault="true">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        />
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            style="@style/CardStyle"
+            app:cardBackgroundColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_receive_sample_details"/>
+
+                <include layout="@layout/divider"/>
+
+                <LinearLayout
+                    android:weightSum="3"
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_weight="1"
+                        android:id="@+id/edtSampleIdWrap"
+                        android:layout_marginTop="@dimen/inputs_margin_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edtSampleId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_sample_id"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <Button
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:drawablePadding="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@drawable/rounded_view"
+                        android:layout_weight="2"
+                        android:id="@+id/btnScanCode"
+                        android:text="Scan Code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:visibility="gone"
+                    app:ms_enableErrorLabel="true"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:id="@+id/spinnerSampleId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/sample_option"
+                    app:ms_hint="Select sample Id"
+                    app:ms_errorColor="@color/colorError"
+                    app:ms_floatingLabelText="Sample Id"
+                    style="@style/SpinnerMaterialStyle"/>
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    app:ms_errorColor="@color/colorError"
+                    app:ms_enableErrorLabel="true"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:id="@+id/spinnerSampleStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/sample_status_option"
+                    app:ms_hint="Select sample status"
+                    app:ms_floatingLabelText="Sample status"
+                    style="@style/SpinnerMaterialStyle"/>
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    app:ms_errorColor="@color/colorError"
+                    app:ms_enableErrorLabel="true"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:id="@+id/spinnerIsFinalDestination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/sample_yes_no_option"
+                    app:ms_hint="Is sample at final destination?"
+                    app:ms_floatingLabelText="Is sample at final destination?"
+                    style="@style/SpinnerMaterialStyle"/>
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    app:ms_errorColor="@color/colorError"
+                    app:ms_enableErrorLabel="true"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:id="@+id/spinnerTransitPoint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/sample_option"
+                    app:ms_hint="Select transit point"
+                    app:ms_floatingLabelText="Transit point"
+                    style="@style/SpinnerMaterialStyle"/>
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    app:ms_errorColor="@color/colorError"
+                    app:ms_enableErrorLabel="true"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:id="@+id/spinnerDestination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/sample_option"
+                    app:ms_hint="Select destination"
+                    app:ms_floatingLabelText="Destination"
+                    style="@style/SpinnerMaterialStyle"/>
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    app:ms_errorColor="@color/colorError"
+                    app:ms_enableErrorLabel="true"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:id="@+id/spinnerTransporter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/sample_option"
+                    app:ms_hint="Select transporter"
+                    app:ms_floatingLabelText="Delivered by"
+                    style="@style/SpinnerMaterialStyle"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <android.support.design.widget.TextInputEditText
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:id="@+id/edtDateReceived"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_date_of_receiving"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:ignore="RtlHardcoded">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/edtPaymentUnrefQuantityWrap"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/inputs_margin_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edtPaymentUnrefQuantity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_payment_unref_qty"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/txvUnitOfMeasure"
+                        android:gravity="center"
+                        android:text="(Bags)"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:visibility="gone"
+                    android:id="@+id/edtPaymentUnrefAmountWrap"
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edtPaymentUnrefAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_payment_amount"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:focusable="false"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:visibility="gone"
+                    android:id="@+id/edtPaymentUnrefDistributorNoWrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edtPaymentUnrefDistributorNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_payment_unref_distributor_no"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:visibility="gone"
+                    android:id="@+id/edtPaymentUnrefPhoneWrap"
+                    android:layout_marginTop="@dimen/inputs_margin_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edtPaymentUnrefPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_phone"
+                        android:inputType="textPersonName"
+                        android:singleLine="true"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- Add deliver to premises and address -->
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:paddingLeft="@dimen/dp_3"
+                    android:layout_marginTop="@dimen/margin_edit"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginEnd="@dimen/dp_3"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/labelDeliveryType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deliver type"
+                        android:layout_marginRight="@dimen/dp_3" />
+                    <RadioGroup
+                        android:layout_toEndOf="@id/labelDeliveryType"
+                        android:orientation="horizontal"
+                        android:id="@+id/rgDeliver"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/labelDeliveryType">
+                        <RadioButton
+                            android:id="@+id/rbtnDeliverYes"
+                            android:checked="true"
+                            android:text="Delivered"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <RadioButton
+                            android:id="@+id/rbtnDeliverNo"
+                            android:text="Self Collect"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    android:id="@+id/layoutDeliveryDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/edtExpectedDateWrap"
+                        android:layout_marginTop="@dimen/inputs_margin_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <android.support.design.widget.TextInputEditText
+                            android:focusable="false"
+                            android:inputType="date"
+                            android:id="@+id/edtExpectedDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_order_expected_date"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/edtAddressWrap"
+                        android:layout_marginTop="@dimen/inputs_margin_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edtAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_dealer_location"
+                            android:inputType="textMultiLine"
+                            android:minLines="2"
+                            android:lines="2"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_gravity="center"
+                    android:id="@+id/btnSubmit"
+                    android:layout_marginTop="@dimen/primary_btn_margin"
+                    style="@style/ButtonSquareGreenBorder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_receive_sample"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+</LinearLayout>

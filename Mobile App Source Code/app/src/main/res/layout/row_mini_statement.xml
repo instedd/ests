@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CardStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:id="@+id/txvSampleId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sample ID"/>
+
+        <include layout="@layout/divider" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/lblAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Health Facility"/>
+        <TextView
+            android:layout_toRightOf="@id/lblAmount"
+            android:paddingLeft="5dp"
+            android:gravity="end"
+            android:id="@+id/txvHealthFacility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Field 2 Value"/>
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:text="Suspected Disease"
+                android:textStyle="bold" />
+            <TextView
+                android:paddingLeft="5dp"
+                android:gravity="end"
+                android:layout_toRightOf="@id/lblPhone"
+                android:id="@+id/txvSuspectedDisease"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Field 1 Value"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/lblTranType"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Specimen"/>
+            <TextView
+                android:gravity="end"
+                android:layout_toRightOf="@id/lblTranType"
+                android:id="@+id/txvSpecimen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Field 1 Value"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/lblTxnID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Destination" />
+            <TextView
+                android:gravity="end"
+                android:paddingLeft="5dp"
+                android:layout_toRightOf="@id/lblTxnID"
+                android:id="@+id/txvDestination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Field 3 Value"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/lblTransporter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Transporter" />
+            <TextView
+                android:gravity="end"
+                android:paddingLeft="5dp"
+                android:layout_toRightOf="@id/lblTransporter"
+                android:id="@+id/txvTransporter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Field 3 Value"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/lblSampleTakingDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Date of sample taking" />
+            <TextView
+                android:gravity="end"
+                android:paddingLeft="5dp"
+                android:layout_toRightOf="@id/lblSampleTakingDate"
+                android:id="@+id/txvSampleTakingDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Field 3 Value"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/lblExpectedDateToReach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Date to reach destination" />
+            <TextView
+                android:gravity="end"
+                android:paddingLeft="5dp"
+                android:layout_toRightOf="@id/lblExpectedDateToReach"
+                android:id="@+id/txvExpectedDateToReach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Field 3 Value"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/md_red_500"
+                android:textStyle="bold"
+                android:id="@+id/lblReceivedStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Received Status" />
+            <TextView
+                android:textColor="@color/md_red_500"
+                android:gravity="end"
+                android:paddingLeft="5dp"
+                android:layout_toRightOf="@id/lblReceivedStatus"
+                android:id="@+id/txvReceivedStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Field 3 Value"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

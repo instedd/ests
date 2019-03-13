@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/colorDbBackground"
+    android:padding="@dimen/card_padding"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:layout_marginTop="@dimen/inputs_margin_small"
+            android:id="@+id/spinnerStatementType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/sample_option"
+            app:ms_hint="Select reception method"
+            app:ms_enableErrorLabel="true"
+            app:ms_errorColor="@color/colorError"
+            app:ms_floatingLabelText="Receive by"
+            style="@style/SpinnerMaterialStyle"/>
+
+        <LinearLayout
+            android:id="@+id/containerMonthlyStatementFields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/edtStatementStartDateWrap"
+            android:layout_marginTop="@dimen/inputs_margin_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <android.support.design.widget.TextInputEditText
+                android:focusable="false"
+                android:id="@+id/edtStatementStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:hint="@string/hint_statement_start_date"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/edtStatementEndDateWrap"
+            android:layout_marginTop="@dimen/inputs_margin_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <android.support.design.widget.TextInputEditText
+                android:focusable="false"
+                android:id="@+id/edtStatementEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:hint="@string/hint_statement_end_date"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/edtStatementEmailWrap"
+                android:layout_marginTop="@dimen/inputs_margin_small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtStatementEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/hint_statement_email"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

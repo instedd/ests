@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ug.co.sampletracker.app.components.contact.offices.Offices">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <fr.ganfra.materialspinner.MaterialSpinner
+        android:visibility="gone"
+        android:spinnerMode="dialog"
+        android:focusable="true"
+        android:layout_marginTop="@dimen/inputs_margin_small"
+        android:id="@+id/spinnerLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/sample_option"
+        app:ms_hint="What is you location?"
+        app:ms_floatingLabelText="My location"
+        style="@style/SpinnerMaterialStyle"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="8dp"
+        android:id="@+id/recyclerViewOffices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</LinearLayout>

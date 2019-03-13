@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:padding="@dimen/padding_eight"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="@dimen/font_level_1"
+            android:id="@+id/txvInvoiceNoLabel"
+            android:text="Invoice No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/txvInvoiceNo"
+            android:gravity="right"
+            android:textSize="@dimen/font_level_1"
+            android:text="21092100"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/txvInvoiceNoLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/txvInvoiceNoLabel" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txvDateLabel"
+            android:text="Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/txvDate"
+            android:gravity="right"
+            android:text="15th October 2018"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/txvDateLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/txvDateLabel" />
+    </RelativeLayout>
+
+    <View
+        android:background="#cecece"
+        android:layout_marginTop="@dimen/padding_eight"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+</LinearLayout>

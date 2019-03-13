@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_marginStart="@dimen/padding_eight"
+        android:layout_marginEnd="@dimen/padding_eight"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:visibility="gone"
+            android:padding="@dimen/padding_eight"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <fr.ganfra.materialspinner.MaterialSpinner
+                app:ms_enableErrorLabel="true"
+                app:ms_errorColor="@color/colorError"
+                android:focusable="true"
+                android:id="@+id/spinnerRequestBy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/sample_option"
+                app:ms_hint="Request delivery note by"
+                app:ms_floatingLabelText="Request delivery note by"
+                style="@style/SpinnerMaterialStyle"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/edtInvoiceNoWrap"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <android.support.design.widget.TextInputEditText
+                    android:maxLength="11"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:id="@+id/edtInvoiceNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Delivery note no." />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:id="@+id/containerDates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/edtFromDateWrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:maxLines="1"
+                        android:id="@+id/edtFromDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="From"
+                        android:text="12-10-2018" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/edtToDateWrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:maxLines="1"
+                        android:id="@+id/edtToDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="To"
+                        android:text="12-10-2018" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:onClick="btnSearchClick"
+                android:textColor="@color/white"
+                android:text="@string/hint_search"
+                style="@style/ButtonSquareGreenBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_marginTop="@dimen/padding_eight"
+            android:id="@+id/swipeToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v7.widget.RecyclerView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

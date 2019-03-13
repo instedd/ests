@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        />
+
+    <android.support.v7.widget.CardView app:cardBackgroundColor="@color/white"
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/CardStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <ScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="@dimen/font_level_1"
+                        android:textStyle="bold"
+                        android:id="@+id/txvInvoiceNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="02019210"/>
+
+                    <include layout="@layout/divider" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/lblDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Invoice date"/>
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:layout_toRightOf="@id/lblDate"
+                        android:gravity="end"
+                        android:id="@+id/txvDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="15th October 2019"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/lblCustNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customer number"/>
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:layout_toRightOf="@id/lblCustNumber"
+                        android:gravity="end"
+                        android:id="@+id/txvCustNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="000111"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/lblCustName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customer name"/>
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:layout_toRightOf="@id/lblCustName"
+                        android:gravity="end"
+                        android:id="@+id/txvCustName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hardware World Uganda"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentTop="true"
+                        android:id="@+id/lblInvoiceAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Invoice address"/>
+                    <TextView
+                        android:gravity="end"
+                        android:layout_below="@id/lblInvoiceAddress"
+                        android:id="@+id/txvInvAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kiwenda Maganjo"/>
+                </RelativeLayout>
+
+                <View
+                    android:background="#cecece"
+                    android:layout_marginTop="@dimen/padding_eight"
+                    android:layout_marginBottom="@dimen/padding_eight"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/lblProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Item name"/>
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:layout_toRightOf="@id/lblProduct"
+                        android:gravity="end"
+                        android:id="@+id/txvProdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Supaset"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/lblQty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quantity"/>
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:layout_toRightOf="@id/lblQty"
+                        android:gravity="end"
+                        android:id="@+id/txvQty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1000"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/lblUnitCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unit cost"/>
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:layout_toRightOf="@id/lblUnitCost"
+                        android:gravity="end"
+                        android:id="@+id/txvUnitCost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="50"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/lblAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total amount"/>
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:layout_toRightOf="@id/lblAmount"
+                        android:gravity="end"
+                        android:id="@+id/txvAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="50000"/>
+                </RelativeLayout>
+
+                <View
+                    android:background="#cecece"
+                    android:layout_marginTop="@dimen/padding_eight"
+                    android:layout_marginBottom="@dimen/padding_eight"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/lblNoteNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery note number"/>
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:layout_toRightOf="@id/lblNoteNo"
+                        android:gravity="end"
+                        android:id="@+id/txvDeliveryNoteNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="02190219"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/lblIncoterm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Incoterm"/>
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:layout_toRightOf="@id/lblIncoterm"
+                        android:gravity="end"
+                        android:id="@+id/txvIncoterm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="To be delivered"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_alignParentTop="true"
+                        android:id="@+id/lblDeliveryPlant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery Plant"/>
+                    <TextView
+                        android:gravity="end"
+                        android:layout_below="@id/lblDeliveryPlant"
+                        android:id="@+id/txvDeliveryPlant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kiwenda Maganjo"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

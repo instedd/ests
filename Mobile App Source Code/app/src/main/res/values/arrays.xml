@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sample_option">
+        <item>Choose option</item>
+    </string-array>
+
+    <string-array name="sample_status_option">
+        <item>Intact</item>
+        <item>Broken seals</item>
+        <item>Open</item>
+    </string-array>
+
+    <string-array name="sample_yes_no_option">
+        <item>YES</item>
+        <item>NO</item>
+    </string-array>
+
+    <string-array name="hima_service_points">
+        <item>Namanve Depot</item>
+        <item>Kasese Plant</item>
+        <item>Tororo Grinding Plant</item>
+    </string-array>
+
+</resources>

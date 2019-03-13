@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:activity="ug.co.sampletracker.app.components.auth.login.verification.ReferenceVerification">
+
+
+<include
+
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <FrameLayout
+    android:layout_below="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ui_dark_bridge" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_above="@id/contentPane"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout">
+
+            <!--<ImageView
+                android:src="@drawable/key_security"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />-->
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/contentPane"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                app:contentPadding="@dimen/padding_eight"
+                android:id="@+id/loginPane"
+                app:cardBackgroundColor="@color/md_white_1000"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Dealer Number Verification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <!-- Phone Label -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        >
+                        <EditText
+                            android:id="@+id/txvCustomerReferenceNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:hint="Dealer number" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <CheckBox
+                        android:id="@+id/checkBoxRememberMe"
+                        android:layout_marginBottom="@dimen/margin_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_remember_me"/>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <CheckBox
+                                android:checked="true"
+                                android:id="@+id/chkBoxAccIndividual"
+                                android:layout_weight="1"
+                                android:text="Individual A/c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                            <CheckBox
+                                android:id="@+id/chkBoxAccDealer"
+                                android:layout_weight="1"
+                                android:text="Dealer A/c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:background="@color/colorDisabled"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            >
+                            <EditText
+                                android:id="@+id/edtDealerNo"
+                                android:visibility="visible"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"
+                                android:hint="Dealer No." />
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                    <Button
+                        android:textColor="@color/white"
+                        android:background="@color/primary_dark"
+                        android:id="@+id/btnVerifyReferenceNumber"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginBottom="@dimen/padding_eight"
+                        android:padding="12dp"
+                        android:text="Verify"/>
+
+                    <TextView
+                        android:onClick="btnGoToLandingPage"
+                        android:id="@+id/btnLogin"
+                        android:textColor="@color/primary_dark"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_eight"
+                        android:layout_marginBottom="@dimen/padding_eight"
+                        android:text="Back to Previous Page"
+                        android:gravity="center"
+                        android:textSize="16dip"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </ScrollView>
+    </RelativeLayout>
+
+</FrameLayout>
+
+</RelativeLayout>
+

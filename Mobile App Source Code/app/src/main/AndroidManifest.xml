@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ug.co.sampletracker.app">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- permission to get phone number -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- To use SMS based services -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application        android:name="ug.co.sampletracker.app.utils.SampleTrackerApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/sample_tracker_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/sample_tracker_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <meta-data
+            android:name="DATABASE"
+            android:value="ug_co_lafarge_mservices.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="6" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="ug.co.lafarge.mservices.models" />
+
+        <activity
+            android:name="ug.co.sampletracker.app.components.splash.Splash"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ug.co.sampletracker.app.components.receivedsamples.view.ViewReceivedSamples"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="ug.co.sampletracker.app.components.registeredsamples.registersample.RegisterSample"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="ug.co.sampletracker.app.components.account.ViewAccount"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="ug.co.sampletracker.app.components.auth.login.verification.LoginPage"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="ug.co.sampletracker.app.components.dashboard.DashboardPage"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="ug.co.sampletracker.app.components.auth.password.ChangePassword"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="ug.co.sampletracker.app.components.auth.signin.otpverification.SignInOtpVefirication"
+            android:launchMode="singleTask" />
+
+        <receiver android:name="ug.co.sampletracker.app.utils.receivers.SmsBroadcastReceiver">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+            -->
+        </receiver>
+
+        <service android:name="ug.co.sampletracker.app.utils.GetTransactionStatusAndroidService" />
+
+        <activity
+            android:name="ug.co.sampletracker.app.components.auth.signin.SignIn"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="ug.co.sampletracker.app.components.auth.signup.Signup"
+            android:launchMode="singleTask" />
+        <activity android:name="ug.co.sampletracker.app.LayoutTester">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="ug.co.sampletracker.app.components.locations.maps.LocationMap"
+            android:launchMode="singleTask" />
+        <activity android:name="ug.co.sampletracker.app.components.contact.ContactUs" />
+        <activity android:name="ug.co.sampletracker.app.components.auth.reset.ResetPassword" />
+        <activity
+            android:name="ug.co.sampletracker.app.components.contact.offices.Offices"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="ug.co.sampletracker.app.components.registeredsamples.view.ViewRegisteredSamplesSamples"
+            android:launchMode="singleTask" />
+        <activity android:name="ug.co.sampletracker.app.components.otp.otprequest.PhoneNumberRequest" />
+        <activity android:name="ug.co.sampletracker.app.components.otp.otpverification.OtpVerification" />
+        <activity android:name="ug.co.sampletracker.app.components.receivedsamples.menu.SampleRegistrationMenu" android:label="@string/module_register_sample" />
+
+        <activity android:name="ug.co.sampletracker.app.components.dashboard.extendedmenu.ExtendedMenu" />
+        <activity android:name="ug.co.sampletracker.app.components.notification.Notifications" />
+        <activity android:name="ug.co.sampletracker.app.components.receivedsamples.receivesample.SampleReceivingMenu" />
+        <activity android:name="ug.co.sampletracker.app.components.receivedsamples.receivesample.ReceiveSample" />
+    </application>
+
+</manifest>

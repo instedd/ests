@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:visibility="gone"
+        android:background="#cecece"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imgOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_option"/>
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/imgOption"
+            android:id="@+id/txvOptionLabel"
+            android:text="Place Order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imgOption"
+            android:layout_marginStart="@dimen/activity_vertical_margin" />
+    </RelativeLayout>
+
+    <View
+        android:background="#cecece"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

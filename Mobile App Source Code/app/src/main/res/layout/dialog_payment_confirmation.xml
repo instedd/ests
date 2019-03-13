@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/card_padding">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone  number"/>
+            <TextView
+                android:gravity="end"
+                android:layout_toRightOf="@id/lblPhone"
+                android:paddingLeft="@dimen/dp_3"
+                android:paddingStart="@dimen/dp_3"
+                android:id="@+id/txvPaymentConfirmationPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0701000000"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/lblAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount in UGX"/>
+            <TextView
+                android:gravity="end"
+                android:layout_toRightOf="@id/lblAmount"
+                android:paddingLeft="@dimen/dp_3"
+                android:paddingStart="@dimen/dp_3"
+                android:id="@+id/txvPaymentConfirmation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="########"
+                android:layout_toEndOf="@id/lblAmount" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutDeliveryDate"
+            android:layout_marginBottom="@dimen/margin_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/lblDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivery date"/>
+            <TextView
+                android:gravity="end"
+                android:layout_toRightOf="@id/lblDate"
+                android:paddingLeft="@dimen/dp_3"
+                android:paddingStart="@dimen/dp_3"
+                android:id="@+id/txvDeliveryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="yyyy-mm-dd"
+                android:layout_toEndOf="@id/lblDate" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

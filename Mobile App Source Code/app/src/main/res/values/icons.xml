@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--<string name="icon_register_sample">&#xf217;</string>-->
+    <string name="icon_register_sample">&#xf0c3;</string>
+    <string name="icon_payment">&#xf0d6;</string>
+    <string name="icon_dealers">&#xf0c0;</string>
+    <string name="icon_contact_us">&#xf095;</string>
+    <string name="icon_receive_sample">&#xf022;</string>
+    <string name="icon_invoice">&#xf15b;</string>
+    <string name="icon_deliveries">&#xf0d1;</string>
+    <string name="icon_tonnage_report">&#xf15c;</string>
+    <string name="icon_account">&#xf2bd;</string>
+    <string name="icon_balance">&#xf24e;</string>
+    <string name="icon_home">&#xf015;</string>
+    <string name="icon_chat">&#xf075;</string>
+
+</resources>

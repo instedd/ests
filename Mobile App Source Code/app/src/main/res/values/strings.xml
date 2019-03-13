@@ -1,0 +1,140 @@
+<resources>
+    <string name="app_name">Sample Tracker</string>
+    <string name="m_service_name">Sample Tracker</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="module_login">Login</string>
+    <string name="module_home">Home</string>
+    <string name="module_dashboard">Dashboard</string>
+    <string name="module_payment">Deposit Money</string>
+    <string name="module_account">My Account</string>
+    <string name="module_balances">View Balances</string>
+    <string name="module_register_sample">Register Sample</string>
+    <string name="module_received_samples">Received Samples</string>
+    <string name="module_registered_samples">Registered Samples</string>
+    <string name="module_orders_individual">Buy Cement</string>
+    <string name="module_dealers">Dealers</string>
+    <string name="module_regional_offices">Regional Offices</string>
+    <string name="module_dealer_location">Dealer Location</string>
+    <string name="module_receive_sample">Receive Sample</string>
+    <string name="module_notification">Notifications</string>
+    <string name="module_help">Quick Tour</string>
+    <string name="module_mo_kash">Mo Kash</string>
+    <string name="module_contact_us">Contact Us</string>
+    <string name="module_dealer_reports">Dealer Reports</string>
+    <string name="module_dealer_report_tonnage">Tonnage Reports</string>
+    <string name="module_dealer_report_invoice">Request Invoices</string>
+    <string name="module_dealer_report_delivery_note">Confirm Deliveries</string>
+
+    <string name="customer_type_direct">Hima Dealer</string>
+    <string name="customer_type_other">Individual Customer</string>
+
+    <string name="hint_reference_number">Customer Number</string>
+    <string name="hint_order_expected_date">Delivery date</string>
+    <string name="hint_order_address">Delivery Address</string>
+    <string name="hint_order_qty">Quantity</string>
+    <string name="hint_statement_email">Email to receive statement</string>
+    <string name="hint_statement_start_date">Start Date</string>
+    <string name="hint_statement_end_date">End Date</string>
+
+    <string name="label_account_verification">Account Verification</string>
+    <string name="label_remember_me">Remember my dealer number</string>
+    <string name="label_verify">Verify</string>
+    <string name="label_no_orders">Your received samples will appear here. There are currently no received samples found</string>
+    <string name="label_no_statement">Your registered samples will appear here. There are currently no registered samples found</string>
+
+    <string name="title_order_request">Place Order</string>
+    <string name="label_order">Order</string>
+    <string name="label_payment_to_hima_cement">Place an Order</string>
+    <string name="hint_payment_amount">Amount to pay</string>
+    <string name="label_payment_pay">pay</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_confirm">Confirm</string>
+    <string name="title_payment_history">View Payments</string>
+    <string name="hint_payment_unref_distributor_no">Dealer number</string>
+    <string name="hint_payment_unref_qty">Quantity</string>
+    <string name="placeholder_text">########</string>
+    <string name="hint_mobile_money_no">Enter your mobile money number</string>
+    <string name="hint_phone_no">Enter your phone number</string>
+    <string name="agree">YES</string>
+    <string name="disagree">NO</string>
+    <string name="okay">OKAY</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="hima_slogan">Building better cities</string>
+    <string name="hint_search">Search</string>
+    <string name="other_customer_dashboard_name">Hima Client</string>
+    <string name="label_verify_pin">Verify PIN</string>
+    <string name="request_for_otp">Request PIN</string>
+    <string name="label_wait_for_sms">Waiting for SMS …</string>
+    <string name="waiting_for_pay">The transaction has been initiated. Waiting for payment confirmation prompt</string>
+    <string name="copy_right">Hima cement self service app \@2018</string>
+    <string name="label_message_otp_send">A one time PIN has been sent to your registered phone number</string>
+    <string name="contact_hq_name">Sample Tracker</string>
+    <string name="label_password_reset">We just need your registered phone number to send you a one time PIN to enable you reset your password</string>
+    <string name="message_request_sms_permission">Hima Cement App will now request for SMS permission on your device.\nThis is required in order to send a one time PIN to verify your phone number. Proceed with request?</string>
+    <string name="label_register">Not a member? Register</string>
+    <string name="choose">Choose</string>
+    <string name="module_payment_modes">Payment Method</string>
+    <string name="phone_number_info">To enable us show you transactions done using a given phone, please enter the number below.
+    We will then send a one time PIN to that number</string>
+    <string name="pin_info">A PIN has been sent to 0701******, please enter the PIN below to complete verification</string>
+    <string name="label_feedback_type">I\'m telling you about</string>
+    <string name="label_feedback_desc">Description</string>
+    <string name="hint_feedback_desc">Write feedback here</string>
+    <string name="hint_phone">Username, e.g johndoe</string>
+    <string name="hint_email">Email, optional</string>
+    <string name="hint_password">Password, 6 or more characters</string>
+    <string name="hint_otp">One time PIN</string>
+    <string name="hint_dealer_name">Dealer name</string>
+    <string name="hint_dealer_location">Physical location for delivery</string>
+    <string name="label_order_details">Fill in the sample details</string>
+    <string name="label_receive_sample_details">Fill in the received sample details</string>
+
+    <string name="icon_user">&#xf007;</string>
+    <string name="icon_add">&#xf067;</string>
+    <string name="icon_readmore">&#xf178;</string>
+    <string name="icon_answer">&#xf095;</string>
+    <string name="icon_mute">&#xf131;</string>
+
+    <string name="icon_like">&#xf087;</string>
+    <string name="icon_share">&#xf064;</string>
+    <string name="icon_follow">&#xf005;</string>
+
+    <string name="icon_android">&#xf17b;</string>
+    <string name="icon_dropbox">&#xf16b;</string>
+    <string name="icon_soundcloud">&#xf1be;</string>
+    <string name="icon_spotify">&#xf1bc;</string>
+
+    <string name="icon_vine">&#xf1ca;</string>
+    <string name="icon_twitter">&#xf099;</string>
+    <string name="icon_tumbler">&#xf173;</string>
+    <string name="icon_stackoverflow">&#xf16c;</string>
+    <string name="icon_gplus">&#xf0d5;</string>
+    <string name="icon_facebook">&#xf09a;</string>
+
+    <string name="icon_entypo_facebook">&#59140;</string>
+
+    <string name="icon_behance">&#xf1b4;</string>
+    <string name="icon_dribble">&#xf17d;</string>
+
+    <string name="icon_send">&#xf1d8;</string>
+    <string name="icon_download">&#xf0ed;</string>
+    <string name="icon_upload">&#xf0ee;</string>
+    <string name="icon_config">&#xf085;</string>
+    <string name="icon_creditcard">&#xf09d;</string>
+    <string name="ghost_button_title">Ghost Button</string>
+    <string name="icon_envelope"></string>
+    <string name="android_prefix">Android Prefix</string>
+    <string name="label_deposit_money">Deposit money to your Hima account</string>
+    <string name="st_slogan">Welcome to the Sample Tracker App</string>
+    <string name="hint_sample_id">Sample Id</string>
+    <string name="hint_date_of_taking">Date of sample taking</string>
+    <string name="hint_date_to_reac">Expected date to reach final destination</string>
+    <string name="hint_clinical_notes">Clinical notes</string>
+    <string name="label_register_sample">Submit Sample Details</string>
+    <string name="label_receive_sample">Submit Sample Details</string>
+    <string name="hint_date_of_receiving">Received on</string>
+
+</resources>

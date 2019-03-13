@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:focusable="true"
+android:background="@color/colorDefaultBg"
+android:focusableInTouchMode="true"
+android:focusedByDefault="true"
+tools:context="ug.co.sampletracker.app.components.contact.ContactUs">
+
+<include
+    android:id="@+id/toolbar"
+    layout="@layout/toolbar"
+    />
+
+<ScrollView
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <RelativeLayout
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <FrameLayout
+           android:layout_alignParentTop="true"
+           android:id="@+id/header"
+           android:background="@drawable/call_center_st"
+           android:layout_width="match_parent"
+           android:layout_height="150dp"
+           android:layout_marginBottom="@dimen/card_margin">
+       </FrameLayout>
+
+       <android.support.v7.widget.CardView
+           android:layout_below="@id/header"
+           android:id="@+id/content"
+           style="@style/CardStyle"
+           app:cardBackgroundColor="@color/white"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+               <TextView
+                   android:textColor="@color/primary"
+                   android:gravity="center"
+                   android:text="@string/contact_hq_name"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+
+               <include layout="@layout/divider"/>
+
+               <TextView
+                   android:layout_marginTop="10sp"
+                   android:text="Twed Towers, 6th Floor"
+                   android:gravity="center"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="10dp" />
+               <TextView
+                   android:text="Plot 10, Kafu Road, Nakasero"
+                   android:gravity="center"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="10dp" />
+               <TextView
+                   android:text="P.O Box 7230, Kampala, Uganda"
+                   android:gravity="center"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+               <TextView
+                   android:text="Tel: +256 31 2213 200/100"
+                   android:gravity="center"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+               <TextView
+                   android:text="Email: support@sampletracker.instedd.org"
+                   android:gravity="center"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+
+               <LinearLayout
+                   android:orientation="horizontal"
+                   android:gravity="center"
+                   android:layout_marginTop="15dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <ImageButton
+                       android:id="@+id/btnEmail"
+                       android:layout_margin="5dp"
+                       android:padding="3dp"
+                       android:background="@color/primary"
+                       android:src="@drawable/ic_mail"
+                       android:layout_weight="1"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content" />
+
+                   <ImageButton
+                       android:id="@+id/btnCall"
+                       android:layout_margin="5dp"
+                       android:padding="3dp"
+                       android:background="@color/accent"
+                       android:src="@drawable/ic_phone"
+                       android:layout_weight="1"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content" />
+
+                   <ImageButton
+                       android:id="@+id/btnLocation"
+                       android:layout_margin="5dp"
+                       android:padding="3dp"
+                       android:background="@color/md_blue_700"
+                       android:src="@drawable/ic_location"
+                       android:layout_weight="1"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content" />
+
+               </LinearLayout>
+
+           </LinearLayout>
+
+       </android.support.v7.widget.CardView>
+
+       <android.support.v7.widget.CardView
+           android:layout_below="@id/content"
+            android:id="@+id/otherOffices"
+           android:visibility="visible"
+           style="@style/CardStyle"
+           app:cardBackgroundColor="@color/white"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <LinearLayout
+               android:gravity="center"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical">
+
+               <RelativeLayout
+                   android:padding="8dp"
+                   android:layout_margin="8dp"
+                   android:background="@drawable/rounded_view"
+                   android:onClick="btnGoToRegionalOffices"
+                   android:gravity="center"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <ImageView
+                       android:onClick="btnGoToRegionalOffices"
+                       android:layout_centerVertical="true"
+                       android:id="@+id/imgOfficeSt"
+                       android:src="@drawable/img_office_st"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content" />
+
+                   <TextView
+                       android:onClick="btnGoToRegionalOffices"
+                       android:layout_toRightOf="@id/imgOfficeSt"
+                       android:gravity="center"
+                       android:textAllCaps="true"
+                       android:id="@+id/btnTxvViewOffices"
+                       android:layout_margin="10dp"
+                       android:text="View our Regional Offices"
+                       android:layout_gravity="center"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textColor="@color/primary_dark"
+                       />
+
+               </RelativeLayout>
+
+
+           </LinearLayout>
+
+       </android.support.v7.widget.CardView>
+   </RelativeLayout>
+
+</ScrollView>
+
+</LinearLayout>

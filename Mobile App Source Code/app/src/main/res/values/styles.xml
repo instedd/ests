@@ -1,0 +1,91 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowSoftInputMode">stateHidden</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_theme_background</item>
+    </style>
+
+   <!-- <style name="BtnLoginStyle">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@color/primary</item>
+        <item name="android:padding">@dimen/padding_btn</item>
+        <item name="android:layout_margin">@dimen/margin_btn</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+-->
+    <style name="BtnLoginStyle">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/rounded_button_transparent</item>
+        <item name="android:padding">@dimen/padding_btn</item>
+        <item name="android:layout_margin">@dimen/margin_btn</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+
+    <style name="SpinnerMaterialStyle">
+        <item name="ms_multiline">false</item>
+        <item name="ms_enableFloatingLabel">true</item>
+        <item name="ms_enableErrorLabel">false</item>
+        <!--<item name="ms_baseColor">@color/colorAccent</item>-->
+        <!--<item name="ms_highlightColor">@color/colorAccent</item>-->
+        <item name="ms_errorColor">@color/md_red_500</item>
+        <item name="ms_thickness">1dp</item>
+        <!--<item name="ms_hintColor">@color/colorAccent</item>-->
+        <!--<item name="ms_arrowColor">@color/colorAccent</item>-->
+        <item name="ms_arrowSize">16dp</item>
+        <item name="ms_alignLabels">false</item>
+        <!--<item name="ms_floatingLabelColor">@color/colorAccent</item>-->
+    </style>
+
+    <style name="Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="CardStyle">
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="android:layout_marginTop">@dimen/card_margin</item>
+        <item name="android:layout_marginBottom">@dimen/card_margin</item>
+        <item name="cardCornerRadius">@dimen/card_radius</item>
+        <item name="contentPadding">@dimen/card_padding</item>
+    </style>
+
+    <style name="ButtonSquareWhiteBorder">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/rounded_view</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+
+    <style name="ButtonSquareGreenBorder">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+
+    <style name="ButtonSquareAccentBorder">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/rounded_button_accent</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="ProgressDialogFullScreen" parent="@android:style/Theme.Translucent">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+</resources>
