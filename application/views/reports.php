@@ -46,12 +46,14 @@
                         <th>Disease Type</th>
                         <th>Initial Sample Date</th>
                         <th>Expected Destination Date </th>
+                        <th>Action </th>
                 </tr>
                 </thead>
                 <tbody>
                   <?php
                     $i = 1;
                     $app = 1;
+                    $action="encrypt";
                   if(isset($registered_samples)){
                     foreach ($registered_samples as $row_samples) {
                         ?>
@@ -64,6 +66,7 @@
                             <td><?= $row_samples->disease_id; ?></td>
                             <td><?= date('d,M Y h:m:i',strtotime($row_samples->initialSampleDate)); ?></td>
                             <td><?= date('d,M Y h:m:i',strtotime($row_samples->finalDestinationDate)); ?></td>
+                            <td><a href="<?=base_url('Reports/sampleDetails/'.encryptor($action,$row_samples->sample_id));?>"><span class="label-success label label-default">VIEW DETAILS</span></a></td>
                         </tr>
                         <?php $app++;
                     } 
@@ -93,6 +96,7 @@
                         <th>Destination</th>
                         <th>Recorded By</th>
                         <th>Date Received</th>
+                        <th>Total time taken</th>
                         <th>Turn-around time status</th>
                         
                         
@@ -102,13 +106,18 @@
                   <?php
                     $i = 1;
                     $app = 1;
+                    $ci =&get_instance();
+                    $ci->load->model('Reverselookups_model');
                    if(isset($received_samples)){
                     foreach ($received_samples as $row_received_sample) {
                         $date_received=$row_received_sample->date_received;
                         $finalDestinationDate=$row_received_sample->finalDestinationDate;
                         $destination=$row_received_sample->destination_id;
                         $turn_around_time_status=(($date_received>$finalDestinationDate)?'<span class="label-danger label label-default" >Delayed</span>':'<span class="label-success label label-default" >DELIVERED ON TIME</span>');
-                       ?>
+                         $sample_date=$ci->Reverselookups_model->get_sample_registration_date($row_received_sample->sample_id);
+                        $secs=(strtotime($row_received_sample->date_received)-strtotime($sample_date));
+                        //$strtotime=strtotime(date($secs));
+                        ?>
                         <tr>
                             <td><?= $app; ?>.</td>
                             <td><?= $row_received_sample->sample_id; ?></td>
@@ -116,6 +125,7 @@
                             <td><?= $row_received_sample->destination_id; ?></td>
                             <td><?= $row_received_sample->entered_by; ?></td>
                             <td><?= date('d,M Y h:m:i',strtotime($row_received_sample->date_received)); ?></td>
+                            <td><?= secsToStr($secs); ?></td>
                             <td><?= $turn_around_time_status; ?></td>
                         </tr>
                         <?php $app++;

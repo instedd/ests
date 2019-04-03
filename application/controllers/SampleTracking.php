@@ -12,7 +12,7 @@ class SampleTracking extends CI_Controller
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
         parent::__construct();
         $this->load->library(array('session','notification','form_validation', 'email', 'pagination'));
-        $this->load->helper(array('utility', 'html', 'url', 'form', 'notification'));
+        $this->load->helper(array('html', 'url', 'form', 'notification'));
         $this->load->model('Lookups_model');
         $this->load->model('Dashboard_model');
         $this->load->model('Setups_model');
@@ -621,10 +621,16 @@ public function received_samples()
        }
        public function notifications()
         {
-        $current_class = $this->router->fetch_class();
-        $current_method = $this->router->fetch_method();
-        $fm_name = $this->session->userdata['user_org_name'];
-        $data = array(
+          $action='decrypt';
+          $record_id=encryptor($action,$this->uri->segment(3));
+          if(isset($record_id)){
+          $data_to_update=array('expires_on'=>date('Y-m-d H:i:s'));
+          $this->db->where('id', $record_id);
+          $this->db->update('tbl_notifications', $data_to_update);
+           $current_class = $this->router->fetch_class();
+           $current_method = $this->router->fetch_method();
+           $fm_name = $this->session->userdata['user_org_name'];
+           $data = array(
             'page_protection' => $this->protected_page(),
             'page_title' => title_ext . clean_menu_item_name($current_method),
             'menu_name' => $this->Lookups_model->get_menu_name($current_class),
@@ -639,12 +645,37 @@ public function received_samples()
             'destination' => $this->Setups_model->get_destination(),
             'sample_type' => $this->Setups_model->get_sample_type(),
             'total_notifications' => $this->Dashboard_model->get_total_notifications(),
-       );
+        );
         $data['get_all_notifications'] = $this->notification->get_all_notifications($id = '');
         $this->load->view('header', $data);
         $this->load->view('sample_tracking/notifications', $data);
         $this->load->view('footer', $data);
-
+           }else{
+           $current_class = $this->router->fetch_class();
+           $current_method = $this->router->fetch_method();
+           $fm_name = $this->session->userdata['user_org_name'];
+           $data = array(
+            'page_protection' => $this->protected_page(),
+            'page_title' => title_ext . clean_menu_item_name($current_method),
+            'menu_name' => $this->Lookups_model->get_menu_name($current_class),
+            'awesome_icon' => $this->Lookups_model->get_menu_icon($current_class),
+            'sub_menu_item' => $this->Lookups_model->get_sub_menu_item($current_method),
+            'sub_menu_description' => ucfirst(strtolower(substr($current_class, 2))),
+            'data_menu_category' => $this->Lookups_model->get_menu_category($this->session->userdata['user_group_id']),
+            'data_fm_name' => $fm_name,
+            'boolean_response' => $this->Lookups_model->get_boolean_response(),
+            'diseases' => $this->Setups_model->get_disease_names(),
+            'facility_code' => $this->Setups_model->get_facility_codes($this->session->userdata['location']),
+            'destination' => $this->Setups_model->get_destination(),
+            'sample_type' => $this->Setups_model->get_sample_type(),
+            'total_notifications' => $this->Dashboard_model->get_total_notifications(),
+        );
+        $data['get_all_notifications'] = $this->notification->get_all_notifications($id = '');
+        $this->load->view('header', $data);
+        $this->load->view('sample_tracking/notifications', $data);
+        $this->load->view('footer', $data);
+           }
+        
     }
     public function search()
     {

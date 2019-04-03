@@ -69,10 +69,10 @@
                             </div>
                             <div class="col-md-6 form-group">
                                 <label class="control-label" for="notes"> Clinical notes</label>
-                                <input name="notes" id="notes"
+                                <textarea name="notes" id="notes"
                                 " placeholder="Please fill in the comments"
                                        class="form-control"
-                                       value="'.$row_sample->clinical_notes.'">
+                                       value="'.$row_sample->clinical_notes.'"/></textarea>
                                 <span class="text-danger help-block small with-errors">
                                             '.form_error('notes').'
                                         </span>

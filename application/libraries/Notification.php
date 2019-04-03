@@ -16,7 +16,7 @@ class Notification{
       function get_all_notifications($id)
     {
         $append_id=($id!=='')?'and id='.$id.'':'';
-        $this->CI->db->select("id,message,date_created,created_by,received_by FROM `tbl_notifications` 
+        $this->CI->db->select("id,message,date_created,expires_on,created_by,received_by FROM `tbl_notifications` 
         WHERE 1
          " . $append_id . " 
           order by `id` desc LIMIT 10", FALSE);

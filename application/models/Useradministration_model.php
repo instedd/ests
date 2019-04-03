@@ -352,7 +352,7 @@ class Useradministration_model extends CI_Model
     {
          $this->db->select('*');
         $this->db->from('tbl_registered_samples');
-        $this->db->order_by('sample_id','asc');
+        $this->db->order_by('initialSampleDate','desc');
         $db_rows = $this->db->get();
         if ($db_rows->num_rows() > 0) {
             foreach ($db_rows->result() as $data) {
@@ -367,7 +367,7 @@ class Useradministration_model extends CI_Model
 
       $this->db->select('*');
         $this->db->from('tbl_received_sample');
-        $this->db->order_by('sample_id','asc');
+        $this->db->order_by('date_received','desc');
         $db_rows = $this->db->get();
         if ($db_rows->num_rows() > 0) {
             foreach ($db_rows->result() as $data) {
@@ -396,13 +396,68 @@ class Useradministration_model extends CI_Model
                             on (s.`sample_id`=r.`sample_id`)
                             WHERE 1 and r.date_received !='1970-01-01'
                             and r.`is_destination`='YES'
-                            order by r.`sample_id` asc", FALSE);
+                            order by r.`date_received` desc", FALSE);
         $db_rows = $this->db->get();
         if ($db_rows->num_rows() > 0) {
             foreach ($db_rows->result() as $data) {
                 $db_data_fetched_array[] = $data;
             }
             return $db_data_fetched_array;
+        }
+    }
+
+  function get_sample_details($sample_id){
+       // get sample status
+        $this->db->select("received_status FROM `tbl_registered_samples` WHERE 1 and sample_id=" . $sample_id . "", FALSE);
+        $received_status=$this->db->get()->row()->received_status;
+      if($received_status=='received'){
+
+  $this->db->select(" s.`id`,
+                          s.`sample_id` as reg_sample_id,
+                           s.`destination_id`,
+                            s.`initialSampleDate`,
+                            s.`finalDestinationDate`,
+                            s.`facility_code_id`,
+                            s.`districtCode` as reg_district,
+                            s.`sample_type_id`,
+                            s.`disease_id`,
+                            s.`clinical_notes`,
+                            s.`received_status`,
+                            s.`entered_by` as registered_by,
+                            r.`sample_id`,
+                            r.`districtCode`,
+                            r.`sample_status`,
+                            r.`destination_id`,
+                            r.`is_destination`,
+                            r.`date_received`,
+                            r.`entered_by`,
+                            r.`delivered_by`,
+                            r.`created_at`
+                            FROM `tbl_registered_samples` as `s`
+                            left join `tbl_received_sample` as `r`
+                            on (s.`sample_id`=r.`sample_id`)
+                            WHERE s.`sample_id`=".$sample_id." and r.date_received !='1970-01-01'
+                            order by s.`initialSampleDate` DESC", FALSE);
+  }else{
+   $this->db->select(" s.`id`,
+                          s.`sample_id` as reg_sample_id,
+                           s.`destination_id`,
+                            s.`initialSampleDate`,
+                            s.`finalDestinationDate`,
+                            s.`facility_code_id`,
+                            s.`districtCode` as reg_district,
+                            s.`sample_type_id`,
+                            s.`disease_id`,
+                            s.`entered_by` as registered_by,
+                            s.`received_status`,
+                            s.`clinical_notes`
+                            FROM `tbl_registered_samples` as `s`
+                            WHERE s.`sample_id`=".$sample_id." 
+                            order by s.`initialSampleDate` DESC", FALSE);
+  }
+     $db_rows = $this->db->get();
+     if ($db_rows->num_rows() > 0) {
+            return $db_rows->row_array();
         }
     }
     function get_all_received_sample_in_transit()

@@ -342,4 +342,32 @@ public function map()
     $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
     $objWriter->save('php://output');
     }
+     public function sampleDetails()
+    {
+        $action='decrypt';
+        $sample_id=encryptor($action,$this->uri->segment(3));
+        @$this->page_session_expiry($this->session->userdata['user_org_id']);
+        $fm_id = $this->session->userdata['user_org_id'];
+        $current_method = $this->router->fetch_method();
+        $current_class = $this->router->fetch_class();
+        $fm_name = $this->session->userdata['user_org_name'];
+
+        $data = array(
+            'page_protection' => $this->protected_page(),
+            'page_title' => title_ext . 'Dashboard',
+            'menu_name' => $this->Lookups_model->get_menu_name($current_class),
+            'awesome_icon' => $this->Lookups_model->get_menu_icon($current_class),
+            'sub_menu_item' => $this->Lookups_model->get_sub_menu_item('index'),
+            'sub_menu_description' => 'Home page',
+            'data_menu_category' => $this->Lookups_model->get_menu_category($this->session->userdata['user_group_id']),
+            'boolean_response' => $this->Lookups_model->get_boolean_response(),
+            'drop_down_roles' => $this->Setups_model->drop_down_roles(),
+            'last_segment' => 'dashboard'
+        );
+        
+        $data['sample_details'] = $this->Useradministration_model->get_sample_details($sample_id);
+        $this->load->view('header', $data);
+        $this->load->view('sample_details', $data);
+        $this->load->view('footer', $data);
+    }
 }

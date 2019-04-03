@@ -8,16 +8,39 @@ class Reverselookups_model extends CI_Model
     {
         parent::__construct();
     }
-
+function get_received_sample_details($sample_id)
+    {
+      $this->db->select('*');
+      $this->db->from('tbl_received_sample');
+      $this->db->where(array('sample_id'=>$sample_id));
+        $this->db->order_by('sample_id','asc');
+        $db_rows = $this->db->get();
+        if ($db_rows->num_rows() > 0) {
+            foreach ($db_rows->result() as $data) {
+                $db_data_fetched_array[] = $data;
+            }
+            return $db_data_fetched_array;
+        }
+    }
+     function get_district_name($id)
+    {
+        $this->db->select("districtName FROM `tbl_district` WHERE 1 and id=" . $id . "", FALSE);
+        return $this->db->get()->row()->districtName;
+    }
     function get_health_facility($id)
     {
         $this->db->select("name FROM `tbl_facility_codes` WHERE 1 and id=" . $id . "", FALSE);
         return $this->db->get()->row()->name;
     }
-   function get_destinations($id)
+     function get_destinations($id)
     {
         $this->db->select("name FROM `tbl_destination` WHERE 1 and id=" . $id . "", FALSE);
         return $this->db->get()->row()->name;
+    }
+   function get_sample_registration_date($id)
+    {
+        $this->db->select("initialSampleDate FROM `tbl_registered_samples` WHERE 1 and sample_id=" . $id . "", FALSE);
+        return $this->db->get()->row()->initialSampleDate;
     }
     function get_district($id)
     {

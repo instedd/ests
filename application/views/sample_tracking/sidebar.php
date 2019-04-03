@@ -39,9 +39,9 @@ $ci->load->model('Dashboard_model');
              
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
+                <!-- <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
+                </div> -->
                 <div class="pull-right">
                   <a href="<?= site_url('FmLogin/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
@@ -117,15 +117,10 @@ $ci->load->model('Dashboard_model');
               echo $menu_category;
             }?>
           </span>
-			       <?php if (intval($menu_category_id) !== 1) { ?>
                <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-                                <?php } else {
-                                } ?>
-            
           </a>
-		  <?php if (intval($menu_category_id) !== 1) { ?>
           <ul class="treeview-menu">
 		  <?php
                       $html = '';
@@ -140,11 +135,10 @@ $ci->load->model('Dashboard_model');
                       }
                       ?>
                   </ul>
-              <?php } else {
-              } ?>
+              
           </li>
 
-                    <?php } ?>
+        <?php } ?>
 
        </ul>
         

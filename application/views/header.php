@@ -30,6 +30,10 @@ if ($page_protection == 0) {
   <link rel="stylesheet" href="<?=base_url();?>vendors/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="<?=base_url();?>vendors/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="<?=base_url();?>himaps/css/map_style.css" type="text/css" />
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
+<style>
+body {
+    font-family: 'Poppins';font-size: 14px;
+}
+</style>

@@ -30,14 +30,19 @@
             <?php if(isset($get_all_notifications)):
               foreach($get_all_notifications as $notifications):
             $user_id=$notifications->created_by;
+            $expires_on=$notifications->expires_on;
+            $action="encrypt";
             //$this->CI =& get_instance();
             ?>
+            <?php if($expires_on==NULL){?>
             <li>
               <i class="fa fa-bell bg-blue"></i>
 
               <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i><?=$this->reverselookups_model->time_elapsed_string($notifications->date_created);?></span>
-
+                <span class="time ">
+                  <a href="<?=base_url('sampleTracking/notifications/'.encryptor($action,$notifications->id));?>">Mark as seen</a>
+                </span>
+               <span class="time"><i class="fa fa-clock-o"></i><?=$this->reverselookups_model->time_elapsed_string($notifications->date_created);?></span>
                 <h3 class="timeline-header"><a href="#"><?=$notifications->created_by;?></a> trigered a notification</h3>
 
                 <div class="timeline-body">
@@ -45,6 +50,21 @@
                 </div>
               </div>
             </li>
+             <?php } else{?>
+               <li>
+              <i class="fa fa-bell bg-blue"></i>
+
+              <div class="timeline-item" style="background-color: #D3D3D3;">
+                <span class="time" style="text-color: red;"><i class="fa fa-check">Seen</i></span>
+               <span class="time"><i class="fa fa-clock-o"></i><?=$this->reverselookups_model->time_elapsed_string($notifications->date_created);?></span>
+                <h3 class="timeline-header"><a href="#"><?=$notifications->created_by;?></a> trigered a notification</h3>
+
+                <div class="timeline-body">
+                  <?=$notifications->message;?>
+                </div>
+              </div>
+            </li>
+            <?php }?>
             <?php endforeach;?>
           <?php endif;?>
           </ul>
