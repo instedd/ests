@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://www.roytuts.com/prevent-sql-injection-in-codeigniter/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" itemscope="itemscope" itemtype="http://schema.org/Article" style="transform: none;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	<title>Prevent SQL Injection in Codeigniter - Roy Tutorials</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://www.roytuts.com/prevent-sql-injection-in-codeigniter/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Prevent SQL Injection in Codeigniter - Roy Tutorials">
+<meta property="og:description" content="This tutorial will show you how to prevent SQL injection in Codeigniter application. SQL injection is: a malicious code injection technique that may destroy your database. one of the most common web hacking techniques. the placement of malicious code in SQL statements,...">
+<meta property="og:url" content="https://www.roytuts.com/prevent-sql-injection-in-codeigniter/">
+<meta property="og:site_name" content="Roy Tutorials">
+<meta property="article:author" content="https://www.facebook.com/sarkarblog">
+<meta property="article:tag" content="Active Record">
+<meta property="article:tag" content="codeigniter mysql">
+<meta property="article:tag" content="Query Bind">
+<meta property="article:tag" content="Query Escape">
+<meta property="article:tag" content="SQL Injection">
+<meta property="article:section" content="Codeigniter">
+<meta property="article:published_time" content="2016-05-22T02:04:09+00:00">
+<meta property="article:modified_time" content="2018-05-24T10:46:45+00:00">
+<meta property="og:updated_time" content="2018-05-24T10:46:45+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This tutorial will show you how to prevent SQL injection in Codeigniter application. SQL injection is: a malicious code injection technique that may destroy your database. one of the most common web hacking techniques. the placement of malicious code in SQL statements,...">
+<meta name="twitter:title" content="Prevent SQL Injection in Codeigniter - Roy Tutorials">
+<meta name="twitter:creator" content="@soumitrajuster">
+<script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.roytuts.com/#organization","name":"","url":"https://www.roytuts.com/","sameAs":[]},{"@type":"WebSite","@id":"https://www.roytuts.com/#website","url":"https://www.roytuts.com/","name":"Roy Tutorials","publisher":{"@id":"https://www.roytuts.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.roytuts.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.roytuts.com/prevent-sql-injection-in-codeigniter/#webpage","url":"https://www.roytuts.com/prevent-sql-injection-in-codeigniter/","inLanguage":"en-US","name":"Prevent SQL Injection in Codeigniter - Roy Tutorials","isPartOf":{"@id":"https://www.roytuts.com/#website"},"datePublished":"2016-05-22T02:04:09+00:00","dateModified":"2018-05-24T10:46:45+00:00"},{"@type":"Article","@id":"https://www.roytuts.com/prevent-sql-injection-in-codeigniter/#article","isPartOf":{"@id":"https://www.roytuts.com/prevent-sql-injection-in-codeigniter/#webpage"},"author":{"@id":"https://www.roytuts.com/author/sugr86/#author","name":"Soumitra Roy Sarkar"},"publisher":{"@id":"https://www.roytuts.com/#organization"},"headline":"Prevent SQL Injection in Codeigniter","datePublished":"2016-05-22T02:04:09+00:00","dateModified":"2018-05-24T10:46:45+00:00","commentCount":0,"mainEntityOfPage":"https://www.roytuts.com/prevent-sql-injection-in-codeigniter/#webpage","keywords":"Active Record,codeigniter mysql,Query Bind,Query Escape,SQL Injection","articleSection":"Codeigniter"},{"@type":"Person","@id":"https://www.roytuts.com/author/sugr86/#author","name":"Soumitra Roy Sarkar","image":{"@type":"ImageObject","@id":"https://www.roytuts.com/#personlogo","url":"https://secure.gravatar.com/avatar/25e7fef6913e79bd8f24622f19ca5a93?s=96&d=mm&r=g","caption":"Soumitra Roy Sarkar"},"description":"I am a professional Web developer, Enterprise Application developer, Software Engineer and Blogger. Connect me on <a title=\"JEE Tutorials\" href=\"https://www.jeejava.com\">JEE Tutorials</a> | <a title=\"http://www.twitter.com/soumitrajuster\" href=\"http://www.twitter.com/soumitrajuster\">Twitter</a> |\u00a0<a title=\"https://www.facebook.com/sarkarblog\" href=\"https://www.facebook.com/sarkarblog\">Facebook </a> |\u00a0<a title=\"https://plus.google.com/u/0/115372465904150449315/posts\" href=\"https://plus.google.com/u/0/115372465904150449315/posts\">Google Plus</a> |\u00a0<a title=\"http://www.linkedin.com/pub/soumitra-sarkar/28/a03/80b\" href=\"http://www.linkedin.com/pub/soumitra-sarkar/28/a03/80b\">Linkedin</a> | <a title=\"Reddit\" href=\"https://www.reddit.com/user/soumitraroy\">Reddit</a>","sameAs":["https://www.facebook.com/sarkarblog","https://twitter.com/https://www.twitter.com/soumitrajuster"]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="amphtml" href="https://www.roytuts.com/prevent-sql-injection-in-codeigniter/amp/"><meta name="generator" content="AMP for WP 0.9.97.50.1"><link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Roy Tutorials » Feed" href="https://www.roytuts.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Roy Tutorials » Comments Feed" href="https://www.roytuts.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Roy Tutorials » Prevent SQL Injection in Codeigniter Comments Feed" href="https://www.roytuts.com/prevent-sql-injection-in-codeigniter/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.roytuts.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="parent-style-css" href="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="child-style-css" href="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="lightslider-css" href="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/lightslider.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="editorialmag-style-css" href="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/style(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="editorialmag-responsive-css" href="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="editorialmag-fonts-css" href="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/css" type="text/css" media="all">
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/jquery-migrate.min.js.download"></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://www.roytuts.com/wp-content/themes/editorialmag/assets/library/html5shiv/html5shiv.min.js?ver=1.1.4'></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://www.roytuts.com/wp-content/themes/editorialmag/assets/library/respond/respond.min.js?ver=1.1.4'></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="https://www.roytuts.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.roytuts.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.roytuts.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.1.1">
+<link rel="shortlink" href="https://www.roytuts.com/?p=1929">
+<link rel="alternate" type="application/json+oembed" href="https://www.roytuts.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.roytuts.com%2Fprevent-sql-injection-in-codeigniter%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.roytuts.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.roytuts.com%2Fprevent-sql-injection-in-codeigniter%2F&amp;format=xml">
+	
+	<!-- Google Analytics - start -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-57525136-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-57525136-1');
+	</script>
+    <!-- Google Analytics - end -->
+    
+    <!-- Google Auto Ads - start -->
+    <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8323278707142241",
+              enable_page_level_ads: true
+         });
+    </script>
+    <!-- Google Auto Ads - end -->
+<style>.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style><style>.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style></head>
+
+<body class="post-template-default single single-post postid-1929 single-format-standard" style="transform: none;">
+
+<div id="page" class="site" style="transform: none;">
+	<a class="skip-link screen-reader-text" href="https://www.roytuts.com/prevent-sql-injection-in-codeigniter/#content">Skip to content</a>
+
+	
+	<header id="masthead" class="site-header header-bgimg " itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+		<div class="sticky-menu fixed-header">
+			<div class="sparkle-wrapper">
+				<nav class="main-navigation">
+					<div class="toggle-button">
+						<span class="toggle-bar1"></span>
+						<span class="toggle-bar2"></span>
+						<span class="toggle-bar3"></span>
+					</div>
+					<div class="nav-menu">
+						<div class="menu-primary-container"><ul id="primary-menu" class="menu"><li id="menu-item-1528" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1528"><a href="http://www.roytuts.com/">Home</a></li>
+<li id="menu-item-1622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1622"><a title="jQuery Interview Questions and Answers" href="https://www.roytuts.com/jquery-interview-questions-and-answers/">jQuery</a></li>
+<li id="menu-item-1797" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1797"><a title="Oracle PL/SQL Interview Questions and Answers" href="https://www.roytuts.com/plsql-interview-questions-and-answers/">PL/SQL</a></li>
+<li id="menu-item-2363" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2363"><a href="https://www.roytuts.com/category/data-structure/">Data Structure</a></li>
+</ul></div>					</div>
+				</nav>
+			</div>
+		</div><!-- STICKY MENU -->
+
+		<div class="top-header">
+			<div class="sparkle-wrapper">
+				<div class="top-nav">
+					<div class="menu-top-container"><ul id="top-menu" class="menu"><li id="menu-item-2752" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2752"><a href="https://www.roytuts.com/terms-conditions/">Terms &amp; Conditions</a></li>
+<li id="menu-item-2753" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2753"><a href="https://www.roytuts.com/privacy/">Privacy</a></li>
+</ul></div>				</div>
+				<div class="top-right">
+					<!--<div class="date-time"></div>-->
+					<div class="temprature">
+																			<a href="https://www.facebook.com/sarkarblog" target="_blank">
+								<i class="icofont fa fa-facebook"></i>
+							</a>
+													<a href="https://www.twitter.com/soumitrajuster" target="_blank">
+								<i class="icofont fa fa-twitter"></i>
+							</a>
+													<a href="https://plus.google.com/+SoumitraSarkarwebtuts" target="_blank">
+								<i class="icofont fa fa-google-plus"></i>
+							</a>
+													<a href="https://www.reddit.com/user/soumitraroy" target="_blank">
+								<i class="icofont fa fa-reddit"></i>
+							</a>
+							
+							<a href="http://www.linkedin.com/pub/soumitra-sarkar/28/a03/80b" target="_blank">
+								<i class="icofont fa fa-linkedin"></i>
+							</a>
+											</div>
+				</div>
+			</div>
+		</div> <!-- TOP HEADER -->
+		<div class="bottom-header">
+			<div class="sparkle-wrapper">
+				<div class="site-logo site-branding">
+										<h1 class="site-title">
+						<a href="https://www.roytuts.com/" rel="home">
+							Roy Tutorials						</a>
+					</h1>
+												<p class="site-description">
+								Technical…Practical…Theoretical…							</p>
+										
+				</div> <!-- .site-branding -->
+
+				<div class="header-ad-section">
+					<section id="custom_html-22" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async="" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/f.txt"></script>
+<!-- roytuts-1 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8323278707142241" data-ad-slot="9988566013" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></section>				</div>
+			</div>
+		</div> <!-- BOTTOM HEADER -->
+
+		<div class="nav-wrap nav-left-align">
+			<div class="sparkle-wrapper">
+				<nav class="main-navigation"><span class="magicofont fa fa-arrow-circle-left"></span>
+					<div class="toggle-button">
+						<span class="toggle-bar1"></span>
+						<span class="toggle-bar2"></span>
+						<span class="toggle-bar3"></span>
+					</div>
+					<div class="nav-menu">
+						<div class="menu-primary-container"><ul id="primary-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1528"><a href="http://www.roytuts.com/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1622"><a title="jQuery Interview Questions and Answers" href="https://www.roytuts.com/jquery-interview-questions-and-answers/">jQuery</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1797"><a title="Oracle PL/SQL Interview Questions and Answers" href="https://www.roytuts.com/plsql-interview-questions-and-answers/">PL/SQL</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2363"><a href="https://www.roytuts.com/category/data-structure/">Data Structure</a></li>
+</ul></div>					</div>
+				</nav>
+
+				<div class="nav-icon-wrap">
+					<div class="search-wrap">
+						<i class="icofont fa fa-search"></i>
+						<div class="search-form-wrap">
+							<form role="search" method="get" class="search-form" action="https://www.roytuts.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form>						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- MAIN NAVIGATION -->
+	</header>
+
+		
+
+	<div id="content" class="site-content" style="transform: none;">
+
+	<div class="home-right-side" style="transform: none;">
+		<div class="sparkle-wrapper" style="transform: none;">
+			<div id="primary" class="home-main-content content-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+				<!-- #main -->
+			<div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><main id="main" class="site-main">
+					<header class="page-header">
+						<h1 class="page-title"><span>Prevent SQL Injection in Codeigniter</span></h1>					</header><!-- .page-header -->
+					<article id="post-1929" class="post-1929 post type-post status-publish format-standard hentry category-codeigniter tag-active-record tag-codeigniter-mysql tag-query-bind tag-query-escape tag-sql-injection">
+	<header class="entry-header">
+		<div class="entry-meta">
+			<span class="posted-on"><a href="https://www.roytuts.com/prevent-sql-injection-in-codeigniter/" rel="bookmark"><time class="updated" datetime="2018-05-24T16:16:45+05:30"><i class="fa fa-history"></i>&nbsp;May 24, 2018</time><time class="entry-date published" datetime="2016-05-22T02:04:09+05:30">&nbsp;<i class="fa fa-clock-o"></i>&nbsp;May 22, 2016</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://www.roytuts.com/author/sugr86/">Soumitra Roy Sarkar</a></span></span><span class="byline"> <span class="comments-link"><a href="https://www.roytuts.com/prevent-sql-injection-in-codeigniter/#respond">No Comment</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">		
+				
+		<div class="colorful-cat"><a href="https://www.roytuts.com/category/codeigniter/" rel="category tag">Codeigniter</a>&nbsp;</div>
+		<p style="text-align: justify;">This tutorial will show you how to prevent SQL injection in Codeigniter application.</p>
+<p>SQL injection is:</p>
+<p style="padding-left: 30px;">a malicious code injection technique that may destroy your database.</p>
+<p style="padding-left: 30px;">one of the most common web hacking techniques.</p>
+<p style="padding-left: 30px;">the placement of malicious code in SQL statements, via input fields in web page.</p>
+<p style="text-align: justify;">It is very important to escape the variable you pass by when using to the database query because in web application security SQL injections play an important role.</p>
+<p style="text-align: justify;">We usually use <em>mysql_real_escape_string()</em> function to prevent SQL injections, but we do not need to use this function in case of Codeigniter. In Codeigniter we have different ways such as Escaping Queries, Query Binding and Active Record to prevent SQL injection in Codeigniter.</p>
+<p>The following reference has been taken from Codeigniter documentation.</p>
+<p><span style="text-decoration: underline;"><strong>Escaping Queries</strong></span></p>
+<p style="text-align: justify;">It’s a very good security practice to escape your data before submitting it into your database. CodeIgniter has three methods that help you do this:<span id="more-1929"></span></p>
+<p style="text-align: justify;">&nbsp;&nbsp; <span style="text-decoration: underline;">$this-&gt;db-&gt;escape()</span> This function determines the data type so that it can escape only string data. It also automatically adds single quotes around the data so you don’t have to:</p>
+<pre class="lang:php decode:true ">$sql = "INSERT INTO table (title) VALUES(".$this-&gt;db-&gt;escape($title).")";</pre>
+<p style="text-align: justify;">&nbsp;&nbsp;&nbsp; <span style="text-decoration: underline;">$this-&gt;db-&gt;escape_str()</span> This function escapes the data passed to it, regardless of type. Most of the time you’ll use the above function rather than this one. Use the function like this:</p>
+<pre class="lang:php decode:true ">$sql = "INSERT INTO table (title) VALUES('".$this-&gt;db-&gt;escape_str($title)."')";</pre>
+<p style="text-align: justify;">&nbsp;&nbsp;&nbsp; <span style="text-decoration: underline;">$this-&gt;db-&gt;escape_like_str()</span> This method should be used when strings are to be used in LIKE conditions so that LIKE wildcards (‘%’, ‘_’) in the string are also properly escaped.</p>
+<pre class="lang:php decode:true ">$search = '20% raise';
+$sql = "SELECT id FROM table WHERE column LIKE '%" .
+    $this-&gt;db-&gt;escape_like_str($search)."%' ESCAPE '!'";</pre>
+<p style="text-align: justify;"><span style="color: #ff0000;">Important</span></p>
+<p style="text-align: justify;">The escape_like_str() method uses ‘!’ (exclamation mark) to escape special characters for LIKE conditions. Because this method escapes partial strings that you would wrap in quotes yourself, it cannot automatically add the ESCAPE ‘!’ condition for you, and so you’ll have to manually do that.</p>
+<p><span style="text-decoration: underline;"><strong>Query Bindings</strong></span></p>
+<p style="text-align: justify;">Bindings enable you to simplify your query syntax by letting the system put the queries together for you. Consider the following example:</p>
+<pre class="lang:php decode:true ">$sql = "SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?";
+$this-&gt;db-&gt;query($sql, array(3, 'live', 'Rick'));</pre>
+<p style="text-align: justify;">The question marks in the query are automatically replaced with the values in the array in the second parameter of the query function.</p>
+<p>Binding also work with arrays, which will be transformed to IN sets:</p>
+<pre class="lang:php decode:true ">$sql = "SELECT * FROM some_table WHERE id IN ? AND status = ? AND author = ?";
+$this-&gt;db-&gt;query($sql, array(array(3, 6), 'live', 'Rick'));</pre>
+<p style="text-align: justify;">The resulting query will be:</p>
+<pre class="lang:php decode:true">SELECT * FROM some_table WHERE id IN (3,6) AND status = 'live' AND author = 'Rick'</pre>
+<p style="text-align: justify;">The secondary benefit of using binds is that the values are automatically escaped, producing safer queries. You don’t have to remember to manually escape data; the engine does it automatically for you.</p>
+<p><strong><span style="text-decoration: underline;">Inserting Data using Active Record</span></strong></p>
+<p>$this-&gt;db-&gt;insert()</p>
+<p style="text-align: justify;">Generates an insert string based on the data you supply, and runs the query. You can either pass an array or an object to the function.</p>
+<p>All values are escaped automatically producing safer queries.</p>
+<p><span style="color: #000080;"><strong>Prerequisites</strong></span></p>
+<p>Netbeans 8.1<br>
+XAMPP in Windows<br>
+Codeigniter 3.0.6</p>
+<p><strong><span style="color: #000080;">Configure XAMPP and Netbeans</span></strong></p>
+<p style="text-align: justify;">From Netbeans IDE go to Tools-&gt;Options. Click on PHP. Now on tab “General” browse the file for “PHP 5 Interpreter”. The php interpreter file generally placed inside the &lt;physical drive in Windows OS&gt;:\xampp\php\php.exe</p>
+<p><strong><span style="color: #000080;">Configure Codeigniter and Netbeans</span></strong></p>
+<p style="text-align: justify;">Create a new PHP project in Netbeans. Then remove the index.php file from the newly created project. Now copy the extracted files from Codeigniter 3.0.6 to the newly created project directory.</p>
+<p style="text-align: justify;"><strong><span style="color: #000080;">Step 1.</span></strong> Now modify &lt;root directory&gt;/application/config/autoload.php file for auto-loading html, url, file, form and session.</p>
+<p style="text-align: justify;">The auto-load is required for few helper functions, library classes that are used frequently throughout the application to avoid loading each time we want to use everywhere.</p>
+<pre class="lang:php decode:true ">$autoload['helper'] = array('html', 'url', 'file', 'form');
+
+$autoload['libraries'] = array('database', 'session');</pre>
+<p style="text-align: justify;"><strong><span style="color: #000080;">Step 2.</span></strong> Now modify &lt;root directory&gt;/application/config/config.php file to define some captcha config.</p>
+<p style="text-align: justify;">Th below encryption key is required whenever you want to use session in your Codeigniter application. If you do not want to use session then you can omit such encryption key and also make sure you do not load session library.</p>
+<pre class="lang:php decode:true ">$config['encryption_key'] = '2d8+e6]K0?ocWp7&amp;`K)&gt;6Ky"|.x|%nuwafC~S/+6_mZI9/17y=sKKG.;Tt}k';</pre>
+<p style="text-align: justify;"><strong><span style="color: #000080;">Step 3.</span></strong> Now modify &lt;root directory&gt;/application/config/database.php file to add database config.</p>
+<pre class="lang:php decode:true ">$db['default'] = array(
+    'dsn' =&gt; '',
+    'hostname' =&gt; 'localhost',
+    'username' =&gt; 'root',
+    'password' =&gt; '',
+    'database' =&gt; 'codeigniter',
+    'dbdriver' =&gt; 'mysqli',
+    'dbprefix' =&gt; '',
+    ...more
+);</pre>
+<p style="text-align: justify;"><strong><span style="color: #000080;">Step 4.</span></strong> Now create blogs table in codeigniter database. We want to maintain blogs in database so we need a table to store the blogs.</p>
+<pre class="lang:mysql decode:true ">CREATE TABLE `blogs` (
+  `blog_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `blog_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `blog_content` text COLLATE utf8_unicode_ci NOT NULL,
+  `blog_date` datetime NOT NULL,
+  PRIMARY KEY (`blog_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;</pre>
+<p style="text-align: justify;"><strong><span style="color: #000080;">Step 5.</span></strong> Create a view file add_blog.php under &lt;root directory&gt;/application/views which will be used to save new blog.</p>
+<p style="text-align: justify;">This view file is responsible for getting input for a new blog from the end user and this page is also responsible for showing the appropriate message while new blog saved successfully or if any error occurred during saving the new blog.</p>
+<pre class="lang:default decode:true ">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Codeigniter Database Escape&lt;/title&gt;
+        &lt;style type="text/css"&gt;
+
+            ::selection { background-color: #E13300; color: white; }
+            ::-moz-selection { background-color: #E13300; color: white; }
+
+            body {
+                background-color: #fff;
+                margin: 40px;
+                font: 13px/20px normal Helvetica, Arial, sans-serif;
+                color: #4F5155;
+            }            
+
+            #body {
+                margin: 0 15px 0 15px;
+            }
+
+            #container {
+                margin: 10px;
+                border: 1px solid #D0D0D0;
+                box-shadow: 0 0 8px #D0D0D0;
+            }
+
+            h1 {
+                margin-left: 15px;
+            }
+
+            .error {
+                color: #E13300;
+            }
+
+            .success {
+                color: darkgreen;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="container"&gt;
+            &lt;h1&gt;CodeIgniter Database Escape&lt;/h1&gt;            
+            &lt;div id="body"&gt;
+                &lt;?php
+                if (isset($success) &amp;&amp; strlen($success)) {
+                    echo '&lt;div class="success"&gt;';
+                    echo '&lt;p&gt;' . $success . '&lt;/p&gt;';
+                    echo '&lt;/div&gt;';
+                }
+                if (validation_errors()) {
+                    echo validation_errors('&lt;div class="error"&gt;', '&lt;/div&gt;');
+                }
+                ?&gt;
+                &lt;?php
+                $attributes = array('name' =&gt; 'add_blog_form', 'id' =&gt; 'add_blog_form');
+                echo form_open($this-&gt;uri-&gt;uri_string(), $attributes);
+                ?&gt;
+                &lt;p&gt;Title : &lt;input type="text" name="title" id="title" size="54"/&gt;&lt;/p&gt;
+                &lt;p&gt;Content : &lt;textarea id="content" name="content" rows="10" cols="50"&gt;&lt;/textarea&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;input name="add_blog" value="Add Blog" type="submit" /&gt;&lt;/p&gt;
+                &lt;?php
+                echo form_close();
+                ?&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+<p style="text-align: justify;"><strong><span style="color: #000080;">Step 6.</span></strong> Create a Controller class under &lt;root directory&gt;/application/controllers for handling client’s request and response.</p>
+<p style="text-align: justify;">This controller class also communicated with the model layer and finally perform the database activities in the model class to save the new blog.</p>
+<p style="text-align: justify;">This class also validates and required fields according to the rules set to the input fields.</p>
+<pre class="lang:php decode:true ">&lt;?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Description of Blog
+ *
+ * @author https://www.roytuts.com
+ */
+class Blog extends CI_Controller {
+
+    function __construct() {
+        parent::__construct();
+        $this-&gt;load-&gt;model('blogmodel');
+        $this-&gt;load-&gt;library('form_validation');
+    }
+
+    public function index() {
+        $data = array();
+        if ($this-&gt;input-&gt;post('add_blog')) {
+            $this-&gt;form_validation-&gt;set_rules('title', 'Title', 'required');
+            $this-&gt;form_validation-&gt;set_rules('content', 'Content', 'required');
+            if ($this-&gt;form_validation-&gt;run()) {
+                $title = $this-&gt;input-&gt;post('title');
+                $content = $this-&gt;input-&gt;post('content');
+                $result = $this-&gt;blogmodel-&gt;save_new_blog($title, $content);
+                $data['success'] = 'Blog successfully added';
+            }
+        }
+        $this-&gt;load-&gt;view('add_blog', $data);
+    }
+
+}</pre>
+<p style="text-align: justify;"><strong><span style="color: #000080;">Step 7.</span></strong> Now create a model class for interacting with database.</p>
+<p style="text-align: justify;">Here in this model class we are performing database operations in order to save the new blog. We are also escaping the input values sent from the end user in order to prevent SQL injection in Codeigniter.</p>
+<p style="text-align: justify;">Look carefully how we have used three types of methods to prevent SQL injection in Codeigniter.</p>
+<pre class="lang:php decode:true ">&lt;?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Description of BlogModel
+ *
+ * @author https://www.roytuts.com
+ */
+class BlogModel extends CI_Model {
+
+    private $blogs = 'blogs';   // blog table
+
+    function __construct() {
+        parent::__construct();
+    }
+
+    //save new blog
+    function save_new_blog($title, $content) {
+        //Escaping Query
+        $sql = "INSERT INTO " . $this-&gt;blogs . "(blog_title,blog_content,blog_date)"
+                . " VALUES(" . $this-&gt;db-&gt;escape($title) . "," . $this-&gt;db-&gt;escape($content) .
+                "," . $this-&gt;db-&gt;escape(date('Y-m-d H:i:s')) . ")";
+        $this-&gt;db-&gt;query($sql);
+        
+        //Query Binding
+        $sql = $sql = "INSERT INTO " . $this-&gt;blogs . "(blog_title,blog_content,blog_date)"
+                . " VALUES(?,?,?)";
+        $this-&gt;db-&gt;query($sql, array($title, $content, date('Y-m-d H:i:s')));
+        
+        //Active Record
+        $data = array(
+            'blog_title' =&gt; $title,
+            'blog_content' =&gt; $content,
+            'blog_date' =&gt; date('Y-m-d H:i:s')
+        );
+        $this-&gt;db-&gt;insert($this-&gt;blogs, $data);
+    }
+
+}</pre>
+<p style="text-align: justify;"><strong><span style="color: #000080;">Step 8.</span></strong>&nbsp;We want to open the page with default controller so we need to point to our own controller we have created above. Now modify &lt;root directory&gt;/application/config/routes.php file for pointing the default controller class.</p>
+<pre class="lang:php decode:true ">$route['default_controller'] = 'blog';</pre>
+<p style="text-align: justify;"><strong><span style="color: #000080;">Step 9.</span></strong> Now if everything is fine run the application and you should get the desired output.</p>
+<p style="text-align: justify;">Thanks for reading.</p>
+<strong>Tags:</strong> <a href="https://www.roytuts.com/tag/active-record/" rel="tag">Active Record</a> • <a href="https://www.roytuts.com/tag/codeigniter-mysql/" rel="tag">codeigniter mysql</a> • <a href="https://www.roytuts.com/tag/query-bind/" rel="tag">Query Bind</a> • <a href="https://www.roytuts.com/tag/query-escape/" rel="tag">Query Escape</a> • <a href="https://www.roytuts.com/tag/sql-injection/" rel="tag">SQL Injection</a><br>	</div><!-- .entry-content -->
+</article><!-- #post-## -->
+
+<!-- roytuts-3 ad code - start -->
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8323278707142241" data-ad-slot="3942032414" data-ad-format="auto"></ins>
+
+<!-- roytuts-3 ad code - end -->
+<p></p>
+
+	<div class="sparkle-author-box">
+		<div class="sparkle-author-image">
+						<img src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/mine.jpg">
+		</div>
+		<div class="sparkle-author-details">
+			<span class="author-name">
+				<a href="https://www.roytuts.com/author/sugr86/" title="Posts by Soumitra Roy Sarkar" rel="author">Soumitra Roy Sarkar</a>			</span>
+			<div class="author-desc">
+				I am a professional Web developer, Enterprise Application developer, Software Engineer and Blogger. Connect me on <a title="JEE Tutorials" href="https://www.jeejava.com/">JEE Tutorials</a> | <a title="http://www.twitter.com/soumitrajuster" href="http://www.twitter.com/soumitrajuster">Twitter</a> |&nbsp;<a title="https://www.facebook.com/sarkarblog" href="https://www.facebook.com/sarkarblog">Facebook </a> |&nbsp;<a title="https://plus.google.com/u/0/115372465904150449315/posts" href="https://plus.google.com/u/0/115372465904150449315/posts">Google Plus</a> |&nbsp;<a title="http://www.linkedin.com/pub/soumitra-sarkar/28/a03/80b" href="http://www.linkedin.com/pub/soumitra-sarkar/28/a03/80b">Linkedin</a> | <a title="Reddit" href="https://www.reddit.com/user/soumitraroy">Reddit</a>			</div>
+		</div><!-- .author-details -->
+	</div>
+
+<!-- Google match content start -->
+
+	<ins class="adsbygoogle" style="display:block;" data-ad-format="autorelaxed" data-ad-client="ca-pub-8323278707142241" data-ad-slot="6863944373"></ins>
+	
+<!-- Google match content end -->
+
+<nav class="navigation post-navigation">
+	<div class="nav-links">
+		<div class="nav-previous"><a href="https://www.roytuts.com/upload-and-play-video-using-codeigniter/" rel="prev">Upload and Play Video using Codeigniter</a></div><div class="nav-next"><a href="https://www.roytuts.com/codeigniter-pagination-example/" rel="next">Codeigniter Pagination Example</a></div>	</div>
+</nav>
+
+
+<div id="comments" class="comments-area">
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.roytuts.com/prevent-sql-injection-in-codeigniter/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.roytuts.com/wp-comments-post.php" method="post" id="commentform" class="comment-form anti-spam-form-processed" novalidate="">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="1929" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<!-- Anti-spam plugin v.5.4 wordpress.org/plugins/anti-spam/ -->
+		<p class="antispam-group antispam-group-q" style="clear: both; display: none;">
+			<label>Current ye@r <span class="required">*</span></label>
+			<input type="hidden" name="antspm-a" class="antispam-control antispam-control-a" value="2019">
+			<input type="text" name="antspm-q" class="antispam-control antispam-control-q" value="5.4" autocomplete="off">
+		</p>
+		<p class="antispam-group antispam-group-e" style="display: none;">
+			<label>Leave this field empty</label>
+			<input type="text" name="antspm-e-email-url-website" class="antispam-control antispam-control-e" value="" autocomplete="off">
+		</p>
+			<input type="hidden" name="antspm-d" class="antispam-control antispam-control-d" value="2019"></form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+				</main></div></div><!-- #primary -->
+
+					<section id="secondaryright" class="home-right-sidebar widget-area" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 3409.8px;">
+					<div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-138px); width: 351px; left: 865.6px; top: 0px;"><aside id="search-3" class="widget clearfix widget_search"><form role="search" method="get" class="search-form" action="https://www.roytuts.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form></aside><aside id="custom_html-23" class="widget_text widget clearfix widget_custom_html"><div class="textwidget custom-html-widget">
+<!-- roytuts-2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8323278707142241" data-ad-slot="2465299219" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div></aside><aside id="emag_magazine_recent_posts-3" class="widget clearfix emag_magazine_recent_posts">  
+                    <h2 class="widget-title">
+                <span>Recent Posts</span>
+            </h2>
+                <div class="recent-news-wrap">
+                            <div class="recent-news-block">
+                                        <div class="recent-news-content">
+                        <h3 class="news-title">
+                            <a href="https://www.roytuts.com/creating-custom-template-tags-and-filter-in-django/">Creating custom template tags and filter in Django</a>
+                        </h3>
+                        <div class="news-block-footer">
+                            <div class="news-date">
+                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/creating-custom-template-tags-and-filter-in-django/">April 29, 2019</a>
+                            </div>
+                            <div class="news-comment">
+                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/creating-custom-template-tags-and-filter-in-django/#respond">No comment</a>                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="recent-news-block">
+                                        <div class="recent-news-content">
+                        <h3 class="news-title">
+                            <a href="https://www.roytuts.com/working-with-media-files-in-django-templates/">Working with media files in Django templates</a>
+                        </h3>
+                        <div class="news-block-footer">
+                            <div class="news-date">
+                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/working-with-media-files-in-django-templates/">April 26, 2019</a>
+                            </div>
+                            <div class="news-comment">
+                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/working-with-media-files-in-django-templates/#respond">No comment</a>                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="recent-news-block">
+                                        <div class="recent-news-content">
+                        <h3 class="news-title">
+                            <a href="https://www.roytuts.com/working-with-static-resources-in-django-templates/">Working with static resources in Django templates</a>
+                        </h3>
+                        <div class="news-block-footer">
+                            <div class="news-date">
+                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/working-with-static-resources-in-django-templates/">April 22, 2019</a>
+                            </div>
+                            <div class="news-comment">
+                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/working-with-static-resources-in-django-templates/#respond">No comment</a>                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="recent-news-block">
+                                        <div class="recent-news-content">
+                        <h3 class="news-title">
+                            <a href="https://www.roytuts.com/working-with-parent-and-child-templates-in-django/">Working with parent and child templates in Django</a>
+                        </h3>
+                        <div class="news-block-footer">
+                            <div class="news-date">
+                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/working-with-parent-and-child-templates-in-django/">April 18, 2019</a>
+                            </div>
+                            <div class="news-comment">
+                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/working-with-parent-and-child-templates-in-django/#respond">No comment</a>                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="recent-news-block">
+                                        <div class="recent-news-content">
+                        <h3 class="news-title">
+                            <a href="https://www.roytuts.com/datatable-crud-example-using-codeigniter-mysql-and-ajax/">DataTable CRUD Example using Codeigniter, MySQL and AJAX</a>
+                        </h3>
+                        <div class="news-block-footer">
+                            <div class="news-date">
+                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/datatable-crud-example-using-codeigniter-mysql-and-ajax/">March 21, 2019</a>
+                            </div>
+                            <div class="news-comment">
+                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/datatable-crud-example-using-codeigniter-mysql-and-ajax/#respond">No comment</a>                            </div>
+                        </div>
+                    </div>
+                </div>
+                       
+        </div>         
+    </aside><aside id="categories-8" class="widget clearfix widget_categories"><h2 class="widget-title"><span>Categories</span></h2><form action="https://www.roytuts.com/" method="get"><label class="screen-reader-text" for="cat">Categories</label><select name="cat" id="cat" class="postform">
+	<option value="-1">Select Category</option>
+	<option class="level-0" value="115">AJAX</option>
+	<option class="level-0" value="1234">AngularJS</option>
+	<option class="level-0" value="1167">Array</option>
+	<option class="level-0" value="1168">C</option>
+	<option class="level-0" value="1133">Cache</option>
+	<option class="level-0" value="11">Codeigniter</option>
+	<option class="level-0" value="344">CSS</option>
+	<option class="level-0" value="1166">Data Structure</option>
+	<option class="level-0" value="1388">django</option>
+	<option class="level-0" value="1144">Email</option>
+	<option class="level-0" value="930">File Upload</option>
+	<option class="level-0" value="840">Finance</option>
+	<option class="level-0" value="134">htaccess</option>
+	<option class="level-0" value="68">HTML</option>
+	<option class="level-0" value="109">JavaScript</option>
+	<option class="level-0" value="378">Joomla</option>
+	<option class="level-0" value="67">jQuery</option>
+	<option class="level-0" value="855">Marketing Idea</option>
+	<option class="level-0" value="371">Microsoft</option>
+	<option class="level-0" value="1363">MongoDB</option>
+	<option class="level-0" value="288">MySQL</option>
+	<option class="level-0" value="1343">NodeJS</option>
+	<option class="level-0" value="856">Optimization</option>
+	<option class="level-0" value="1228">PDO</option>
+	<option class="level-0" value="7">PHP</option>
+	<option class="level-0" value="1372">Python</option>
+	<option class="level-0" value="1331">React JS</option>
+	<option class="level-0" value="30">REST</option>
+	<option class="level-0" value="1271">Search Algorithm</option>
+	<option class="level-0" value="1276">Sort Algorithm</option>
+	<option class="level-0" value="1249">Structure</option>
+	<option class="level-0" value="841">Tax</option>
+	<option class="level-0" value="1297">Unix</option>
+	<option class="level-0" value="1219">Wordpress</option>
+	<option class="level-0" value="355">xampp</option>
+</select>
+</form>
+
+
+			</aside></div></section><!-- #secondary -->
+	<!-- SIDEBAR -->
+		</div>
+	</div>
+
+	</div><!-- #content -->
+
+			<footer id="colophon" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+							<div class="footer-social">
+					<div class="sparkle-wrapper">
+													<div class="footer-social-block">
+								<a href="https://www.facebook.com/sarkarblog" class="facebook">
+									<i class="icofont fa fa-facebook"></i>
+									<div class="footer-social-content">
+										Facebook										<span class="social-sub-title">Like me on facebook</span>
+									</div>
+								</a>
+							</div>
+													<div class="footer-social-block">
+								<a href="https://www.twitter.com/soumitrajuster" class="twitter">
+									<i class="icofont fa fa-twitter"></i>
+									<div class="footer-social-content">
+										Twitter										<span class="social-sub-title">Tweet me on twitter</span>
+									</div>
+								</a>
+							</div>
+													<div class="footer-social-block">
+								<a href="http://www.linkedin.com/pub/soumitra-sarkar/28/a03/80b" class="linkedin">
+									<i class="icofont fa fa-linkedin"></i>
+									<div class="footer-social-content">
+										Linkedin										<span class="social-sub-title">Join me on Linkedin</span>
+									</div>
+								</a>
+							</div>
+													<div class="footer-social-block">
+								<a href="https://plus.google.com/+SoumitraSarkarwebtuts" class="google_plus">
+									<i class="icofont fa fa-google-plus"></i>
+									<div class="footer-social-content">
+										GooglePlus										<span class="social-sub-title">Join me on Google Plus</span>
+									</div>
+								</a>
+							</div>
+													<div class="footer-social-block">
+								<a href="https://www.reddit.com/user/soumitraroy" class="reddit">
+									<i class="icofont fa fa-reddit"></i>
+									<div class="footer-social-content">
+										Reddit										<span class="social-sub-title">Join me on Reddit</span>
+									</div>
+								</a>
+							</div>
+											</div>
+				</div>
+			
+			<!-- Main Footer Area -->
+							<div class="bottom-footer column-4">
+					<div class="sparkle-wrapper">
+						<div class="bottom-footer-block">
+							<section id="custom_html-20" class="widget_text widget widget_custom_html"><h2 class="widget-title">About Me</h2><div class="textwidget custom-html-widget"><div class="wg-sparkle-author-box">
+		<div class="wg-sparkle-author-image">
+			<img src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/mine.jpg">
+		</div>
+		<div class="wg-sparkle-author-details">
+			<span class="wg-author-name">
+				<a href="https://www.roytuts.com/author/sugr86/" title="Posts by Soumitra Roy Sarkar" rel="author">Soumitra Roy Sarkar</a>
+			</span>
+			<div class="wg-author-desc">
+				I am a professional Web developer, Enterprise Application developer, Software Engineer and Blogger. Connect me on <a title="JEE Tutorials" href="https://www.jeejava.com/">JEE Tutorials</a> | <a title="http://www.twitter.com/soumitrajuster" href="http://www.twitter.com/soumitrajuster">Twitter</a> | <a title="https://www.facebook.com/sarkarblog" href="https://www.facebook.com/sarkarblog">Facebook </a> | <a title="https://plus.google.com/u/0/115372465904150449315/posts" href="https://plus.google.com/u/0/115372465904150449315/posts">Google Plus</a> | <a title="http://www.linkedin.com/pub/soumitra-sarkar/28/a03/80b" href="http://www.linkedin.com/pub/soumitra-sarkar/28/a03/80b">Linkedin</a> | <a title="Reddit" href="https://www.reddit.com/user/soumitraroy">Reddit</a>
+			</div>
+		</div>
+	</div></div></section>						</div>
+						<div class="bottom-footer-block">
+							<section id="emag_magazine_timeline_posts-3" class="widget emag_magazine_timeline_posts">  
+                    <h2 class="widget-title">
+                <span>Timeline Posts</span>
+            </h2>
+                <div class="emag-timeline">
+                                
+                    <div class="emag-post-item">                        
+                        <h3><a href="https://www.roytuts.com/datatable-crud-example-using-codeigniter-mysql-and-ajax/">DataTable CRUD Example using Codeigniter, MySQL and AJAX</a></h3>
+                        <div class="news-block-footer">
+                            <div class="news-date">
+                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/datatable-crud-example-using-codeigniter-mysql-and-ajax/">March 21, 2019</a>
+                            </div>
+                            <div class="news-comment">
+                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/datatable-crud-example-using-codeigniter-mysql-and-ajax/#respond">No comment</a>                            </div>
+                        </div>
+                    </div>
+                                
+                    <div class="emag-post-item">                        
+                        <h3><a href="https://www.roytuts.com/codeigniter-mysql-stored-procedure-crud-example/">Codeigniter MySQL Stored Procedure CRUD Example</a></h3>
+                        <div class="news-block-footer">
+                            <div class="news-date">
+                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/codeigniter-mysql-stored-procedure-crud-example/">March 4, 2019</a>
+                            </div>
+                            <div class="news-comment">
+                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/codeigniter-mysql-stored-procedure-crud-example/#respond">No comment</a>                            </div>
+                        </div>
+                    </div>
+                                
+                    <div class="emag-post-item">                        
+                        <h3><a href="https://www.roytuts.com/monitor-health-of-a-url-using-unix/">Monitor health of a URL using Unix</a></h3>
+                        <div class="news-block-footer">
+                            <div class="news-date">
+                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/monitor-health-of-a-url-using-unix/">February 2, 2019</a>
+                            </div>
+                            <div class="news-comment">
+                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/monitor-health-of-a-url-using-unix/#respond">No comment</a>                            </div>
+                        </div>
+                    </div>
+                                
+                    <div class="emag-post-item">                        
+                        <h3><a href="https://www.roytuts.com/file-upload-example-using-angular/">File Upload Example using Angular</a></h3>
+                        <div class="news-block-footer">
+                            <div class="news-date">
+                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/file-upload-example-using-angular/">January 22, 2019</a>
+                            </div>
+                            <div class="news-comment">
+                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/file-upload-example-using-angular/#respond">No comment</a>                            </div>
+                        </div>
+                    </div>
+                                
+                    <div class="emag-post-item">                        
+                        <h3><a href="https://www.roytuts.com/cron-job-chokes-up-system-in-linux/">Figure out which cron job chokes up your system in Linux</a></h3>
+                        <div class="news-block-footer">
+                            <div class="news-date">
+                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/cron-job-chokes-up-system-in-linux/">January 14, 2019</a>
+                            </div>
+                            <div class="news-comment">
+                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/cron-job-chokes-up-system-in-linux/#respond">No comment</a>                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+    </section>						</div>
+						<div class="bottom-footer-block">
+							<section id="emag_magazine_tabbed-3" class="widget emag_magazine_tabbed">  
+        <div class="emag-tabs-wdt ui-tabs ui-widget ui-widget-content ui-corner-all">
+
+            <ul class="emag-tab-nav ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                                    <li class="emag-tab ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="emag-popular" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true">
+                        <a class="emag-tab-anchor ui-tabs-anchor" href="https://www.roytuts.com/prevent-sql-injection-in-codeigniter/#emag-popular" role="presentation" tabindex="-1" id="ui-id-1">
+                            Popular Posts                        </a>
+                    </li>
+                            </ul>
+
+            <div class="tab-content">
+                                    <div id="emag-popular" class="recent-news-wrap ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false">
+                                                        
+                                <div class="recent-news-block">
+                                                                        <div class="recent-news-content">
+                                        <h3 class="news-title">
+                                            <a href="https://www.roytuts.com/nested-comment-system-in-php-ajax/">Nested comment system in PHP, MySQL and AJAX</a>
+                                        </h3>
+                                        <div class="news-block-footer">
+                                            <div class="news-date">
+                                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/nested-comment-system-in-php-ajax/">June 8, 2014</a>
+                                            </div>
+                                            <div class="news-comment">
+                                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/nested-comment-system-in-php-ajax/#comments">31 Comments</a>                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                                            
+                                <div class="recent-news-block">
+                                                                        <div class="recent-news-content">
+                                        <h3 class="news-title">
+                                            <a href="https://www.roytuts.com/datatable-using-codeigniter-mysql-and-ajax/">DataTable using Codeigniter, MySQL and AJAX</a>
+                                        </h3>
+                                        <div class="news-block-footer">
+                                            <div class="news-date">
+                                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/datatable-using-codeigniter-mysql-and-ajax/">October 1, 2015</a>
+                                            </div>
+                                            <div class="news-comment">
+                                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/datatable-using-codeigniter-mysql-and-ajax/#comments">22 Comments</a>                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                                            
+                                <div class="recent-news-block">
+                                                                        <div class="recent-news-content">
+                                        <h3 class="news-title">
+                                            <a href="https://www.roytuts.com/codeigniter-online-visitor-tracking-system/">Codeigniter Online Visitor Tracking System</a>
+                                        </h3>
+                                        <div class="news-block-footer">
+                                            <div class="news-date">
+                                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/codeigniter-online-visitor-tracking-system/">August 14, 2016</a>
+                                            </div>
+                                            <div class="news-comment">
+                                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/codeigniter-online-visitor-tracking-system/#comments">20 Comments</a>                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                                            
+                                <div class="recent-news-block">
+                                                                        <div class="recent-news-content">
+                                        <h3 class="news-title">
+                                            <a href="https://www.roytuts.com/setup-hmvc-with-codeigniter-3/">Setup HMVC with Codeigniter 3</a>
+                                        </h3>
+                                        <div class="news-block-footer">
+                                            <div class="news-date">
+                                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/setup-hmvc-with-codeigniter-3/">March 27, 2016</a>
+                                            </div>
+                                            <div class="news-comment">
+                                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/setup-hmvc-with-codeigniter-3/#comments">19 Comments</a>                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                                            
+                                <div class="recent-news-block">
+                                                                        <div class="recent-news-content">
+                                        <h3 class="news-title">
+                                            <a href="https://www.roytuts.com/codeigniter-ajax-votingrating-system/">Codeigniter, AJAX Voting/Rating System</a>
+                                        </h3>
+                                        <div class="news-block-footer">
+                                            <div class="news-date">
+                                                <i class="icofont fa fa-clock-o"></i> <a href="https://www.roytuts.com/codeigniter-ajax-votingrating-system/">September 3, 2015</a>
+                                            </div>
+                                            <div class="news-comment">
+                                                <i class="icofont fa fa-commenting"></i> <a href="https://www.roytuts.com/codeigniter-ajax-votingrating-system/#comments">19 Comments</a>                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                                </div><!-- .tab-pane #emag-popular -->
+                            </div><!-- .tab-content -->     
+
+        </div><!-- #tabs -->
+
+    </section>						</div>
+						<div class="bottom-footer-block">
+							<section id="pages-5" class="widget widget_pages"><h2 class="widget-title">Useful Links</h2>		<ul>
+			<li class="page_item page-item-1619"><a href="https://www.roytuts.com/jquery-interview-questions-and-answers/">jQuery</a></li>
+<li class="page_item page-item-1795"><a href="https://www.roytuts.com/plsql-interview-questions-and-answers/">PL/SQL</a></li>
+<li class="page_item page-item-18"><a href="https://www.roytuts.com/privacy/">Privacy</a></li>
+<li class="page_item page-item-20"><a href="https://www.roytuts.com/terms-conditions/">Terms &amp; Conditions</a></li>
+		</ul>
+			</section>						</div>
+					</div>
+				</div>
+						<div class="copyright-footer">
+				<div class="sparkle-wrapper">
+					<div class="copyright-block">
+						Copyright  © 2019 <a href="https://www.roytuts.com/" rel="author">Roy Tutorials</a>					</div>
+					<div class="theme-author-block">
+						<a href="https://www.roytuts.com/privacy">Privacy</a>&nbsp;&nbsp;&nbsp;<a href="https://www.roytuts.com/terms-conditions">Terms &amp; Conditions</a>					</div>
+				</div>
+			</div>
+
+			<div class="scroll-to-top show">
+				<i class="icofont fa fa-angle-up"></i>
+			</div>
+		</footer>
+	
+</div><!-- #page -->
+
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/anti-spam-5.4.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/lightslider.min.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/imagesloaded.min.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/navigation.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/skip-link-focus-fix.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/theia-sticky-sidebar.min.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/jquery.matchHeight-min.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/moment.min.js.download"></script>
+<script type="text/javascript">
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/masonry.min.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/editorialmag-custom.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/core.min.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/widget.min.js.download"></script>
+<script type="text/javascript" src="./Prevent SQL Injection in Codeigniter - Roy Tutorials_files/tabs.min.js.download"></script>
+
+
+
+</body></html>

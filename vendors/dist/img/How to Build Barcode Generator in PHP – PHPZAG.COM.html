@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://www.phpzag.com/create-barcode-generator-in-php/# -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/display.js.download"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/pro"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/l.js.download"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/l.js(1).download"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/l.js(2).download"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/l.js(3).download"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/display.js.download"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/pro"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/l.js.download"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/l.js(1).download"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/l.js(2).download"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/l.js(3).download"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.phpzag.com/xmlrpc.php">
+<script src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/osd.js.download"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-4370378731098015.js"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/jquery.min.js.download"></script>
+<title>How to Build Barcode Generator in PHP – PHPZAG.COM</title>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="PHPZAG.COM » Feed" href="https://www.phpzag.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="PHPZAG.COM » Comments Feed" href="https://www.phpzag.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="PHPZAG.COM » How to Build Barcode Generator in PHP Comments Feed" href="https://www.phpzag.com/create-barcode-generator-in-php/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.phpzag.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="cresta-social-crestafont-css" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/csscfont.css" type="text/css" media="all">
+<link rel="stylesheet" id="cresta-social-wp-style-css" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/cresta-wp-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="cresta-social-googlefonts-css" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="opanda-lockers-css" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/lockers.020307.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-bootstrap-css" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-icons-css" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-fonts-css" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/css(2)" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-style-css" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/style.css" type="text/css" media="all">
+<script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script type="text/javascript" async="async" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/jquery.js.download"></script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/modernizr.min.js.download"></script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/bootstrap.min.js.download"></script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/functions.min.js.download"></script>
+<link rel="https://api.w.org/" href="https://www.phpzag.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.phpzag.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.phpzag.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Google Maps Geocode Address Locator with PHP" href="https://www.phpzag.com/google-maps-geocode-address-with-php/">
+<link rel="next" title="Poll and Voting System with PHP and MySQL" href="https://www.phpzag.com/poll-and-voting-system-with-php-and-mysql/">
+<meta name="generator" content="WordPress 5.1.1">
+<link rel="canonical" href="https://www.phpzag.com/create-barcode-generator-in-php/">
+<link rel="shortlink" href="https://www.phpzag.com/?p=5559">
+<link rel="alternate" type="application/json+oembed" href="https://www.phpzag.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.phpzag.com%2Fcreate-barcode-generator-in-php%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.phpzag.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.phpzag.com%2Fcreate-barcode-generator-in-php%2F&amp;format=xml">
+<style type="text/css">
+			@media (max-width : 640px) {
+				#crestashareicon {
+					display:none !important;
+				}
+			}
+		#crestashareicon {position:fixed; top:20%; left:20px; float:left;z-index:99;}
+
+		#crestashareicon .sbutton {clear:both;display:none;}
+		#crestashareicon .sbutton { float:left;}</style><style type="text/css">a, #infinite-handle span, #secondary .widget .post-content a {color:#dd5656}a:hover, a:active, #secondary .widget .post-content a:hover,
+        .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover,
+        .woocommerce nav.woocommerce-pagination ul li span.current  {color: #6d87cf;}.btn-default, .label-default, .flex-caption h2, .btn.btn-default.read-more,button,
+              .navigation .wp-pagenavi-pagination span.current,.navigation .wp-pagenavi-pagination a:hover,
+              .woocommerce a.button, .woocommerce button.button,
+              .woocommerce input.button, .woocommerce #respond input#submit.alt,
+              .woocommerce a.button, .woocommerce button.button,
+              .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt { background-color: #6d87cf; border-color: #6d87cf;}.site-main [class*="navigation"] a, .more-link, .pagination>li>a, .pagination>li>span { color: #6d87cf}.btn-default:hover, .label-default[href]:hover, .tagcloud a:hover,button, .main-content [class*="navigation"] a:hover,.label-default[href]:focus, #infinite-handle span:hover,.btn.btn-default.read-more:hover, .btn-default:hover, .scroll-to-top:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .site-main [class*="navigation"] a:hover, .more-link:hover, #image-navigation .nav-previous a:hover, #image-navigation .nav-next a:hover, .cfa-button:hover,.woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{ background-color: #b7bdce; border-color: #b7bdce; }.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {color: #b7bdce;}.cfa { background-color: #598fbf; } .cfa-button:hover a {color: #598fbf;}.cfa-text { color: #ffffff;}.cfa-button {border-color: ; color: #ffffff;}h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .entry-title {color: #6d87cf;}.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { color: #6d87cf;}.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {color: #ffffff;}#footer-area, .site-info {color: #ffffff;}.entry-content {font-family: Open Sans; font-size:14px; font-weight: normal; color:#6B6B6B;}</style>	<style type="text/css">
+			.navbar > .container .navbar-brand {
+			color: #6d87cf;
+		}
+		</style>
+	        <!-- 
+            Lockers: Facebook SDK
+            OnePress, bizpanda.com
+        -->
+        <script>
+            window.fbAsyncInitPredefined = window.fbAsyncInit;
+            window.fbAsyncInit = function() {
+                window.FB.init({
+                    appId: 117100935120196,
+                    status: true,
+                    cookie: true,
+                    xfbml: true,
+                    version: 'v2.5'
+                });
+                window.FB.init = function(){};
+                window.fbAsyncInitPredefined && window.fbAsyncInitPredefined();
+            };
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js?";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <!-- / -->   
+        <script async="" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/f(7).txt"></script><script>     (adsbygoogle = window.adsbygoogle || []).push({          google_ad_client: "ca-pub-4370378731098015",          enable_page_level_ads: true     });</script>
+<link rel="preload" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/f(8).txt" as="script"><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/f(8).txt"></script><link rel="preload" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/f(9).txt" as="script"><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/f(9).txt"></script><link rel="preload" href="https://pagead2.googlesyndication.com/pagead/js/r20190424/r20190131/show_ads_impl.js" as="script"><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/ga.js.download"></script><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/ga.js.download"></script><script charset="utf-8" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/button.dd024c345fc26f7c7a8d9938b67e5d3d.js.download"></script><script async="" type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/pops"></script><style>.kmu68S3X371{background:#FFF!important;box-shadow:0 2px 10px rgba(0,0,0,.6)!important;color:#383838!important;cursor:pointer!important;font:14px/normal "Roboto Regular",Arial,Helvetica,Geneva,sans-serif!important;padding:10px!important;position:fixed!important;right:10px!important;width:360px!important;user-select:none!important;z-index:99999999999!important}.kmu68S3X371,.kmu68S3X371 *{box-sizing:border-box!important}.kmu68S3X371 .AzXRt2Su7{color:#838383!important;float:right!important;font-size:14px!important;padding:0 4px!important}.kmu68S3X371 .XceeiWRe3{margin-bottom:5px!important}.kmu68S3X371 .S05Z2g45Z{clear:both!important;color:#ddd!important;font-size:10px!important;margin:5px -5px -7px 0!important;text-align:right!important}.kmu68S3X371 .S05Z2g45Z:hover{color:#ccc!important;text-decoration:underline!important}.kmu68S3X371 .B1288QCH{float:left!important;height:80px!important;margin:0 15px 15px 0!important;object-fit:cover!important;width:80px!important}.kmu68S3X371 .mkm3R63Cl{color:#838383!important}.kmu68S3X371 .o0lE0GNNv0Z78{display:inline!important}.kmu68S3X371 .yu8Z7zXi06W0S{font-size:16px!important;margin-bottom:5px!important}</style><link rel="stylesheet" type="text/css" href="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/prettify.css"><script type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/jquery.min.js(1).download"></script><script async="" type="text/javascript" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/pops(1)"></script></head><body data-rsssl="1" class="post-template-default single single-post postid-5559 single-format-standard" hasvsq="1">
+<a class="sr-only sr-only-focusable" href="https://www.phpzag.com/create-barcode-generator-in-php/#content">Skip to main content</a>
+<div id="page" class="hfeed site">
+
+	<header id="masthead" class="site-header" role="banner">
+		<nav class="navbar navbar-default " role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="site-navigation-inner col-sm-12">
+						<div class="navbar-header">
+							<button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+							
+							<div id="logo">
+								<a href="https://www.phpzag.com/"><img src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/cropped-coollogo_com-7816453.png" height="97" width="502" alt="PHPZAG.COM"></a>
+							</div><!-- end of #logo -->
+
+							
+							
+						</div>
+						<div class="collapse navbar-collapse navbar-ex1-collapse"><ul id="menu-tutorials" class="nav navbar-nav"><li id="menu-item-3306" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-3306"><a title="Home" href="https://www.phpzag.com/">Home</a></li>
+<li id="menu-item-5899" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-5899 dropdown"><a title="Tutorials" href="https://www.phpzag.com/category/tutorials/" data-toggle="dropdown" class="dropdown-toggle">Tutorials <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-5907" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-5907"><a title="PHP" href="https://www.phpzag.com/category/tutorials/php-tutorial-2/">PHP</a></li>
+	<li id="menu-item-5909" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5909"><a title="Laravel" href="https://www.phpzag.com/category/tutorials/laravel/">Laravel</a></li>
+	<li id="menu-item-5900" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5900"><a title="AngularJS" href="https://www.phpzag.com/category/tutorials/angularjs/">AngularJS</a></li>
+	<li id="menu-item-3619" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3619"><a title="Wordpress" href="https://www.phpzag.com/category/tutorials/wordpress/">WordPress</a></li>
+	<li id="menu-item-5901" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5901"><a title="HTML5" href="https://www.phpzag.com/category/tutorials/html5-tutorial/">HTML5</a></li>
+	<li id="menu-item-3618" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3618"><a title="Magento" href="https://www.phpzag.com/category/tutorials/magento/">Magento</a></li>
+	<li id="menu-item-5902" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5902"><a title="Javascript" href="https://www.phpzag.com/category/tutorials/javascript-2/">Javascript</a></li>
+	<li id="menu-item-5903" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5903"><a title="JQuery" href="https://www.phpzag.com/category/tutorials/jquery/">JQuery</a></li>
+	<li id="menu-item-5904" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5904"><a title="Magento" href="https://www.phpzag.com/category/tutorials/magento/">Magento</a></li>
+	<li id="menu-item-5905" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5905"><a title="MYSQL" href="https://www.phpzag.com/category/tutorials/mysql/">MYSQL</a></li>
+	<li id="menu-item-5908" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5908"><a title="Wordpress" href="https://www.phpzag.com/category/tutorials/wordpress/">WordPress</a></li>
+	<li id="menu-item-5906" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5906"><a title="Payment Gateways" href="https://www.phpzag.com/category/tutorials/payment-gateways/">Payment Gateways</a></li>
+</ul>
+</li>
+<li id="menu-item-3677" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3677"><a title="Object Oriented Programming in PHP" href="https://www.phpzag.com/object-oriented-programming-with-php/"><span class="glyphicon Object Oriented Programming in PHP"></span>&nbsp;OOP</a></li>
+<li id="menu-item-4131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4131"><a title="Free PHP script live demos" href="https://www.phpzag.com/php-free-script-live-demo/"><span class="glyphicon Free PHP script live demos"></span>&nbsp;<span style="color:#FF6600;font-style: italic;font-weight:bold;">Live Demos</span></a></li>
+<li id="menu-item-3865" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3865"><a title="Interview Questions and Answers for PHP, HTML, Mysql, jQuery, Magento and WordPress" href="https://www.phpzag.com/category/interview-questions/"><span class="glyphicon Interview Questions and Answers for PHP, HTML, Mysql, jQuery, Magento and WordPress"></span>&nbsp;Interview</a></li>
+</ul></div>					</div>
+				</div>
+			</div>
+		</nav><!-- .site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+		<div class="top-section">
+								</div>
+
+		<div class="container main-content-area">	
+		
+		  
+			<!-- Responsive Header adss -->
+					   
+            			<div style="margin-top:10px;" class="row pull-left">			
+				<div class="main-content-inner col-sm-12 col-md-8">
+				
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-5559" class="post-5559 post type-post status-publish format-standard hentry category-php-tutorial-2">
+		<div class="post-inner-content">
+		<header class="entry-header page-header">
+
+			<h1 class="entry-title ">How to Build Barcode Generator in PHP</h1>
+
+			<div class="entry-meta">
+				<span class="posted-on"><i class="fa fa-calendar"></i> <a href="https://www.phpzag.com/create-barcode-generator-in-php/" rel="bookmark"><time class="entry-date published" datetime="2018-03-25T18:04:35+00:00"><strong>Last Updated:</strong> 30 April, 2018</time><time class="updated" datetime="2018-04-30T15:53:47+00:00">30 April, 2018</time></a></span><span class="byline"> <i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="https://www.phpzag.com/author/phpzag/">PHPZAG Team</a></span></span>
+								<span class="cat-links"><i class="fa fa-folder-open-o"></i>
+					 <a href="https://www.phpzag.com/category/tutorials/php-tutorial-2/" rel="category tag">PHP</a>				</span>
+								
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
+
+		<div class="entry-content">
+			<div class="insert-post-ads1">
+			<script async="" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/f(7).txt"></script>
+			<!-- Responsive Ads2 -->
+			<ins class="adsbygoogle" style="display: block; height: 250px;" data-ad-client="ca-pub-1169273815439326" data-ad-slot="4814073657" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:305px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:305px;background-color:transparent;"><iframe width="305" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:305px;height:250px;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(2).html"></iframe></ins></ins></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			</div>
+			<p>Barcode is a machine readable code which generated using items details like item name, item code, price etc. The related Barcode is tagged on item to get item details using Barcode reader machine. The Barcode is very useful for fast selling items to identify items quickly and also useful to manage inventory to prevent inventory build-up for slow selling items. As the Barcode is very useful and needed to implement in many PHP projects to manage inventories etc, so in this tutorial you will learn how to implement Barcode generator using PHP. We will cover this tutorial with live demo to create Barcode generator with PHP. <span id="more-5559"></span></p>
+<p>As we will cover this tutorial with live demo to implement Barcode generator using PHP, so the file structure for this example is following.</p>
+<ul>
+<li><strong>index.php</strong></li>
+<li><strong>barcode.php</strong></li>
+</ul>
+<p><strong>Step1: Create Barcode Generate Form</strong><br>
+First in <strong>index.php</strong>, we will create Barcode generate HTML Form to create Barcode on form submit with options.<br>
+<code class="prettyprint prettyprinted" style=""><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-4"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"post"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-8"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;label&gt;</span><span class="pln">Product Name or Number</span><span class="tag">&lt;/label&gt;</span><br><span class="pln"> &lt;input type="text" name="barcodeText" class="form-control" value="</span><span class="pun">&lt;?</span><span class="pln">php echo </span><span class="lit">@$_POST</span><span class="pun">[</span><span class="str">'barcodeText'</span><span class="pun">];?&gt;</span><span class="pln">"&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-6"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;label&gt;</span><span class="pln">Barcode Type</span><span class="tag">&lt;/label&gt;</span><br><span class="pln"> </span><span class="tag">&lt;select</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"barcodeType"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"barcodeType"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="tag">&gt;</span><br><span class="pln"> &lt;option value="codabar" </span><span class="pun">&lt;?</span><span class="pln">php echo </span><span class="pun">(</span><span class="lit">@$_POST</span><span class="pun">[</span><span class="str">'barcodeType'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">'codabar'</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="str">'selected="selected"'</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">''</span><span class="pun">);</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">&gt;Codabar</span><span class="tag">&lt;/option&gt;</span><br><span class="pln"> &lt;option value="code128" </span><span class="pun">&lt;?</span><span class="pln">php echo </span><span class="pun">(</span><span class="lit">@$_POST</span><span class="pun">[</span><span class="str">'barcodeType'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">'code128'</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="str">'selected="selected"'</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">''</span><span class="pun">);</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">&gt;Code128</span><span class="tag">&lt;/option&gt;</span><br><span class="pln"> &lt;option value="code39" </span><span class="pun">&lt;?</span><span class="pln">php echo </span><span class="pun">(</span><span class="lit">@$_POST</span><span class="pun">[</span><span class="str">'barcodeType'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">'code39'</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="str">'selected="selected"'</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">''</span><span class="pun">);</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">&gt;Code39</span><span class="tag">&lt;/option&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/select&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-6"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;label&gt;</span><span class="pln">Barcode Display</span><span class="tag">&lt;/label&gt;</span><br><span class="pln"> </span><span class="tag">&lt;select</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"barcodeDisplay"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">required</span><span class="tag">&gt;</span><br><span class="pln"> &lt;option value="horizontal" </span><span class="pun">&lt;?</span><span class="pln">php echo </span><span class="pun">(</span><span class="lit">@$_POST</span><span class="pun">[</span><span class="str">'barcodeDisplay'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">'horizontal'</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="str">'selected="selected"'</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">''</span><span class="pun">);</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">&gt;Horizontal</span><span class="tag">&lt;/option&gt;</span><br><span class="pln"> &lt;option value="vertical" </span><span class="pun">&lt;?</span><span class="pln">php echo </span><span class="pun">(</span><span class="lit">@$_POST</span><span class="pun">[</span><span class="str">'barcodeDisplay'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">'vertical'</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="str">'selected="selected"'</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">''</span><span class="pun">);</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">&gt;Vertical</span><span class="tag">&lt;/option&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/select&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-7"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"hidden"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"barcodeSize"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"barcodeSize"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"20"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"hidden"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"printText"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"printText"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"true"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"generateBarcode"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-success form-control"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Generate Barcode"</span><span class="tag">&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/form&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span><span class="tag">&lt;/div&gt;</span><br><span class="pln"> </span></code></p>
+<p><strong>Step2: Get Barcode Generator Library</strong><br>
+We need to <a href="https://github.com/davidscotttufts/php-barcode/" target="_blank" rel="nofollow noopener" class="external">download</a> Barcode generate PHP library to create Barcode . In this example we have already downloaded <strong>barcode.php</strong> and used to create Barcode. The library has<br>
+options to create Barcode with type <strong>Codabar, Code128, Code39</strong> and Barcode display type <strong>Horizontal</strong> and <strong>Vertical</strong>. It also supports options for size <strong>(10, 20 and 400 maximum)</strong> and option to display Barcode with text. So we will handle all these options in this example.</p>
+<p>&nbsp;</p><div class="y6bKpHM2" style="clear:both;float:left;width:100%;margin:0 0 20px 0;"><script async="" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/f(7).txt"></script>
+<ins class="adsbygoogle" style="display: block; text-align: center; height: 162px;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1169273815439326" data-ad-slot="8120126814" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:162px;margin:0;padding:0;position:relative;visibility:visible;width:648px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:162px;margin:0;padding:0;position:relative;visibility:visible;width:648px;background-color:transparent;"><iframe width="648" height="162" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:648px;height:162px;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(3).html"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<p><strong>Step3: Generate Barcode with PHP</strong><br>
+Now on Form submit, we will generate Barcode by passing items details to library file <strong>barcode.php</strong> and display created Barcode in img.<br>
+<code class="prettyprint prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php</span><br><span class="pln"> </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">isset</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">'generateBarcode'</span><span class="pun">]))</span><span class="pln"> </span><span class="pun">{</span><br><span class="pln"> $barcodeText </span><span class="pun">=</span><span class="pln"> trim</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">'barcodeText'</span><span class="pun">]);</span><br><span class="pln"> $barcodeType</span><span class="pun">=</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">'barcodeType'</span><span class="pun">];</span><br><span class="pln"> $barcodeDisplay</span><span class="pun">=</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">'barcodeDisplay'</span><span class="pun">];</span><br><span class="pln"> $barcodeSize</span><span class="pun">=</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">'barcodeSize'</span><span class="pun">];</span><br><span class="pln"> $printText</span><span class="pun">=</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">'printText'</span><span class="pun">];</span><br><span class="pln"> </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$barcodeText </span><span class="pun">!=</span><span class="pln"> </span><span class="str">''</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><br><span class="pln"> echo </span><span class="str">'&lt;h4&gt;Barcode:&lt;/h4&gt;'</span><span class="pun">;</span><br><span class="pln"> echo </span><span class="str">'&lt;img class="barcode" alt="'</span><span class="pun">.</span><span class="pln">$barcodeText</span><span class="pun">.</span><span class="str">'" src="barcode.php?text='</span><span class="pun">.</span><span class="pln">$barcodeText</span><span class="pun">.</span><span class="str">'&amp;codetype='</span><span class="pun">.</span><span class="pln">$barcodeType</span><span class="pun">.</span><span class="str">'&amp;orientation='</span><span class="pun">.</span><span class="pln">$barcodeDisplay</span><span class="pun">.</span><span class="str">'&amp;size='</span><span class="pun">.</span><span class="pln">$barcodeSize</span><span class="pun">.</span><span class="str">'&amp;print='</span><span class="pun">.</span><span class="pln">$printText</span><span class="pun">.</span><span class="str">'"/&gt;'</span><span class="pun">;</span><br><span class="pln"> </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><br><span class="pln"> echo </span><span class="str">'&lt;div class="alert alert-danger"&gt;Enter product name or number to generate barcode!&lt;/div&gt;'</span><span class="pun">;</span><br><span class="pln"> </span><span class="pun">}</span><br><span class="pln"> </span><span class="pun">}</span><br><span class="pln"> </span><span class="pun">?&gt;</span><br><span class="pln"> </span></code></p>
+<p>You can view the live demo from the Demo link and can download the script from the Download link below.<br>
+<a class="demo" href="https://phpzag.com/demo/create-barcode-generator-in-php/">Demo</a>            
+            </p><div class="onp-sl-content" style="display: none;" data-lock-id="onpLock166052">
+                <p><a class="download" title="Download " href="https://phpzag.com/demo/create-barcode-generator-in-php/barcode-generator-in-php.zip" target="_blank" rel="noopener">Download</a></p>
+            </div><div class="onp-sl onp-sl-webkit onp-sl-secrets onp-sl-social-locker onp-sl-social-buttons-frist onp-sl-contains-single-group onp-sl-social-buttons-enabled onp-sl-no-touch" style=""><div class="onp-sl-outer-wrap"><div class="onp-sl-inner-wrap"><div class="onp-sl-screen onp-sl-screen-default"><div class="onp-sl-group onp-sl-social-buttons onp-sl-first-group onp-sl-single-group onp-sl-group-index-1 onp-sl-has-counters onp-sl-horizontal onp-sl-lang-en_US"><div class="onp-sl-group-inner-wrap"><div class="onp-sl-text"><div class="onp-sl-header onp-sl-strong">Download Code is Locked</div><div class="onp-sl-message">Please support us, use one of the buttons below to unlock the content.</div></div><div class="onp-sl-control onp-sl-facebook-like onp-sl-facebook onp-sl-flip onp-sl-state-error" style="z-index: 50;"><div class="onp-sl-control-inner-wrap"><a href="https://www.phpzag.com/create-barcode-generator-in-php/#" class="onp-sl-button-overlay" style="z-index: 50;"><div class="onp-sl-overlay-back" style="z-index: -1;"></div><div class="onp-sl-overlay-front" style="z-index: 1;"><div class="onp-sl-overlay-icon"></div><div class="onp-sl-overlay-line"></div><div class="onp-sl-overlay-text">like</div></div><div class="onp-sl-overlay-header" style="z-index: 1;"></div></a><div class="onp-sl-social-button onp-sl-social-button-facebook-like"></div><div class="onp-sl-error-body"><a href="https://www.phpzag.com/create-barcode-generator-in-php/#" class="onp-sl-error-title">error</a></div></div></div><div class="onp-sl-control onp-sl-twitter-tweet onp-sl-twitter onp-sl-flip" style="z-index: 46;"><div class="onp-sl-control-inner-wrap"><a href="https://www.phpzag.com/create-barcode-generator-in-php/#" class="onp-sl-button-overlay" style="z-index: 46;"><div class="onp-sl-overlay-back" style="z-index: -1;"></div><div class="onp-sl-overlay-front" style="z-index: 1;"><div class="onp-sl-overlay-icon"></div><div class="onp-sl-overlay-line"></div><div class="onp-sl-overlay-text">tweet</div></div><div class="onp-sl-overlay-header" style="z-index: 1;"></div></a><div class="onp-sl-social-button onp-sl-social-button-twitter-tweet"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 60px; height: 20px;" title="Twitter Tweet Button" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/tweet_button.2e9f365dae390394eb8d923cba8c5b11.en.html" data-url="https://www.phpzag.com/create-barcode-generator-in-php/"></iframe><div class="onp-sl-feature-overlay"></div></div></div></div><div class="onp-sl-control onp-sl-google-plus onp-sl-state-error onp-sl-google onp-sl-flip" style="z-index: 42;"><div class="onp-sl-control-inner-wrap"><a href="https://www.phpzag.com/create-barcode-generator-in-php/#" class="onp-sl-button-overlay" style="z-index: 42;"><div class="onp-sl-overlay-back" style="z-index: -1;"></div><div class="onp-sl-overlay-front" style="z-index: 1;"><div class="onp-sl-overlay-icon"></div><div class="onp-sl-overlay-line"></div><div class="onp-sl-overlay-text">+1 us</div></div><div class="onp-sl-overlay-header" style="z-index: 1;"></div></a><div class="onp-sl-error-body"><a href="https://www.phpzag.com/create-barcode-generator-in-php/#" class="onp-sl-error-title">error</a></div><div class="onp-sl-social-button onp-sl-social-button-google-plus"></div></div></div></div></div></div></div></div></div>
+         
+
+        <p></p>
+			<script async="" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/f(7).txt"></script>
+			<ins class="adsbygoogle" style="display: block; height: 388px;" data-ad-format="autorelaxed" data-ad-client="ca-pub-1169273815439326" data-ad-slot="5459826736" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:388px;margin:0;padding:0;position:relative;visibility:visible;width:648px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:388px;margin:0;padding:0;position:relative;visibility:visible;width:648px;background-color:transparent;"><iframe width="648" height="388" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0px;width:648px;height:388px;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(4).html"></iframe></ins></ins></ins>
+			<script>
+				 (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+					</div><!-- .entry-content -->
+
+	
+
+		<footer class="entry-meta">
+
+	    	
+		</footer><!-- .entry-meta -->
+	</div>
+
+	
+</article><!-- #post-## -->
+
+			
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			2 thoughts on “<span>How to Build Barcode Generator in PHP</span>”		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-155376" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-155376" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/791a88a133984c649eb973d63df423c3.png" srcset="https://secure.gravatar.com/avatar/791a88a133984c649eb973d63df423c3?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Teena Arnold</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.phpzag.com/create-barcode-generator-in-php/#comment-155376">
+							<time datetime="2018-04-30T14:56:03+00:00">
+								30 April, 2018 at 2:56 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Really informative and helpful material. Thanks for providing such an amazing solution for barcode generator funtion.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="https://www.phpzag.com/create-barcode-generator-in-php/?replytocom=155376#respond" onclick="return addComment.moveForm( &quot;div-comment-155376&quot;, &quot;155376&quot;, &quot;respond&quot;, &quot;5559&quot; )" aria-label="Reply to Teena Arnold" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-157950" class="comment byuser comment-author-phpzag bypostauthor odd alt depth-2">
+			<article id="div-comment-157950" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/b48bdfd003e219f94ac2079f9a96347f.png" srcset="https://secure.gravatar.com/avatar/b48bdfd003e219f94ac2079f9a96347f?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">PHPZAG Team</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.phpzag.com/create-barcode-generator-in-php/#comment-157950">
+							<time datetime="2018-08-05T16:19:58+00:00">
+								5 August, 2018 at 4:19 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="https://www.phpzag.com/create-barcode-generator-in-php/?replytocom=157950#respond" onclick="return addComment.moveForm( &quot;div-comment-157950&quot;, &quot;157950&quot;, &quot;respond&quot;, &quot;5559&quot; )" aria-label="Reply to PHPZAG Team" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.phpzag.com/create-barcode-generator-in-php/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.phpzag.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit btn btn-default" value="Post Comment" style="display: inline-block;"> <input type="hidden" name="comment_post_ID" value="5559" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="39bb71ad01"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1556895688398"></form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+				<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://www.phpzag.com/google-maps-geocode-address-with-php/" rel="prev"><i class="fa fa-chevron-left"></i> Google Maps Geocode Address Locator with PHP</a></div><div class="nav-next"><a href="https://www.phpzag.com/poll-and-voting-system-with-php-and-mysql/" rel="next">Poll and Voting System with PHP and MySQL <i class="fa fa-chevron-right"></i></a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+</div>
+	<div id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
+		<div class="well">		
+						
+			
+			<aside id="abput_me_3000" class="widget widget_aboutme"><h3 class="widget-title">  </h3>    <style>
+        .aboutme {
+            clear: both
+        }
+
+        .aboutme * {
+            border: 0px solid;
+        }
+
+        .aboutme img {
+            padding: 0px;
+        }
+    </style>
+    <div class="aboutme"><div style="clear:both"></div><div style="border-top: 1px solid #eee; padding-top:5px; position:relative; height:30px"><div style="left:0; position: absolute"><a style="padding:2px" target="_blank" href="https://www.facebook.com/Phpzag-203097989797749/"><img src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/facebook.png" border="0"></a><a style="padding:2px" target="_blank" href="https://feeds.feedburner.com/phpzag/"><img src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/feedburner.png" border="0"></a><a style="padding:2px" target="_blank" href="https://plus.google.com/112450781644946967938/posts"><img src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/googleplus.png" border="0"></a><a style="padding:2px" target="_blank" href="https://twitter.com/phpzag"><img src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/twitter.png" border="0"></a><a style="padding:2px" href="mailto:phpzag@gmail.com"><img src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/email.png" border="0"></a></div></div></div></aside><aside id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="subscribe_section">
+<div class="subscribe_text">
+Subscribe my updates via <b>Email </b>
+</div><div>
+<form action="https://feedburner.google.com/fb/a/mailverify" method="post">
+<input class="feedinput" id="femail" name="email" type="text" placeholder="Enter Your Email">
+<input name="uri" type="hidden" value="phpzag"><input name="loc" type="hidden" value="en_US">
+<input type="submit" class="subscribe_button btn btn-default" value="Subscribe "></form>
+</div>
+<div class="readers_count">
+<div>
+<a href="https://feeds.feedburner.com/phpzag" title="phpzag feed" class="external" rel="nofollow"><img id="fcount" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/phpzag" height="36" width="88" style="border:1" alt=""></a>
+</div>
+</div>
+<div class="clearboth"></div>
+</div>
+
+<br>
+
+<script async="" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/f(7).txt"></script>
+<!-- Responsive Ads2 -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-1169273815439326" data-ad-slot="4814073657" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:338px;background-color:transparent;"><ins id="aswift_4_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:338px;background-color:transparent;"><iframe width="338" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0px;width:338px;height:280px;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(5).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside><aside id="sparkling_popular_posts-2" class="widget sparkling-popular-posts"><h3 class="widget-title">Trending Tutorials</h3>
+
+
+    <!-- popular posts -->
+
+          <div class="popular-posts-wrapper">
+
+
+
+                
+
+
+                        
+
+
+                        <!-- post -->
+
+                        <div class="post">
+
+
+
+                          <!-- image -->
+
+                          <div class="post-image ">
+
+
+
+                                <a href="https://www.phpzag.com/image-upload-and-crop-in-modal-with-php-and-jquery/"><img width="60" height="60" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/image-upload-crop-60x60.png" class="attachment-tab-small size-tab-small wp-post-image" alt="" srcset="https://www.phpzag.com/wp-content/uploads/2016/07/image-upload-crop-60x60.png 60w, https://www.phpzag.com/wp-content/uploads/2016/07/image-upload-crop-150x150.png 150w" sizes="(max-width: 60px) 100vw, 60px"></a>
+
+
+
+                          </div> <!-- end post image -->
+
+
+
+                          <!-- content -->
+
+                          <div class="post-content">
+
+
+
+                              <a href="https://www.phpzag.com/image-upload-and-crop-in-modal-with-php-and-jquery/">Image Upload and Crop in Modal with PHP and jQuery</a>
+																 <span class="date">Last Updated: 12 Jan , 2019</span>
+								                             
+
+
+
+
+
+                          </div><!-- end content -->
+
+                        </div><!-- end post -->
+
+
+
+                        
+
+
+                    
+
+
+                        
+
+
+                        <!-- post -->
+
+                        <div class="post">
+
+
+
+                          <!-- image -->
+
+                          <div class="post-image ">
+
+
+
+                                <a href="https://www.phpzag.com/php-youtube-video-downloader-script/"><img width="60" height="60" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/youtube-video-download-60x60.png" class="attachment-tab-small size-tab-small wp-post-image" alt=""></a>
+
+
+
+                          </div> <!-- end post image -->
+
+
+
+                          <!-- content -->
+
+                          <div class="post-content">
+
+
+
+                              <a href="https://www.phpzag.com/php-youtube-video-downloader-script/">YouTube Video Downloader Script in PHP</a>
+																 <span class="date">Last Updated: 07 Jan , 2019</span>
+								                             
+
+
+
+
+
+                          </div><!-- end content -->
+
+                        </div><!-- end post -->
+
+
+
+                        
+
+
+                    
+
+
+                        
+
+
+                        <!-- post -->
+
+                        <div class="post">
+
+
+
+                          <!-- image -->
+
+                          <div class="post-image ">
+
+
+
+                                <a href="https://www.phpzag.com/convert-currency-using-google-api/"><img width="60" height="60" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/currency-conversion-using-google-api-60x60.png" class="attachment-tab-small size-tab-small wp-post-image" alt="" srcset="https://www.phpzag.com/wp-content/uploads/2016/08/currency-conversion-using-google-api-60x60.png 60w, https://www.phpzag.com/wp-content/uploads/2016/08/currency-conversion-using-google-api-150x150.png 150w" sizes="(max-width: 60px) 100vw, 60px"></a>
+
+
+
+                          </div> <!-- end post image -->
+
+
+
+                          <!-- content -->
+
+                          <div class="post-content">
+
+
+
+                              <a href="https://www.phpzag.com/convert-currency-using-google-api/">Build Currency Converter with PHP</a>
+																 <span class="date">Last Updated: 07 Jan , 2019</span>
+								                             
+
+
+
+
+
+                          </div><!-- end content -->
+
+                        </div><!-- end post -->
+
+
+
+                        
+
+
+                    
+
+
+                        
+
+
+                        <!-- post -->
+
+                        <div class="post">
+
+
+
+                          <!-- image -->
+
+                          <div class="post-image ">
+
+
+
+                                <a href="https://www.phpzag.com/paytm-payment-gateway-integration-in-php/"><img width="60" height="60" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/paytm-payment-gatways-60x60.jpg" class="attachment-tab-small size-tab-small wp-post-image" alt="" srcset="https://www.phpzag.com/wp-content/uploads/2016/10/paytm-payment-gatways-60x60.jpg 60w, https://www.phpzag.com/wp-content/uploads/2016/10/paytm-payment-gatways-150x150.jpg 150w" sizes="(max-width: 60px) 100vw, 60px"></a>
+
+
+
+                          </div> <!-- end post image -->
+
+
+
+                          <!-- content -->
+
+                          <div class="post-content">
+
+
+
+                              <a href="https://www.phpzag.com/paytm-payment-gateway-integration-in-php/">Paytm Payment Gateway Integration in PHP</a>
+																 <span class="date">Last Updated: 19 Jul , 2018</span>
+								                             
+
+
+
+
+
+                          </div><!-- end content -->
+
+                        </div><!-- end post -->
+
+
+
+                        
+
+
+                    
+
+
+                        
+
+
+                        <!-- post -->
+
+                        <div class="post">
+
+
+
+                          <!-- image -->
+
+                          <div class="post-image ">
+
+
+
+                                <a href="https://www.phpzag.com/delete-records-with-bootstrap-confirm-modal-using-php-mysql/"><img width="60" height="60" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/Delete-Records-with-Bootstrap-Confirm-Modal-using-PHP-MySQL-60x60.png" class="attachment-tab-small size-tab-small wp-post-image" alt="" srcset="https://www.phpzag.com/wp-content/uploads/2017/01/Delete-Records-with-Bootstrap-Confirm-Modal-using-PHP-MySQL-60x60.png 60w, https://www.phpzag.com/wp-content/uploads/2017/01/Delete-Records-with-Bootstrap-Confirm-Modal-using-PHP-MySQL-150x150.png 150w" sizes="(max-width: 60px) 100vw, 60px"></a>
+
+
+
+                          </div> <!-- end post image -->
+
+
+
+                          <!-- content -->
+
+                          <div class="post-content">
+
+
+
+                              <a href="https://www.phpzag.com/delete-records-with-bootstrap-confirm-modal-using-php-mysql/">Delete Records with Bootstrap Confirm Modal using PHP &amp; MySQL</a>
+																 <span class="date">Last Updated: 21 Apr , 2018</span>
+								                             
+
+
+
+
+
+                          </div><!-- end content -->
+
+                        </div><!-- end post -->
+
+
+
+                        
+
+
+                    
+
+
+                        
+
+
+                        <!-- post -->
+
+                        <div class="post">
+
+
+
+                          <!-- image -->
+
+                          <div class="post-image ">
+
+
+
+                                <a href="https://www.phpzag.com/inline-editing-using-php-mysql-and-jquery-ajax/"><img width="60" height="60" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/inline-60x60.png" class="attachment-tab-small size-tab-small wp-post-image" alt=""></a>
+
+
+
+                          </div> <!-- end post image -->
+
+
+
+                          <!-- content -->
+
+                          <div class="post-content">
+
+
+
+                              <a href="https://www.phpzag.com/inline-editing-using-php-mysql-and-jquery-ajax/">Inline Editing using PHP MySQL and jQuery Ajax</a>
+																 <span class="date">Last Updated: 04 Jun , 2017</span>
+								                             
+
+
+
+
+
+                          </div><!-- end content -->
+
+                        </div><!-- end post -->
+
+
+
+                        
+
+
+                    
+
+
+          </div> <!-- end posts wrapper -->
+
+
+
+		</aside><aside id="tag_cloud-4" class="widget widget_tag_cloud"><h3 class="widget-title">Popular Search Tags</h3><div class="tagcloud" style="display: block;"><a href="https://www.phpzag.com/category/tutorials/angularjs/" class="tag-cloud-link tag-link-438 tag-link-position-1" style="font-size: 10.346368715084pt;" aria-label="AngularJS (3 items)">AngularJS</a>
+<a href="https://www.phpzag.com/category/articles/" class="tag-cloud-link tag-link-123 tag-link-position-2" style="font-size: 9.4078212290503pt;" aria-label="Articles (2 items)">Articles</a>
+<a href="https://www.phpzag.com/category/snippets/" class="tag-cloud-link tag-link-424 tag-link-position-3" style="font-size: 11.128491620112pt;" aria-label="Code Snippets (4 items)">Code Snippets</a>
+<a href="https://www.phpzag.com/category/tutorials/html5-tutorial/" class="tag-cloud-link tag-link-107 tag-link-position-4" style="font-size: 8pt;" aria-label="HTML5 (1 item)">HTML5</a>
+<a href="https://www.phpzag.com/category/interview-questions/" class="tag-cloud-link tag-link-61 tag-link-position-5" style="font-size: 14.100558659218pt;" aria-label="Interview Questions (11 items)">Interview Questions</a>
+<a href="https://www.phpzag.com/category/tutorials/javascript-2/" class="tag-cloud-link tag-link-164 tag-link-position-6" style="font-size: 9.4078212290503pt;" aria-label="Javascript (2 items)">Javascript</a>
+<a href="https://www.phpzag.com/category/tutorials/jquery/" class="tag-cloud-link tag-link-82 tag-link-position-7" style="font-size: 15.664804469274pt;" aria-label="JQuery (18 items)">JQuery</a>
+<a href="https://www.phpzag.com/category/tutorials/laravel/" class="tag-cloud-link tag-link-440 tag-link-position-8" style="font-size: 8pt;" aria-label="Laravel (1 item)">Laravel</a>
+<a href="https://www.phpzag.com/category/tutorials/magento/" class="tag-cloud-link tag-link-86 tag-link-position-9" style="font-size: 13.083798882682pt;" aria-label="Magento (8 items)">Magento</a>
+<a href="https://www.phpzag.com/category/tutorials/mysql/" class="tag-cloud-link tag-link-55 tag-link-position-10" style="font-size: 9.4078212290503pt;" aria-label="MYSQL (2 items)">MYSQL</a>
+<a href="https://www.phpzag.com/category/tutorials/payment-gateways/" class="tag-cloud-link tag-link-439 tag-link-position-11" style="font-size: 13.474860335196pt;" aria-label="Payment Gateways (9 items)">Payment Gateways</a>
+<a href="https://www.phpzag.com/category/tutorials/php-tutorial-2/" class="tag-cloud-link tag-link-54 tag-link-position-12" style="font-size: 22pt;" aria-label="PHP (122 items)">PHP</a>
+<a href="https://www.phpzag.com/category/tutorials/" class="tag-cloud-link tag-link-441 tag-link-position-13" style="font-size: 11.754189944134pt;" aria-label="Tutorials (5 items)">Tutorials</a>
+<a href="https://www.phpzag.com/category/tutorials/wordpress/" class="tag-cloud-link tag-link-151 tag-link-position-14" style="font-size: 8pt;" aria-label="Wordpress (1 item)">Wordpress</a></div>
+</aside>			<script async="" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/f(7).txt"></script>			<!-- Responsive Ads2 -->			<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-1169273815439326" data-ad-slot="4814073657" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:338px;background-color:transparent;"><ins id="aswift_5_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:338px;background-color:transparent;"><iframe width="338" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;border:0px;width:338px;height:280px;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(6).html"></iframe></ins></ins></ins>			<script>			(adsbygoogle = window.adsbygoogle || []).push({});			</script>
+		</div>		
+		
+		
+
+		
+	</div><!-- #secondary -->
+		</div><!-- close .row -->
+	</div><!-- close .container -->
+</div><!-- close .site-content -->
+
+	<div class="google-auto-placed" style="text-align: center; width: 100%; height: auto; clear: both;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4370378731098015" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 90px;"><ins id="aswift_6_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent;"><ins id="aswift_6_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent;"><iframe width="1200" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;border:0px;width:1200px;height:90px;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(7).html"></iframe></ins></ins></ins></div><div id="footer-area">
+		<div class="container footer-inner">
+			<div class="row">
+				
+	
+	<div class="footer-widget-area">
+				<div class="col-sm-4 footer-widget" role="complementary">
+					<div id="recent-posts-6" class="widget widget_recent_entries">		<h3 class="widgettitle">Latest Tutorials</h3>		<ul>
+					<li>
+				<a href="https://www.phpzag.com/build-inventory-system-with-ajax-php-mysql/">Build Inventory System with Ajax, PHP &amp; MySQL</a>
+							<span class="post-date">18 April, 2019</span>
+						</li>
+					<li>
+				<a href="https://www.phpzag.com/product-filter-search-with-ajax-php-mysql/">Product Filter Search with Ajax, PHP &amp; MySQL</a>
+							<span class="post-date">9 February, 2019</span>
+						</li>
+					<li>
+				<a href="https://www.phpzag.com/build-invoice-system-with-php-mysql/">Build Invoice System with PHP &amp; MySQL</a>
+							<span class="post-date">13 January, 2019</span>
+						</li>
+					<li>
+				<a href="https://www.phpzag.com/live-data-search-with-multiselect-dropdown-using-ajax-php-mysql/">Live Data Search with Multiselect Dropdown using Ajax, PHP &amp; MySQL</a>
+							<span class="post-date">30 December, 2018</span>
+						</li>
+					<li>
+				<a href="https://www.phpzag.com/build-live-chat-system-with-ajax-php-mysql/">Build Live Chat System with Ajax, PHP &amp; MySQL</a>
+							<span class="post-date">9 December, 2018</span>
+						</li>
+				</ul>
+		</div>				</div><!-- .widget-area .first -->
+		
+				<div class="col-sm-4 footer-widget" role="complementary">
+			<div id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="widgettitle">Popular Tags</h3><div class="tagcloud" style="display: block;"><a href="https://www.phpzag.com/category/tutorials/angularjs/" class="tag-cloud-link tag-link-438 tag-link-position-1" style="font-size: 10.346368715084pt;" aria-label="AngularJS (3 items)">AngularJS</a>
+<a href="https://www.phpzag.com/category/articles/" class="tag-cloud-link tag-link-123 tag-link-position-2" style="font-size: 9.4078212290503pt;" aria-label="Articles (2 items)">Articles</a>
+<a href="https://www.phpzag.com/category/snippets/" class="tag-cloud-link tag-link-424 tag-link-position-3" style="font-size: 11.128491620112pt;" aria-label="Code Snippets (4 items)">Code Snippets</a>
+<a href="https://www.phpzag.com/category/tutorials/html5-tutorial/" class="tag-cloud-link tag-link-107 tag-link-position-4" style="font-size: 8pt;" aria-label="HTML5 (1 item)">HTML5</a>
+<a href="https://www.phpzag.com/category/interview-questions/" class="tag-cloud-link tag-link-61 tag-link-position-5" style="font-size: 14.100558659218pt;" aria-label="Interview Questions (11 items)">Interview Questions</a>
+<a href="https://www.phpzag.com/category/tutorials/javascript-2/" class="tag-cloud-link tag-link-164 tag-link-position-6" style="font-size: 9.4078212290503pt;" aria-label="Javascript (2 items)">Javascript</a>
+<a href="https://www.phpzag.com/category/tutorials/jquery/" class="tag-cloud-link tag-link-82 tag-link-position-7" style="font-size: 15.664804469274pt;" aria-label="JQuery (18 items)">JQuery</a>
+<a href="https://www.phpzag.com/category/tutorials/laravel/" class="tag-cloud-link tag-link-440 tag-link-position-8" style="font-size: 8pt;" aria-label="Laravel (1 item)">Laravel</a>
+<a href="https://www.phpzag.com/category/tutorials/magento/" class="tag-cloud-link tag-link-86 tag-link-position-9" style="font-size: 13.083798882682pt;" aria-label="Magento (8 items)">Magento</a>
+<a href="https://www.phpzag.com/category/tutorials/mysql/" class="tag-cloud-link tag-link-55 tag-link-position-10" style="font-size: 9.4078212290503pt;" aria-label="MYSQL (2 items)">MYSQL</a>
+<a href="https://www.phpzag.com/category/tutorials/payment-gateways/" class="tag-cloud-link tag-link-439 tag-link-position-11" style="font-size: 13.474860335196pt;" aria-label="Payment Gateways (9 items)">Payment Gateways</a>
+<a href="https://www.phpzag.com/category/tutorials/php-tutorial-2/" class="tag-cloud-link tag-link-54 tag-link-position-12" style="font-size: 22pt;" aria-label="PHP (122 items)">PHP</a>
+<a href="https://www.phpzag.com/category/tutorials/" class="tag-cloud-link tag-link-441 tag-link-position-13" style="font-size: 11.754189944134pt;" aria-label="Tutorials (5 items)">Tutorials</a>
+<a href="https://www.phpzag.com/category/tutorials/wordpress/" class="tag-cloud-link tag-link-151 tag-link-position-14" style="font-size: 8pt;" aria-label="Wordpress (1 item)">Wordpress</a></div>
+</div>		</div><!-- .widget-area .second -->
+		
+				<div class="col-sm-4 footer-widget" role="complementary">
+			<div id="sparkling-social-3" class="widget sparkling-social"><h3 class="widgettitle"></h3>
+        <!-- social icons -->
+        <div class="social-icons sticky-sidebar-social">
+
+            <nav id="menu-social" class="social-icons"><ul id="menu-social-items" class="social-menu"><li id="menu-item-3644" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3644"><a href="https://www.facebook.com/Phpzag-203097989797749/"><i class="social_icon fa"><span>Facebook</span></i></a></li>
+<li id="menu-item-3645" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3645"><a href="https://twitter.com/phpzag"><i class="social_icon fa"><span>Twitter</span></i></a></li>
+<li id="menu-item-3646" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3646"><a href="https://plus.google.com/112450781644946967938/posts"><i class="social_icon fa"><span>Google Plus</span></i></a></li>
+<li id="menu-item-3647" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3647"><a href="http://feeds.feedburner.com/phpzag/"><i class="social_icon fa"><span>Feed</span></i></a></li>
+</ul></nav>
+        </div><!-- end social icons --></div>		</div><!-- .widget-area .third -->
+			</div>			</div>
+			
+	<br>
+		</div>
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="site-info container">
+				<div class="row">
+					<nav id="menu-social" class="social-icons"><ul id="menu-social-items" class="social-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3644"><a href="https://www.facebook.com/Phpzag-203097989797749/"><i class="social_icon fa"><span>Facebook</span></i></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3645"><a href="https://twitter.com/phpzag"><i class="social_icon fa"><span>Twitter</span></i></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3646"><a href="https://plus.google.com/112450781644946967938/posts"><i class="social_icon fa"><span>Google Plus</span></i></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3647"><a href="http://feeds.feedburner.com/phpzag/"><i class="social_icon fa"><span>Feed</span></i></a></li>
+</ul></nav>					<nav role="navigation" class="col-md-6">
+											</nav>
+					<div class="copyright col-md-6">
+						Copyright © 2011 - 2019  <a href="https://www.phpzag.com/" title="PHPZAG.COM">PHPZAG.COM</a>  All rights reserved. |  <a href="https://www.phpzag.com/about" title="Advertise">About</a> | <a href="https://www.phpzag.com/contact" title="Advertise">Contact</a> | <a href="https://www.phpzag.com/advertise" title="Advertise">Advertise</a>											</div>
+				</div>
+			</div><!-- .site-info -->
+			<div class="scroll-to-top" style="display: none;"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+		</footer><!-- #colophon -->
+	</div>
+</div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(8).html"></iframe></ins></ins></ins><!-- #page -->
+
+  <script type="text/javascript">
+    jQuery( document ).ready( function( $ ){
+      if ( $( window ).width() >= 767 ){
+        $( '.navbar-nav > li.menu-item > a' ).click( function(){
+          window.location = $( this ).attr( 'href' );
+        });
+      }
+    });
+  </script>
+        <!-- 
+            Lockers: user tracker for visibility filters
+            OnePress, bizpanda.com
+        -->
+        <script>
+            window.__bp_session_timeout = '900';
+            window.__bp_session_freezing = 0;
+            window.bizpanda||(window.bizpanda={}),window.bizpanda.bp_can_store_localy=function(){return!1},window.bizpanda.bp_ut_get_cookie=function(e){for(var n=e+"=",i=document.cookie.split(";"),o=0;o<i.length;o++){for(var t=i[o];" "==t.charAt(0);)t=t.substring(1);if(0==t.indexOf(n))return decodeURIComponent(t.substring(n.length,t.length))}return!1},window.bizpanda.bp_ut_set_cookie=function(e,n,i){var o=new Date;o.setTime(o.getTime()+24*i*60*60*1e3);var t="expires="+o.toUTCString();document.cookie=e+"="+encodeURIComponent(n)+"; "+t+"; path=/"},window.bizpanda.bp_ut_get_obj=function(e){var n=null;if(!(n=window.bizpanda.bp_can_store_localy()?window.localStorage.getItem("bp_ut_session"):window.bizpanda.bp_ut_get_cookie("bp_ut_session")))return!1;n=(n=n.replace(/\-c\-/g,",")).replace(/\-q\-/g,'"');try{n=JSON.parse(n)}catch(e){return!1}return n.started+1e3*e<(new Date).getTime()&&(n=null),n},window.bizpanda.bp_ut_set_obj=function(e,n){e.started&&window.__bp_session_freezing||(e.started=(new Date).getTime()),(e=JSON.stringify(e))&&(e=(e=e.replace(/\"/g,"-q-")).replace(/\,/g,"-c-")),window.bizpanda.bp_can_store_localy()?window.localStorage.setItem("bp_ut_session",e):window.bizpanda.bp_ut_set_cookie("bp_ut_session",e,5e3)},window.bizpanda.bp_ut_count_pageview=function(){var e=window.bizpanda.bp_ut_get_obj(window.__bp_session_timeout);e||(e={}),e.pageviews||(e.pageviews=0),0===e.pageviews&&(e.referrer=document.referrer,e.landingPage=window.location.href,e.pageviews=0),e.pageviews++,window.bizpanda.bp_ut_set_obj(e)},window.bizpanda.bp_ut_count_locker_pageview=function(){var e=window.bizpanda.bp_ut_get_obj(window.__bp_timeout);e||(e={}),e.lockerPageviews||(e.lockerPageviews=0),e.lockerPageviews++,window.bizpanda.bp_ut_set_obj(e)},window.bizpanda.bp_ut_count_pageview();
+        </script>
+        <!-- / -->
+                    <script>
+            if ( !window.bizpanda ) window.bizpanda = {};
+            if ( !window.bizpanda.lockerOptions ) window.bizpanda.lockerOptions = {};
+            window.bizpanda.lockerOptions['onpLock166052'] = {"lockerId":"4115","tracking":"true","postId":5559,"ajaxUrl":"https:\/\/www.phpzag.com\/wp-admin\/admin-ajax.php","options":{"demo":false,"actualUrls":false,"text":{"header":"Download Code is Locked","message":"Please support us, use one of the buttons below to unlock the content."},"theme":"secrets","lang":"en_US","agreement":{"termsUrl":"https:\/\/www.phpzag.com?bizpanda=terms-of-use","privacyPolicyUrl":"https:\/\/www.phpzag.com?bizpanda=privacy-policy","showInPopup":{"width":570,"height":400}},"overlap":{"mode":"full","position":"middle","altMode":"transparence"},"highlight":1,"googleAnalytics":1,"locker":{"counter":1,"loadingTimeout":20000,"tumbler":false,"naMode":"show-error","inAppBrowsers":"visible_with_warning","inAppBrowsersWarning":"You are viewing this page in the {browser}. The locker may work incorrectly in this browser. Please open this page in a standard browser."},"proxy":"https:\/\/www.phpzag.com\/wp-admin\/admin-ajax.php?action=opanda_connect","groups":["social-buttons"],"socialButtons":{"counters":1,"order":["facebook-like","twitter-tweet","google-plus"],"behaviorOnError":"show_error","behaviorError":"Unable to create social buttons. Please make sure that nothing blocks loading of social scripts in your browser. Some browser extentions (Avast, PrivDog, AdBlock, Adguard etc.) or usage of private tabs in FireFox may cause this issue. Turn them off and try again.","facebook":{"appId":"117100935120196","lang":"en_US","version":"v2.5","like":{"url":"https:\/\/www.phpzag.com\/create-barcode-generator-in-php\/","title":"like","theConfirmIssue":0}},"twitter":{"lang":"en","tweet":{"url":"https:\/\/www.phpzag.com\/create-barcode-generator-in-php\/","doubleCheck":0,"title":"tweet"}},"google":{"lang":"en","plus":{"url":"https:\/\/www.phpzag.com\/create-barcode-generator-in-php\/","title":"+1 us"}}},"lazy":false},"_theme":"secrets","_style":null,"ajax":false,"stats":true};
+        </script>
+            <!--www.crestaproject.com Social Button Floating Start--><div id="crestashareicon" class="cresta-share-icon  third_style show-count-active"><div class="sbutton crestaShadow facebook-cresta-share float" id="facebook-cresta" style="display: block;"><a rel="nofollow" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.phpzag.com%2Fcreate-barcode-generator-in-php%2F&amp;t=How+to+Build+Barcode+Generator+in+PHP" title="Share to Facebook" onclick="window.open(this.href,&#39;targetWindow&#39;,&#39;toolbars=0,location=0,status=0,menubar=0,scrollbars=1,resizable=1,width=640,height=320,left=200,top=200&#39;);return false;"><i class="cs c-icon-cresta-facebook"></i></a></div><div class="sbutton crestaShadow twitter-cresta-share float withCount noCountTwo noCountThree" id="twitter-cresta" style="display: block;"><a rel="nofollow" href="https://twitter.com/intent/tweet?text=How+to+Build+Barcode+Generator+in+PHP&amp;url=https%3A%2F%2Fwww.phpzag.com%2Fcreate-barcode-generator-in-php%2F&amp;via=phpzag" title="Share to Twitter" onclick="window.open(this.href,&#39;targetWindow&#39;,&#39;toolbars=0,location=0,status=0,menubar=0,scrollbars=1,resizable=1,width=640,height=320,left=200,top=200&#39;);return false;"><i class="cs c-icon-cresta-twitter"></i></a><span class="cresta-the-count" id="twitter-count">0</span></div><div class="sbutton crestaShadow googleplus-cresta-share float" id="googleplus-cresta" style="display: block;"><a rel="nofollow" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.phpzag.com%2Fcreate-barcode-generator-in-php%2F" title="Share to Google Plus" onclick="window.open(this.href,&#39;targetWindow&#39;,&#39;toolbars=0,location=0,status=0,menubar=0,scrollbars=1,resizable=1,width=640,height=320,left=200,top=200&#39;);return false;"><i class="cs c-icon-cresta-gplus"></i></a></div><div class="sbutton crestaShadow linkedin-cresta-share float" id="linkedin-cresta" style="display: block;"><a rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.phpzag.com%2Fcreate-barcode-generator-in-php%2F&amp;title=How+to+Build+Barcode+Generator+in+PHP&amp;source=https://www.phpzag.com/" title="Share to LinkedIn" onclick="window.open(this.href,&#39;targetWindow&#39;,&#39;toolbars=0,location=0,status=0,menubar=0,scrollbars=1,resizable=1,width=640,height=320,left=200,top=200&#39;);return false;"><i class="cs c-icon-cresta-linkedin"></i></a></div><div class="sbutton crestaShadow pinterest-cresta-share float" id="pinterest-cresta" style="display: block;"><a rel="nofollow" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3A%2F%2Fwww.phpzag.com%2Fcreate-barcode-generator-in-php%2F&amp;media=https://www.phpzag.com/wp-content/plugins/cresta-social-share-counter/images/no-image-found.png&amp;description=How+to+Build+Barcode+Generator+in+PHP" title="Share to Pinterest" onclick="window.open(this.href,&#39;targetWindow&#39;,&#39;toolbars=0,location=0,status=0,menubar=0,scrollbars=1,resizable=1,width=640,height=320,left=200,top=200&#39;);return false;"><i class="cs c-icon-cresta-pinterest"></i></a><span class="cresta-the-count" id="pinterest-count">0</span></div><div class="sbutton" id="total-shares" style="display: block;" data-pinterestshares="0" data-twittershares="0"><span class="cresta-the-total-count" id="total-count">0</span><span class="cresta-the-total-text">Shares</span></div><div style="clear: both;"></div></div>
+
+<!--www.crestaproject.com Social Button Floating End-->
+<script type="text/javascript">
+/* <![CDATA[ */
+var crestaShareSSS = {"FacebookCount":"nope"};
+var crestaPermalink = {"thePermalink":"https:\/\/www.phpzag.com\/create-barcode-generator-in-php\/","themorezero":"nomore","themorenumber":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/jquery.cresta-social-share-counter.js.download"></script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/jquery.cresta-social-effect.js.download"></script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/effect.min.js.download"></script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/effect-highlight.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var facebookSDK = {"appId":"117100935120196","lang":"en_US"};
+var __pandalockers = {"lang":[],"postId":"5559","visibility":[],"managedInitHook":""};
+/* ]]> */
+</script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/lockers.020307.min.js.download"></script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/skip-link-focus-fix.js.download"></script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/wp-embed.min.js.download"></script>
+<script async="async" type="text/javascript" defer="defer" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/form.js.download"></script>
+ 
+        <!--
+            Lockers: script checks if the locker assets were successfully loaded and creates lockers.
+            OnePress, bizpanda.com
+        -->
+        <script>
+            (function($){ if ( window.bizpanda && window.bizpanda.initLockers ) { window.bizpanda.initLockers(); } })(jQuery); (function($){ $(function(){ if ( window.bizpanda && window.bizpanda.initLockers ) return; $.getScript( "https://www.phpzag.com?b3ad0d7ee=2d2411", function() { if ( window.bizpanda && window.bizpanda.initLockers ) window.bizpanda.initLockers(); }); }); })(jQuery);
+        </script>
+         
+        
+<script>
+$(document).ready(function() {
+      $('code').addClass('prettyprint');
+        $.getScript( "https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js", function( data, textStatus, jqxhr ) {
+           //console.log("prettified");
+           });
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49752503-1', 'auto');
+  ga('send', 'pageview');
+
+</script><iframe data-aa="1157227" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/1157227.html" scrolling="no" style="width:728px; height:90px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
+
+<!-- Dynamic page generated in 0.558 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-05-03 14:51:29 -->
+
+<!-- super cache --><div id="fb-root"></div><script type="text/javascript" id="twitter-wjs" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/widgets.js.download"></script><iframe id="google_osd_static_frame_1997415295590" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(9).html"></iframe><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/widget_iframe.2e9f365dae390394eb8d923cba8c5b11.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe style="position:absolute;left:-999px;top:-999px;visibility:hidden" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(10).html"></iframe><iframe style="display: none; visibility: hidden;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(11).html"></iframe><div class="kmu68S3X371" style="opacity: 1; top: 10px;"><div class="gmt5D1Ka5Fg7c"><img class="B1288QCH" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource"><div class="o0lE0GNNv0Z78"><div class="AzXRt2Su7">×</div><div class="yu8Z7zXi06W0S">Renew Norton License Now</div><div class="XceeiWRe3">Your Norton Subscription Has Expired</div><div class="mkm3R63Cl">Norton</div></div></div><div class="S05Z2g45Z">Ads by BWPlayer</div></div><iframe style="display: none; visibility: hidden;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(12).html"></iframe><div style="position:absolute;top:-300px;left:-40px;width:1px;height:1px;"><iframe id="__l1__l" style="top:-300px;left:-400px;border:0px solid transparent !important;width:1px !important;height:1px !important;display:none;" seamless="" height="1px" border="0px" width="1px" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/sto.html"></iframe></div><script type="text/javascript" id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script></body><iframe id="google_shimpl" style="display: none;" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/saved_resource(13).html"></iframe><iframe id="google_esf" name="google_esf" src="./How to Build Barcode Generator in PHP – PHPZAG.COM_files/zrt_lookup.html" data-ad-client="ca-pub-4370378731098015" style="display: none;"></iframe></html>

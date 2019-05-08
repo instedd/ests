@@ -79,7 +79,14 @@ class Api extends REST_Controller {
           $initialDate=date('Y-m-d',strtotime($initialSampleDate));
           $finalDestinationDate=$this->input->post('finalDestinationDate');
           $finalDate=date('Y-m-d',strtotime($finalDestinationDate));
-          $sample_id=$this->input->post('barcode');
+          $sample_type=$this->input->post('sample_type');
+          $destination= $this->reverselookups_model->get_destinations($this->input->post('destination'));
+          $sample_id=rand(100000,999999);
+          if(isset($this->input->post('barcode'))){
+          $code=$this->input->post('barcode');
+          }else{
+           $code=$sample_id."-".preg_replace("/[^a-zA-Z0-9\s]/", "",date('Y-m-d'))."-".$id."-".$sample_type."-".$destination;
+          }
           $registed_sample = $this->useradministration_model->check_registered_sample($sample_id);
           if ($registed_sample > 0) {
             $this->response([
@@ -93,7 +100,7 @@ class Api extends REST_Controller {
               $health_facility=$this->reverselookups_model->get_health_facility($id);
               $data_to_insert = array(
                 'id' => NULL,
-                'sample_id' => $this->input->post('barcode'),
+                'sample_id' => $code,
                 'facility_code_id'=> $health_facility,
                 'disease_id'=> $this->reverselookups_model->get_disease($this->input->post('disease')),
                 'sample_type_id'=> $this->reverselookups_model->get_sample_type($this->input->post('sample_type')),
@@ -109,9 +116,10 @@ class Api extends REST_Controller {
             );
              $insert = $this->api_model->insert($data_to_insert);
              if($insert){
+              $this->set_barcode($code);
                 //send notification
-             $sample_id=$this->input->post('barcode');
-             $message='Sample id'." ".$sample_id." ".'was registered at'." ".$health_facility;
+            // $sample_id=$this->input->post('barcode');
+             $message='Sample id'." ".$code." ".'was registered at'." ".$health_facility;
              $notification=$this->notification->notify($message,$created_by,$this->session->userdata['user_full_name']);
                 //set the response and exit
                 $this->response([
@@ -131,6 +139,19 @@ class Api extends REST_Controller {
             ], REST_Controller::HTTP_FORBIDDEN); 
 }
 }
+ private function set_barcode($code)
+    {
+        //load library
+        $this->load->library('zend');
+        //load in folder Zend
+        $this->zend->load('Zend/Barcode');
+        $time=time();/*
+        //generate barcode
+       $file_name= substr($code, 0, 7);*/
+       $barcode=Zend_Barcode::factory('code128', 'image', array('text'=>$code,'barHeight' => 60), array());
+       $file=imagegif($barcode->draw(), './barcode/'.$code.'.gif');
+       return $file;
+    }
 // getting application data
 
 public function appData_get($id=''){

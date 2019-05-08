@@ -834,7 +834,7 @@ public function system_permissions()
     {
         $record_id = $this->input->post('record_id');
         $data_all_sub_menu_items = $this->Lookups_model->get_all_sub_menu_items($record_id);
-
+       var_dump($record_id); exit();
         $data = array(
             'record_id' => $record_id,
             'data_all_sub_menu_items' => $data_all_sub_menu_items,
@@ -978,8 +978,7 @@ public function system_permissions()
     {
         $record_id = $this->input->post('record_id');
         $all_roles = $this->Setups_model->get_all_system_role_details($record_id);
-        
-        $data = array(
+       $data = array(
             'record_id' => $record_id,
             'all_roles' => $all_roles,
             'boolean_response' => $this->Lookups_model->get_boolean_response()

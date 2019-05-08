@@ -1,0 +1,98 @@
+var data = {};
+data.page = window.location;
+data.referrer = document.referrer;
+var v = viewport();
+data.w = v.width;
+data.h = v.height;
+data.code = document.getElementById("WTS_TRACKING_SCRIPT").getAttribute('data-code');
+data.userAgent = navigator.userAgent;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.open("POST","https://wts.anexia-it.com/index/saveVisit",true);
+xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhr.onreadystatechange = function() {
+   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+       var input = document.createElement("input");
+        input.setAttribute("type","hidden");
+        input.setAttribute("data-wts_session_id",xhr.responseText);
+        input.setAttribute("id","wts_session_id_hidden_field");
+        document.body.appendChild(input);
+        
+
+        var mailXhr = new XMLHttpRequest();
+        mailXhr.open("GET","https://wts.anexia-it.com/api/getContact/"+xhr.responseText+"/"+btoa(window.location.href));
+        mailXhr.onreadystatechange = function() {
+            if (mailXhr.readyState === XMLHttpRequest.DONE && mailXhr.status === 200) {
+                var emailElements = document.getElementsByClassName("WTS_TRACKING_EMAIL_MARKER");
+                for (var i = 0;i<emailElements.length;i++) {   
+                    emailElements[i].innerHTML = JSON.parse(mailXhr.responseText).email;
+                    emailElements[i].setAttribute("href",'mailto://'+JSON.parse(mailXhr.responseText).email);
+                }
+
+                var firstnameElements = document.getElementsByClassName("WTS_TRACKING_FIRSTNAME_MARKER");
+                for (var i = 0;i<firstnameElements.length;i++) {
+                    firstnameElements[i].innerHTML = JSON.parse(mailXhr.responseText).firstname;
+                }
+
+                var lastnameElements = document.getElementsByClassName("WTS_TRACKING_LASTNAME_MARKER");
+                for (var i = 0;i<lastnameElements.length;i++) {
+                    lastnameElements[i].innerHTML = JSON.parse(mailXhr.responseText).lastname;
+                }
+
+                var pictureElements = document.getElementsByClassName("WTS_TRACKING_PICTURE_MARKER");
+                for (var i = 0;i<pictureElements.length;i++) {
+                    pictureElements[i].style.backgroundImage = "url('"+JSON.parse(mailXhr.responseText).picture+"')";
+                }
+
+                var fullnameElements = document.getElementsByClassName("WTS_TRACKING_FULLNAME_MARKER");
+                for (var i = 0;i<fullnameElements.length;i++) {
+                    fullnameElements[i].innerHTML = JSON.parse(mailXhr.responseText).firstname + " " + JSON.parse(mailXhr.responseText).lastname;
+                }
+            }
+        }
+        mailXhr.send();
+        
+
+        if (typeof(setSessions) === 'function')
+            setSessions();
+   }
+}
+xhr.send(serialize(data));
+
+function serialize(obj) {
+  var str = [];
+  for(var p in obj)
+    if (obj.hasOwnProperty(p)) {
+      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+    }
+  return str.join("&");
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function viewport()
+{
+    var e = window
+    , a = 'inner';
+    if ( !( 'innerWidth' in window ) )
+    {
+        a = 'client';
+        e = document.documentElement || document.body;
+    }
+    return { width : e[ a+'Width' ] , height : e[ a+'Height' ] }
+}

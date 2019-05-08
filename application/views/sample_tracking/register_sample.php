@@ -31,7 +31,7 @@
                         );
                         echo form_open("SampleTracking/registerSample", $attributes); ?>
                         <fieldset>
-                            <div class="col-md-6 form-group">
+                            <!-- <div class="col-md-6 form-group">
                                 <label class="control-label" for="barcode"> Sample Id</label>
                                 <input name="barcode" id="barcode"
                                        type="text" placeholder="Please scan barcode on sample"
@@ -40,7 +40,7 @@
                                 <span class="text-danger help-block small with-errors">
                                            
                                         </span>
-                            </div>
+                            </div> -->
 
                             <div class="col-md-6 form-group">
                                 <label class="control-label" for="facility_code">Health Facility</label>

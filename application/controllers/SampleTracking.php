@@ -106,9 +106,9 @@ class SampleTracking extends CI_Controller
           $initialDate=date('Y-m-d',strtotime($initialSampleDate));
           $finalDestinationDate=$this->input->post('finalDestinationDate');
           $finalDate=date('Y-m-d',strtotime($finalDestinationDate));
-          $sample_id=$this->input->post('barcode');
-          $registed_sample = $this->Useradministration_model->check_registered_sample($sample_id);
-        if ($registed_sample > 0) {
+		  $sample_id=rand(100000,999999);
+		  $registed_sample = $this->Useradministration_model->check_registered_sample($sample_id);
+         if ($registed_sample > 0) {
         $this->session->set_flashdata('message','The sample is already registerd');
          $fm_name = $this->session->userdata['user_org_name'];
          $register_sample='register_sample';
@@ -132,12 +132,19 @@ class SampleTracking extends CI_Controller
         $this->load->view('sample_tracking/register_sample', $data);
         $this->load->view('footer', $data);
         }else{
+              $destination= $this->reverselookups_model->get_destinations($this->input->post('destination'));
               $id=$this->input->post('facility_code');
+              $sample_type=$this->input->post('sample_type');
               $district=$this->reverselookups_model->get_district_code($id);
               $health_facility=$this->reverselookups_model->get_health_facility($id);
+              $code=$sample_id."-".preg_replace("/[^a-zA-Z0-9\s]/", "",date('Y-m-d'))."-".$id."-".$sample_type."-".$destination;
+             /*$file_name= substr($code, 0, 7);*/
+             //$stringParts = explode("WR", $code);
+             //var_dump($stringParts);
+             //exit();
              $data_to_insert = array(
                 'id' => NULL,
-                'sample_id' => $this->input->post('barcode'),
+                'sample_id' => $code,
                 'facility_code_id'=> $health_facility,
                 'disease_id'=> $this->reverselookups_model->get_disease($this->input->post('disease')),
                 'sample_type_id'=> $this->reverselookups_model->get_sample_type($this->input->post('sample_type')),
@@ -150,17 +157,32 @@ class SampleTracking extends CI_Controller
                 'created_at' => date('Y-m-d H:i:s'),
                 'transporter'=> $this->input->post('transporter'),
                 'file_path'=> $inputFileName,
+                //'barcode_path'=>'barcode/'.$code.'.gif'
             );
              $this->update_insert('tbl_registered_samples', $data_to_insert);
-             $sample_id=$this->input->post('barcode');
-             $message='Sample id'." ".$sample_id." ".'was registered at'." ".$health_facility;
+             //$sample_id=$this->input->post('barcode');
+             $message='Sample id'." ".$code." ".'was registered at'." ".$health_facility;
              $notification=$this->notification->notify($message,$created_by, $registered_by="");
         $this->session->set_flashdata('sample_add_success_msg', '
                                     <div class="col-sm-offset-1 col-sm-10 alert alert-success text-center fadeIn" style="color:#0C2B2D;">
                                     <p>Sample successfully added</p></div>
                                     ');
+        $this->set_barcode($code);
         redirect('' . $current_class . '/registered_samples');
     }
+    }
+    private function set_barcode($code)
+    {
+        //load library
+        $this->load->library('zend');
+        //load in folder Zend
+        $this->zend->load('Zend/Barcode');
+        $time=time();/*
+        //generate barcode
+       $file_name= substr($code, 0, 7);*/
+       $barcode=Zend_Barcode::factory('code128', 'image', array('text'=>$code,'barHeight' => 60), array());
+       $file=imagegif($barcode->draw(), './barcode/'.$code.'.gif');
+       return $file;
     }
 public function registered_samples()
     {

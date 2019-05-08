@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<!-- saved from url=(0161)file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums.html -->
+<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>[RESOLVED] mysqli with prepare, bind_param and arrays for an insert class - PHPBuilder Forums</title>
+    <meta name="description" content="The energetic, vibrant community of developers that are passionate and dedicated to sharing and learning more about PHP.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="theme-color" content="#60bf0a">
+    
+          <link rel="stylesheet" href="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/forum-f77d3b2b.css">
+    
+          <link href="https://board.phpbuilder.com/assets/favicon-khe81s1e.ico" rel="shortcut icon">
+    <!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111682725-1');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/board.phpbuilder.com\/","name":"PHPBuilder Forums","alternateName":"PHPBuilder.com Forums","potentialAction":{"@type":"SearchAction","target":"https:\/\/board.phpbuilder.com\/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/board.phpbuilder.com\/","@id":"#organization","name":"board.phpbuilder.com Forums","logo":"https:\/\/board.phpbuilder.com\/forum\/assets\/logo-main.png"}</script>
+
+<!-- Native Tag -->
+<script src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/native.js.download"></script>
+<link rel="stylesheet" type="text/css" href="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/native.css">
+<script>
+  _native.init("CKYD52JL", {
+    targetClass: 'native-js'
+  });
+</script><script src="./[RESOLVED] mysqli with prepare, bind_param and arrays for an insert class - PHPBuilder Forums_files/CKYD52JL.json"></script><script src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/CKYD52JL.json"></script>
+
+<!-- Open Graph -->
+<meta property="og:image" content="https://board.phpbuilder.com/assets/logo-main.png">
+    <link rel="stylesheet" href="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/css">
+  <style type="text/css"></style><style></style><script></script><link type="text/css" rel="stylesheet" href="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/default.min.css"><script type="text/javascript" async="" src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/highlight.min.js.download"></script><style></style><style type="text/css"></style><style></style><script></script><style></style></head>
+
+  <body class="no-touch"><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-info cc-theme-block cc-bottom cc-color-override--338990927 " style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">By using PHPBuilder.com you accept our cookies and agree to our <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://phpbuilder.com/privacy/" target="_blank">privacy policy.</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">OK!</a></div><!--googleon: all--></div><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-info cc-theme-block cc-bottom cc-color-override--338990927 " style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">By using PHPBuilder.com you accept our cookies and agree to our <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://phpbuilder.com/privacy/" target="_blank">privacy policy.</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">OK!</a></div><!--googleon: all--></div>
+    <div class="native-js"></div>
+
+<script src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/cookieconsent.min.js.download"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#edeff5",
+      "text": "#444444"
+    },
+    "button": {
+      "background": "#444444",
+      "text": "#ffffff"
+    }
+  },
+  "content": {
+    "message": "By using PHPBuilder.com you accept our cookies and agree to our",
+	"dismiss": "OK!",
+    "link": "privacy policy.",
+    "href": "https://phpbuilder.com/privacy/"
+  }
+})});
+</script>
+
+<div id="app" class="App App--discussion affix scrolled">
+
+  <div id="app-navigation" class="App-navigation"><div class="Navigation ButtonGroup App-backControl"><a class="Button Navigation-back Button--icon hasIcon" href="https://board.phpbuilder.com/" title="Back to discussion list" active="false" type="button"><i class="icon fa fa-chevron-left Button-icon"></i></a></div></div>
+
+  <div id="drawer" class="App-drawer">
+
+    <header id="header" class="App-header">
+      <div id="header-navigation" class="Header-navigation"><div class="Navigation ButtonGroup "><a class="Button Navigation-back Button--icon hasIcon" href="https://board.phpbuilder.com/" title="Back to discussion list" active="false" type="button"><i class="icon fa fa-chevron-left Button-icon"></i></a></div></div>
+      <div class="container">
+        <h1 class="Header-title">
+          <a href="https://board.phpbuilder.com/" id="home-link">
+                                      <img src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/logo-2amzebql.png" alt="PHPBuilder Forums" class="Header-logo">
+                      </a>
+        </h1>
+        <div id="header-primary" class="Header-primary"><ul class="Header-controls"></ul></div>
+        <div id="header-secondary" class="Header-secondary"><ul class="Header-controls"><li class="item-search"><div class="Search "><div class="Search-input"><input class="FormControl" type="search" placeholder="Search Forum"></div><ul class="Dropdown-menu Search-results"></ul></div></li><li class="item-signUp"><button class="Button Button--link" type="button" title="Sign Up"><span class="Button-label">Sign Up</span></button></li><li class="item-logIn"><button class="Button Button--link" type="button" title="Log In"><span class="Button-label">Log In</span></button></li></ul></div>
+      </div>
+    </header>
+
+  </div>
+
+  <main class="App-content">
+    <div id="content"><div class="DiscussionPage"><div class="DiscussionPage-discussion"><header class="Hero DiscussionHero DiscussionHero--colored" style="background-color: rgb(92, 180, 13);"><div class="container"><ul class="DiscussionHero-items"><li class="item-tags"><span class="TagsLabel "><a class="TagLabel  colored" title="Discussion and technical help covering all areas of PHP development." href="https://board.phpbuilder.com/t/php-help" style="color: rgb(92, 180, 13); background-color: rgb(92, 180, 13);"><span class="TagLabel-text">PHP Help</span></a><a class="TagLabel  colored" title="Conversation and technical support regarding PHP and SQL." href="https://board.phpbuilder.com/t/php-databases" style="color: rgb(96, 191, 10); background-color: rgb(96, 191, 10);"><span class="TagLabel-text">PHP Databases</span></a></span></li><li class="item-title"><h2 class="DiscussionHero-title">[RESOLVED] mysqli with prepare, bind_param and arrays for an insert class</h2></li></ul></div></header><div class="container"><nav class="DiscussionPage-nav"><ul><li class="item-share-social"><button class="Button Button-icon Button--share hasIcon" type="button" title="Share this post"><i class="icon fa fa-share-alt Button-icon"></i><span class="Button-label">Share this post</span></button></li><li class="item-controls"><div class="ButtonGroup Dropdown dropdown App-primaryControl Dropdown--split itemCount1"><button class=" SplitDropdown-button Button Button--primary hasIcon" type="button" title="Log In to Reply"><i class="icon fa fa-reply Button-icon"></i><span class="Button-label">Log In to Reply</span></button><button class="Dropdown-toggle Button Button--icon Button--primary" data-toggle="dropdown"><i class="icon fa fa-ellipsis-v Button-icon"></i><i class="icon fa fa-caret-down Button-caret"></i></button><ul class="Dropdown-menu dropdown-menu  Dropdown-menu--right"><li class="item-reply"><button class=" hasIcon" type="button" title="Log In to Reply"><i class="icon fa fa-reply Button-icon"></i><span class="Button-label">Log In to Reply</span></button></li></ul></div></li><li class="item-scrubber"><div class="PostStreamScrubber Dropdown App-titleControl"><button class="Button Dropdown-toggle" data-toggle="dropdown"><span class="Scrubber-index">9</span> of <span class="Scrubber-count">9</span> posts <i class="icon fa fa-sort "></i></button><div class="Dropdown-menu dropdown-menu"><div class="Scrubber"><a class="Scrubber-first"><i class="icon fa fa-angle-double-up "></i> Original Post</a><div class="Scrubber-scrollbar" style="max-height: 107.6px; cursor: pointer; user-select: none;"><div class="Scrubber-before" style="height: 61.1722%;"></div><div class="Scrubber-handle" style="cursor: move; height: 32.0513%;"><div class="Scrubber-bar"></div><div class="Scrubber-info"><strong><span class="Scrubber-index">9</span> of <span class="Scrubber-count">9</span> posts</strong><span class="Scrubber-description">April 2019</span></div></div><div class="Scrubber-after" style="height: 6.77653%;"></div><div class="Scrubber-unread" style="top: 100%; height: 0%;"> unread</div></div><a class="Scrubber-last"><i class="icon fa fa-angle-double-down "></i> Now</a></div></div></div></li></ul></nav><div class="DiscussionPage-stream"><div class="PostStream"><div class="PostStream-item" data-index="0" data-time="2013-01-24T03:52:00.000Z" data-number="1" data-id="11022981" data-type="comment" style="display: block;"><article class="Post undefined CommentPost"><div><header class="Post-header"><ul><li class="item-user"><div class="PostUser"><h3><a href="https://board.phpbuilder.com/u/kender"><span class="Avatar PostUser-avatar" style="background: rgb(198, 160, 229);">K</span> <span class="username">kender</span></a></h3><ul class="PostUser-badges badges"></ul></div></li><li class="item-meta"><div class="Dropdown PostMeta"><a class="Dropdown-toggle" data-toggle="dropdown"><time pubdate="true" datetime="2013-01-24T06:52:00+03:00" title="Thursday, January 24, 2013 6:52 AM" data-humantime="true">Jan '13</time></a><div class="Dropdown-menu dropdown-menu"><span class="PostMeta-number">Post #1</span> <span class="PostMeta-time"><time pubdate="true" datetime="2013-01-24T06:52:00+03:00">Thursday, January 24, 2013 6:52 AM</time></span> <span class="PostMeta-ip"></span><input class="FormControl PostMeta-permalink"></div></div></li></ul></header><div class="Post-body"><p>Hopefully the title says it all</p>
+
+<p>I am trying to find a class that will perform a mysqli based insert with prepare &amp; bind_param<br>
+actually, a class or combination of that would perform INSERT, DELETE, SELECT and UPDATE...</p>
+
+<p>I have searched php.net (several functions that seem to be incomplete) and general google searches (lmgtfy is not necessary - unless you can word the query better than I have been able to)</p>
+
+<p>I would like to use bind_param for the type specifications (ensuring I get the results I want), not just a generic real_query INSERT statement</p>
+
+<p>The functionality is there, just not perfect, and if i could limit it to a string value i would be fine, but with an array of indefinite length it makes it harder (darn near impossible from my testing)</p>
+
+<p>any help, even a point in the right direction, would be appreciated!</p>
+
+<p>Thanks in advance</p></div><aside class="Post-actions"><ul><li class="item-reply"><button class="Button Button--link" type="button" title="Reply"><span class="Button-label">Reply</span></button></li></ul></aside><footer class="Post-footer"><ul></ul></footer></div></article><div class="Post-quoteButtonContainer"></div></div><div class="PostStream-item" data-index="1" data-time="2013-01-24T04:18:16.000Z" data-number="2" data-id="11022983" data-type="comment" style="display: block;"><article class="Post undefined CommentPost"><div><header class="Post-header"><ul><li class="item-user"><div class="PostUser"><h3><a href="https://board.phpbuilder.com/u/Weedpacket"><img class="Avatar PostUser-avatar" src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/09zd1blak7gpmglq.png"> <span class="username">Weedpacket</span></a></h3><ul class="PostUser-badges badges"><li class="item-group4"><span class="Badge Badge--group--4 " title="" style="background-color: rgb(128, 52, 158);" data-original-title="Mod"><i class="icon fa fa-bolt Badge-icon"></i></span></li></ul></div></li><li class="item-meta"><div class="Dropdown PostMeta"><a class="Dropdown-toggle" data-toggle="dropdown"><time pubdate="true" datetime="2013-01-24T07:18:16+03:00" title="Thursday, January 24, 2013 7:18 AM" data-humantime="true">Jan '13</time></a><div class="Dropdown-menu dropdown-menu"><span class="PostMeta-number">Post #2</span> <span class="PostMeta-time"><time pubdate="true" datetime="2013-01-24T07:18:16+03:00">Thursday, January 24, 2013 7:18 AM</time></span> <span class="PostMeta-ip"></span><input class="FormControl PostMeta-permalink"></div></div></li></ul></header><div class="Post-body"><p>It's not clear what you want - of course, if you could specify what you want precisely enough you'd be able to write it yourself: all the machinery is provided (it's called programming). For example [man]mysqli_stmt_bind_param[/man] allows you to specify the types of supplied values.</p></div><aside class="Post-actions"><ul><li class="item-reply"><button class="Button Button--link" type="button" title="Reply"><span class="Button-label">Reply</span></button></li></ul></aside><footer class="Post-footer"><ul></ul></footer></div></article><div class="Post-quoteButtonContainer"></div></div><div class="PostStream-item" data-index="2" data-time="2013-01-24T04:35:37.000Z" data-number="3" data-id="11022989" data-type="comment" style="display: block;"><article class="Post undefined CommentPost"><div><header class="Post-header"><ul><li class="item-user"><div class="PostUser"><h3><a href="https://board.phpbuilder.com/u/kender"><span class="Avatar PostUser-avatar" style="background: rgb(198, 160, 229);">K</span> <span class="username">kender</span></a></h3><ul class="PostUser-badges badges"></ul></div></li><li class="item-meta"><div class="Dropdown PostMeta"><a class="Dropdown-toggle" data-toggle="dropdown"><time pubdate="true" datetime="2013-01-24T07:35:37+03:00" title="Thursday, January 24, 2013 7:35 AM" data-humantime="true">Jan '13</time></a><div class="Dropdown-menu dropdown-menu"><span class="PostMeta-number">Post #3</span> <span class="PostMeta-time"><time pubdate="true" datetime="2013-01-24T07:35:37+03:00">Thursday, January 24, 2013 7:35 AM</time></span> <span class="PostMeta-ip"></span><input class="FormControl PostMeta-permalink"></div></div></li></ul></header><div class="Post-body"><p>I am looking for a function that will connect to a database, perform an insert with an array as the input values.. something like</p>
+
+<p>forgive the poor quality of the example, I'm headed to bed and wanted to get this out before i went.. but you should get the idea of what i want.. (which is the functiont that actually does the work with an array of variable sizes not a set value</p>
+<pre data-s9e-livepreview-postprocess="if(&#39;undefined&#39;!==typeof hljs)hljs._hb(this)"><code class="language-php hljs">$link = <span class="hljs-keyword">new</span> mysqli(<span class="hljs-string">'db_server'</span>, <span class="hljs-string">'db_user'</span>, <span class="hljs-string">'db_pass'</span>, <span class="hljs-string">'db_name'</span>);
+$param_array = <span class="hljs-keyword">array</span>(<span class="hljs-string">"i"</span>,<span class="hljs-string">"s"</span>,<span class="hljs-string">"s"</span>,<span class="hljs-string">"s"</span>);
+$insert_array = <span class="hljs-keyword">array</span>(<span class="hljs-string">"Id"</span> =&gt; <span class="hljs-string">"1"</span>, <span class="hljs-string">"first_name"</span> =&gt; <span class="hljs-string">"John"</span>, <span class="hljs-string">"last_name"</span> =&gt; <span class="hljs-string">"Smith"</span>, <span class="hljs-string">"state"</span> =&gt; <span class="hljs-string">"New York"</span>);
+insert_query_function($insert_array,$param_array,$link)
+$sql = <span class="hljs-string">"INSERT INTO db_table ($arr1) VALUES($arr_of_question_marks_matching_length_of_arr1)"</span>;
+</code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script></div><aside class="Post-actions"><ul><li class="item-reply"><button class="Button Button--link" type="button" title="Reply"><span class="Button-label">Reply</span></button></li></ul></aside><footer class="Post-footer"><ul></ul></footer></div></article><div class="Post-quoteButtonContainer"></div></div><div class="PostStream-item" data-index="3" data-time="2013-01-24T06:07:06.000Z" data-number="4" data-id="11022991" data-type="comment" style="display: block;"><article class="Post undefined CommentPost"><div><header class="Post-header"><ul><li class="item-user"><div class="PostUser"><h3><a href="https://board.phpbuilder.com/u/Weedpacket"><img class="Avatar PostUser-avatar" src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/09zd1blak7gpmglq.png"> <span class="username">Weedpacket</span></a></h3><ul class="PostUser-badges badges"><li class="item-group4"><span class="Badge Badge--group--4 " title="" style="background-color: rgb(128, 52, 158);" data-original-title="Mod"><i class="icon fa fa-bolt Badge-icon"></i></span></li></ul></div></li><li class="item-meta"><div class="Dropdown PostMeta"><a class="Dropdown-toggle" data-toggle="dropdown"><time pubdate="true" datetime="2013-01-24T09:07:06+03:00" title="Thursday, January 24, 2013 9:07 AM" data-humantime="true">Jan '13</time></a><div class="Dropdown-menu dropdown-menu"><span class="PostMeta-number">Post #4</span> <span class="PostMeta-time"><time pubdate="true" datetime="2013-01-24T09:07:06+03:00">Thursday, January 24, 2013 9:07 AM</time></span> <span class="PostMeta-ip"></span><input class="FormControl PostMeta-permalink"></div></div></li></ul></header><div class="Post-body"><p>So ... which bit is the part causing you problems? [font=monospace]$arr1 = join(',', array_keys($insert_array));[/font]? [font=monospace]$arr_of_question_marks_matching_length_of_arr1 = join(',', array_fill(0, count($arr1), '?'));[/font]?</p></div><aside class="Post-actions"><ul><li class="item-reply"><button class="Button Button--link" type="button" title="Reply"><span class="Button-label">Reply</span></button></li></ul></aside><footer class="Post-footer"><ul></ul></footer></div></article><div class="Post-quoteButtonContainer"></div></div><div class="PostStream-item" data-index="4" data-time="2013-01-24T11:58:28.000Z" data-number="5" data-id="11023015" data-type="comment" style="display: block;"><article class="Post undefined CommentPost"><div><header class="Post-header"><ul><li class="item-user"><div class="PostUser"><h3><a href="https://board.phpbuilder.com/u/kender"><span class="Avatar PostUser-avatar" style="background: rgb(198, 160, 229);">K</span> <span class="username">kender</span></a></h3><ul class="PostUser-badges badges"></ul></div></li><li class="item-meta"><div class="Dropdown PostMeta"><a class="Dropdown-toggle" data-toggle="dropdown"><time pubdate="true" datetime="2013-01-24T14:58:28+03:00" title="Thursday, January 24, 2013 2:58 PM" data-humantime="true">Jan '13</time></a><div class="Dropdown-menu dropdown-menu"><span class="PostMeta-number">Post #5</span> <span class="PostMeta-time"><time pubdate="true" datetime="2013-01-24T14:58:28+03:00">Thursday, January 24, 2013 2:58 PM</time></span> <span class="PostMeta-ip"></span><input class="FormControl PostMeta-permalink"></div></div></li></ul></header><div class="Post-body"><p>the bind_param section, assigning variables, then defining them below it<br>
+the documentation on the function doesn't give me enough info to be able to figure that part out</p></div><aside class="Post-actions"><ul><li class="item-reply"><button class="Button Button--link" type="button" title="Reply"><span class="Button-label">Reply</span></button></li></ul></aside><footer class="Post-footer"><ul></ul></footer></div></article><div class="Post-quoteButtonContainer"></div></div><div class="PostStream-item" data-index="5" data-time="2013-01-24T12:35:41.000Z" data-number="6" data-id="11023017" data-type="comment" style="display: block;"><article class="Post undefined CommentPost"><div><header class="Post-header"><ul><li class="item-user"><div class="PostUser"><h3><a href="https://board.phpbuilder.com/u/Weedpacket"><img class="Avatar PostUser-avatar" src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/09zd1blak7gpmglq.png"> <span class="username">Weedpacket</span></a></h3><ul class="PostUser-badges badges"><li class="item-group4"><span class="Badge Badge--group--4 " title="" style="background-color: rgb(128, 52, 158);" data-original-title="Mod"><i class="icon fa fa-bolt Badge-icon"></i></span></li></ul></div></li><li class="item-meta"><div class="Dropdown PostMeta"><a class="Dropdown-toggle" data-toggle="dropdown"><time pubdate="true" datetime="2013-01-24T15:35:41+03:00" title="Thursday, January 24, 2013 3:35 PM" data-humantime="true">Jan '13</time></a><div class="Dropdown-menu dropdown-menu"><span class="PostMeta-number">Post #6</span> <span class="PostMeta-time"><time pubdate="true" datetime="2013-01-24T15:35:41+03:00">Thursday, January 24, 2013 3:35 PM</time></span> <span class="PostMeta-ip"></span><input class="FormControl PostMeta-permalink"></div></div></li></ul></header><div class="Post-body"><p>You mean like with [man]call_user_func_array[/man], as used for example with the class given in <a href="http://www.php.net/manual/en/mysqli-stmt.bind-param.php#109256" target="_blank" rel="nofollow noreferrer">http://www.php.net/manual/en/mysqli-stmt.bind-param.php#109256</a> or <a href="http://www.php.net/manual/en/mysqli-stmt.bind-param.php#89171" target="_blank" rel="nofollow noreferrer">http://www.php.net/manual/en/mysqli-stmt.bind-param.php#89171</a> then?</p></div><aside class="Post-actions"><ul><li class="item-reply"><button class="Button Button--link" type="button" title="Reply"><span class="Button-label">Reply</span></button></li></ul></aside><footer class="Post-footer"><ul></ul></footer></div></article><div class="Post-quoteButtonContainer"></div></div><div class="PostStream-item" data-index="6" data-time="2013-01-24T15:56:29.000Z" data-number="7" data-id="11023019" data-type="comment" style="display: block;"><article class="Post undefined CommentPost"><div><header class="Post-header"><ul><li class="item-user"><div class="PostUser"><h3><a href="https://board.phpbuilder.com/u/kender"><span class="Avatar PostUser-avatar" style="background: rgb(198, 160, 229);">K</span> <span class="username">kender</span></a></h3><ul class="PostUser-badges badges"></ul></div></li><li class="item-meta"><div class="Dropdown PostMeta"><a class="Dropdown-toggle" data-toggle="dropdown"><time pubdate="true" datetime="2013-01-24T18:56:29+03:00" title="Thursday, January 24, 2013 6:56 PM" data-humantime="true">Jan '13</time></a><div class="Dropdown-menu dropdown-menu"><span class="PostMeta-number">Post #7</span> <span class="PostMeta-time"><time pubdate="true" datetime="2013-01-24T18:56:29+03:00">Thursday, January 24, 2013 6:56 PM</time></span> <span class="PostMeta-ip"></span><input class="FormControl PostMeta-permalink"></div></div></li></ul></header><div class="Post-body"><p>something like this</p>
+
+<pre data-s9e-livepreview-postprocess="if(&#39;undefined&#39;!==typeof hljs)hljs._hb(this)"><code class="language-php hljs"><span class="hljs-meta">&lt;?php</span>
+$table 	= <span class="hljs-string">'user'</span>;
+$typeDef 	= <span class="hljs-keyword">array</span>(<span class="hljs-string">"s"</span>,<span class="hljs-string">"s"</span>);
+$data 	= <span class="hljs-keyword">array</span>(<span class="hljs-string">"first_name"</span>=&gt;<span class="hljs-string">"Jim"</span>, <span class="hljs-string">"last_name"</span>=&gt;<span class="hljs-string">"Jones"</span>);
+$insert 	= sql_insert($data, $typeDef, $table);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sql_insert</span> <span class="hljs-params">($data, $typeDef, $table)</span> </span>{
+	$mysqli = mysqli_con();
+	$data = cleanseArray($data);
+	$keys = array_keys($data);
+	$vals = array_values($data);
+
+$key = <span class="hljs-string">''</span>;
+$val = <span class="hljs-string">''</span>;
+$type = <span class="hljs-string">''</span>;
+$params = <span class="hljs-string">''</span>;
+<span class="hljs-keyword">foreach</span>($keys <span class="hljs-keyword">AS</span> $key_value) {
+	<span class="hljs-keyword">if</span>($key == <span class="hljs-string">''</span>) {
+		$key = $key_value;
+		$val = <span class="hljs-string">'?'</span>;
+	} <span class="hljs-keyword">else</span> {
+		$key .= <span class="hljs-string">', '</span>.$key_value;
+		$val .= <span class="hljs-string">', ?'</span>;
+	}
+}
+<span class="hljs-keyword">foreach</span>($typeDef <span class="hljs-keyword">AS</span> $value) {
+	$type .= $value;
+}
+<span class="hljs-keyword">if</span> ($stmt = $mysqli-&gt;prepare(<span class="hljs-string">"INSERT INTO $table ($key) values ($val)"</span>)) {
+
+	<span class="hljs-comment">/* Set our params */</span>
+	<span class="hljs-keyword">for</span>($i = <span class="hljs-number">0</span>; $i &lt; count($vals); $i++) {
+		$param_key[$i] = $vals[$i];
+		<span class="hljs-keyword">if</span>($params == <span class="hljs-string">''</span>) {
+			$params = <span class="hljs-string">"$$keys[$i]"</span>;
+		} <span class="hljs-keyword">else</span> {
+			$params .= <span class="hljs-string">", $$keys[$i]"</span>;
+		}
+	}
+
+	<span class="hljs-comment">/* Bind our params */</span>
+	$stmt-&gt;bind_param($type, $params);
+
+	<span class="hljs-comment">/* Execute the prepared Statement */</span>
+	$stmt-&gt;execute();
+
+	<span class="hljs-comment">/* Echo results */</span>
+	<span class="hljs-keyword">echo</span> <span class="hljs-string">"Success"</span>;
+
+	<span class="hljs-comment">/* Close the statement */</span>
+	$stmt-&gt;close(); 
+} <span class="hljs-keyword">else</span> {
+	<span class="hljs-comment">/* Error */</span>
+	printf(<span class="hljs-string">"Prepared Statement Error: %s\n"</span>, $mysqli-&gt;error);
+}
+}
+<span class="hljs-meta">?&gt;</span></code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+
+<p>gives this error</p>
+<pre data-s9e-livepreview-postprocess="if(&#39;undefined&#39;!==typeof hljs)hljs._hb(this)"><code class="hljs javascript">arning: mysqli_stmt::bind_param() [<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">'mysqli-stmt.bind-param'</span>&gt;</span>mysqli-stmt.bind-param<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>]: <span class="hljs-built_in">Number</span> <span class="hljs-keyword">of</span> elements <span class="hljs-keyword">in</span> type definition string doesn<span class="hljs-string">'t match number of bind variables in</span></code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script></div><aside class="Post-actions"><ul><li class="item-reply"><button class="Button Button--link" type="button" title="Reply"><span class="Button-label">Reply</span></button></li></ul></aside><footer class="Post-footer"><ul></ul></footer></div></article><div class="Post-quoteButtonContainer"></div></div><div class="PostStream-item" data-index="7" data-time="2013-01-24T19:44:07.000Z" data-number="8" data-id="11023035" data-type="comment" style="display: block;"><article class="Post undefined CommentPost"><div><header class="Post-header"><ul><li class="item-user"><div class="PostUser"><h3><a href="https://board.phpbuilder.com/u/kender"><span class="Avatar PostUser-avatar" style="background: rgb(198, 160, 229);">K</span> <span class="username">kender</span></a></h3><ul class="PostUser-badges badges"></ul></div></li><li class="item-meta"><div class="Dropdown PostMeta"><a class="Dropdown-toggle" data-toggle="dropdown"><time pubdate="true" datetime="2013-01-24T22:44:07+03:00" title="Thursday, January 24, 2013 10:44 PM" data-humantime="true">Jan '13</time></a><div class="Dropdown-menu dropdown-menu"><span class="PostMeta-number">Post #8</span> <span class="PostMeta-time"><time pubdate="true" datetime="2013-01-24T22:44:07+03:00">Thursday, January 24, 2013 10:44 PM</time></span> <span class="PostMeta-ip"></span><input class="FormControl PostMeta-permalink"></div></div></li></ul></header><div class="Post-body"><p>fixed it, here is the function if you would like to look at it<br>
+Any improvements or suggestions would be welcome!</p>
+
+<p>Thanks</p>
+
+<pre data-s9e-livepreview-postprocess="if(&#39;undefined&#39;!==typeof hljs)hljs._hb(this)"><code class="language-php hljs"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bindParameters</span><span class="hljs-params">(&amp;$statement, &amp;$params)</span> </span>{
+  $args   = <span class="hljs-keyword">array</span>();
+  $args[] = implode(<span class="hljs-string">''</span>, array_values($params));
+
+  <span class="hljs-keyword">foreach</span> ($params <span class="hljs-keyword">as</span> $paramName =&gt; $paramType) {
+    $args[] = &amp;$params[$paramName];
+    $params[$paramName] = <span class="hljs-keyword">null</span>;
+  }
+
+  call_user_func_array(<span class="hljs-keyword">array</span>(&amp;$statement, <span class="hljs-string">'bind_param'</span>), $args);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sql_insert</span> <span class="hljs-params">($data, $typeDef, $table)</span> </span>{
+	$mysqli = mysqli_con();
+	$keys = array_keys($data);
+	$vals = array_values($data);
+
+$key = <span class="hljs-string">''</span>;
+$val = <span class="hljs-string">''</span>;
+$type = <span class="hljs-string">''</span>;
+<span class="hljs-keyword">foreach</span>($keys <span class="hljs-keyword">AS</span> $key_value) {
+	<span class="hljs-keyword">if</span>($key == <span class="hljs-string">''</span>) {
+		$key = $key_value;
+		$val = <span class="hljs-string">'?'</span>;
+	} <span class="hljs-keyword">else</span> {
+		$key .= <span class="hljs-string">', '</span>.$key_value;
+		$val .= <span class="hljs-string">', ?'</span>;
+	}
+}
+
+<span class="hljs-keyword">if</span> ($stmt = $mysqli-&gt;prepare(<span class="hljs-string">"INSERT INTO $table ($key) values ($val)"</span>)) {
+
+	<span class="hljs-keyword">for</span>($i = <span class="hljs-number">0</span>; $i &lt; count($typeDef); $i++) {
+		<span class="hljs-comment">/* Set params value for binding */</span>
+		$params[$keys[$i]] = $typeDef[$i];
+	}
+
+	<span class="hljs-comment">/* Bind our params */</span>
+	bindParameters($stmt, $params);
+
+	<span class="hljs-keyword">for</span>($i = <span class="hljs-number">0</span>; $i &lt; count($typeDef); $i++) {
+		<span class="hljs-comment">/* Set params for query */</span>
+		$params[$keys[$i]] = $vals[$i];
+	}
+
+	<span class="hljs-comment">/* Execute the prepared Statement */</span>
+	<span class="hljs-keyword">if</span>(!$stmt-&gt;execute() ) { printf(<span class="hljs-string">"Execute Statement Error: %s\n"</span>, $stmt-&gt;error); <span class="hljs-keyword">exit</span>; }
+
+	<span class="hljs-comment">/* Echo results */</span>
+	$insert = <span class="hljs-string">"Success"</span>;
+
+	<span class="hljs-comment">/* Close the statement */</span>
+	$stmt-&gt;close(); 
+} <span class="hljs-keyword">else</span> {
+	<span class="hljs-comment">/* Error */</span>
+	$insert = <span class="hljs-string">"Failure"</span>;
+}
+<span class="hljs-keyword">return</span> $insert;
+}
+<span class="hljs-meta">?&gt;</span></code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script></div><aside class="Post-actions"><ul><li class="item-reply"><button class="Button Button--link" type="button" title="Reply"><span class="Button-label">Reply</span></button></li></ul></aside><footer class="Post-footer"><ul></ul></footer></div></article><div class="Post-quoteButtonContainer"></div></div><div class="PostStream-item" data-index="8" data-time="2019-04-19T05:16:30.000Z" data-number="9" data-id="11093612" data-type="comment" style="display: block;"><div class="PostStream-timeGap"><span>6 years later</span></div><article class="Post undefined CommentPost"><div><header class="Post-header"><ul><li class="item-user"><div class="PostUser"><h3><a href="https://board.phpbuilder.com/u/PepoSkateSnow"><span class="Avatar PostUser-avatar" style="background: rgb(173, 160, 229);">P</span> <span class="username">PepoSkateSnow</span></a></h3><ul class="PostUser-badges badges"></ul></div></li><li class="item-meta"><div class="Dropdown PostMeta"><a class="Dropdown-toggle" data-toggle="dropdown"><time pubdate="true" datetime="2019-04-19T08:16:30+03:00" title="Friday, April 19, 2019 8:16 AM" data-humantime="true">13 days ago</time></a><div class="Dropdown-menu dropdown-menu"><span class="PostMeta-number">Post #9</span> <span class="PostMeta-time"><time pubdate="true" datetime="2019-04-19T08:16:30+03:00">Friday, April 19, 2019 8:16 AM</time></span> <span class="PostMeta-ip"></span><input class="FormControl PostMeta-permalink"></div></div></li></ul></header><div class="Post-body"><p>Hi Kender,</p>
+
+<p>Your functions was a great help for me!</p>   
+
+<p>I have added an improvement to the sql_insert function that makes it easier to add the types to bindparam, since within the same foreach we can evaluate the field type and add the value to the array $ typeDef</p>
+
+<pre data-s9e-livepreview-postprocess="if(&#39;undefined&#39;!==typeof hljs)hljs._hb(this)"><code class="hljs php">        <span class="hljs-keyword">foreach</span> ($data <span class="hljs-keyword">AS</span> $k=&gt;$value) {
+                  
+            <span class="hljs-keyword">if</span>($key == <span class="hljs-string">''</span>) {
+
+                $key = $k;
+                $val = <span class="hljs-string">'?'</span>;
+
+            } <span class="hljs-keyword">else</span> {
+
+                $key .= <span class="hljs-string">', '</span>.$k;
+                $val .= <span class="hljs-string">', ?'</span>;
+                        
+            }
+
+            $typeDef[]= is_int($value)==<span class="hljs-keyword">true</span> ? <span class="hljs-string">'i'</span> : <span class="hljs-string">'s'</span>;
+                    
+        } </code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+
+
+<p>Finally the script was like this</p>
+
+
+<p>function sql_insert ($data, $typeDef, $table) {<br>
+	$mysqli = mysqli_con();<br>
+	$keys = array_keys($data);<br>
+	$vals = array_values($data);</p>
+
+<p>$key = '';<br>
+$val = '';<br>
+$type = '';<br>
+            foreach ($data AS $k=&gt;$value) {</p>
+                      <br>
+<pre data-s9e-livepreview-postprocess="if(&#39;undefined&#39;!==typeof hljs)hljs._hb(this)"><code class="hljs bash">            <span class="hljs-keyword">if</span>(<span class="hljs-variable">$key</span> == <span class="hljs-string">''</span>) {
+
+                <span class="hljs-variable">$key</span> = <span class="hljs-variable">$k</span>;
+                <span class="hljs-variable">$val</span> = <span class="hljs-string">'?'</span>;
+
+            } <span class="hljs-keyword">else</span> {
+
+                <span class="hljs-variable">$key</span> .= <span class="hljs-string">', '</span>.<span class="hljs-variable">$k</span>;
+                <span class="hljs-variable">$val</span> .= <span class="hljs-string">', ?'</span>;
+                        
+            }
+
+            <span class="hljs-variable">$typeDef</span>[]= is_int(<span class="hljs-variable">$value</span>)==<span class="hljs-literal">true</span> ? <span class="hljs-string">'i'</span> : <span class="hljs-string">'s'</span>;
+             
+        } </code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+
+<p>if ($stmt = $mysqli-&gt;prepare("INSERT INTO $table ($key) values ($val)")) {</p>
+
+<pre data-s9e-livepreview-postprocess="if(&#39;undefined&#39;!==typeof hljs)hljs._hb(this)"><code class="hljs php"><span class="hljs-keyword">for</span>($i = <span class="hljs-number">0</span>; $i &lt; count($typeDef); $i++) {
+	<span class="hljs-comment">/* Set params value for binding */</span>
+	$params[$keys[$i]] = $typeDef[$i];
+}
+
+<span class="hljs-comment">/* Bind our params */</span>
+bindParameters($stmt, $params);
+
+<span class="hljs-keyword">for</span>($i = <span class="hljs-number">0</span>; $i &lt; count($typeDef); $i++) {
+	<span class="hljs-comment">/* Set params for query */</span>
+	$params[$keys[$i]] = $vals[$i];
+}
+
+<span class="hljs-comment">/* Execute the prepared Statement */</span>
+<span class="hljs-keyword">if</span>(!$stmt-&gt;execute() ) { printf(<span class="hljs-string">"Execute Statement Error: %s\n"</span>, $stmt-&gt;error); <span class="hljs-keyword">exit</span>; }
+
+<span class="hljs-comment">/* Echo results */</span>
+$insert = <span class="hljs-string">"Success"</span>;
+
+<span class="hljs-comment">/* Close the statement */</span>
+$stmt-&gt;close(); </code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+<p>} else {<br>
+	/<em> Error </em>/<br>
+	$insert = "Failure";<br>
+}<br>
+return $insert;<br>
+}<br>
+?&gt;</p>
+
+
+<p>Thanks a lot for your help!</p></div><aside class="Post-actions"><ul><li class="item-reply"><button class="Button Button--link" type="button" title="Reply"><span class="Button-label">Reply</span></button></li></ul></aside><footer class="Post-footer"><ul></ul></footer></div></article><div class="Post-quoteButtonContainer"></div></div><div class="PostStream-item"><article class="Post ReplyPlaceholder"><header class="Post-header"><span class="Avatar PostUser-avatar"></span> Write a Reply...</header></article></div></div></div></div></div></div></div>
+
+    <div id="flarum-loading" style="display: none;">
+  Loading...
+</div>
+
+  <noscript>
+    <div class="Alert">
+      <div class="container">
+        This site is best viewed in a modern browser with JavaScript enabled.
+      </div>
+    </div>
+
+    <div class="container">
+    <h2>[RESOLVED] mysqli with prepare, bind_param and arrays for an insert class</h2>
+
+    <div>
+                    <div>
+                                <h3>kender</h3>
+                <div class="Post-body">
+                    <p>Hopefully the title says it all</p>
+
+<p>I am trying to find a class that will perform a mysqli based insert with prepare &amp; bind_param<br>
+actually, a class or combination of that would perform INSERT, DELETE, SELECT and UPDATE...</p>
+
+<p>I have searched php.net (several functions that seem to be incomplete) and general google searches (lmgtfy is not necessary - unless you can word the query better than I have been able to)</p>
+
+<p>I would like to use bind_param for the type specifications (ensuring I get the results I want), not just a generic real_query INSERT statement</p>
+
+<p>The functionality is there, just not perfect, and if i could limit it to a string value i would be fine, but with an array of indefinite length it makes it harder (darn near impossible from my testing)</p>
+
+<p>any help, even a point in the right direction, would be appreciated!</p>
+
+<p>Thanks in advance</p>
+                </div>
+            </div>
+
+            <hr>
+                    <div>
+                                <h3>Weedpacket</h3>
+                <div class="Post-body">
+                    <p>It's not clear what you want - of course, if you could specify what you want precisely enough you'd be able to write it yourself: all the machinery is provided (it's called programming). For example [man]mysqli_stmt_bind_param[/man] allows you to specify the types of supplied values.</p>
+                </div>
+            </div>
+
+            <hr>
+                    <div>
+                                <h3>kender</h3>
+                <div class="Post-body">
+                    <p>I am looking for a function that will connect to a database, perform an insert with an array as the input values.. something like</p>
+
+<p>forgive the poor quality of the example, I'm headed to bed and wanted to get this out before i went.. but you should get the idea of what i want.. (which is the functiont that actually does the work with an array of variable sizes not a set value</p>
+<pre data-hljs="" data-s9e-livepreview-postprocess="if('undefined'!==typeof hljs)hljs._hb(this)"><code class="language-php">$link = new mysqli('db_server', 'db_user', 'db_pass', 'db_name');
+$param_array = array("i","s","s","s");
+$insert_array = array("Id" =&gt; "1", "first_name" =&gt; "John", "last_name" =&gt; "Smith", "state" =&gt; "New York");
+insert_query_function($insert_array,$param_array,$link)
+$sql = "INSERT INTO db_table ($arr1) VALUES($arr_of_question_marks_matching_length_of_arr1)";
+</code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+                </div>
+            </div>
+
+            <hr>
+                    <div>
+                                <h3>Weedpacket</h3>
+                <div class="Post-body">
+                    <p>So ... which bit is the part causing you problems? [font=monospace]$arr1 = join(',', array_keys($insert_array));[/font]? [font=monospace]$arr_of_question_marks_matching_length_of_arr1 = join(',', array_fill(0, count($arr1), '?'));[/font]?</p>
+                </div>
+            </div>
+
+            <hr>
+                    <div>
+                                <h3>kender</h3>
+                <div class="Post-body">
+                    <p>the bind_param section, assigning variables, then defining them below it<br>
+the documentation on the function doesn't give me enough info to be able to figure that part out</p>
+                </div>
+            </div>
+
+            <hr>
+                    <div>
+                                <h3>Weedpacket</h3>
+                <div class="Post-body">
+                    <p>You mean like with [man]call_user_func_array[/man], as used for example with the class given in <a href="http://www.php.net/manual/en/mysqli-stmt.bind-param.php#109256" target="_blank" rel="nofollow noreferrer">http://www.php.net/manual/en/mysqli-stmt.bind-param.php#109256</a> or <a href="http://www.php.net/manual/en/mysqli-stmt.bind-param.php#89171" target="_blank" rel="nofollow noreferrer">http://www.php.net/manual/en/mysqli-stmt.bind-param.php#89171</a> then?</p>
+                </div>
+            </div>
+
+            <hr>
+                    <div>
+                                <h3>kender</h3>
+                <div class="Post-body">
+                    <p>something like this</p>
+
+<pre data-hljs="" data-s9e-livepreview-postprocess="if('undefined'!==typeof hljs)hljs._hb(this)"><code class="language-php">&lt;?php
+$table 	= 'user';
+$typeDef 	= array("s","s");
+$data 	= array("first_name"=&gt;"Jim", "last_name"=&gt;"Jones");
+$insert 	= sql_insert($data, $typeDef, $table);
+
+function sql_insert ($data, $typeDef, $table) {
+	$mysqli = mysqli_con();
+	$data = cleanseArray($data);
+	$keys = array_keys($data);
+	$vals = array_values($data);
+
+$key = '';
+$val = '';
+$type = '';
+$params = '';
+foreach($keys AS $key_value) {
+	if($key == '') {
+		$key = $key_value;
+		$val = '?';
+	} else {
+		$key .= ', '.$key_value;
+		$val .= ', ?';
+	}
+}
+foreach($typeDef AS $value) {
+	$type .= $value;
+}
+if ($stmt = $mysqli-&gt;prepare("INSERT INTO $table ($key) values ($val)")) {
+
+	/* Set our params */
+	for($i = 0; $i &lt; count($vals); $i++) {
+		$param_key[$i] = $vals[$i];
+		if($params == '') {
+			$params = "$$keys[$i]";
+		} else {
+			$params .= ", $$keys[$i]";
+		}
+	}
+
+	/* Bind our params */
+	$stmt-&gt;bind_param($type, $params);
+
+	/* Execute the prepared Statement */
+	$stmt-&gt;execute();
+
+	/* Echo results */
+	echo "Success";
+
+	/* Close the statement */
+	$stmt-&gt;close(); 
+} else {
+	/* Error */
+	printf("Prepared Statement Error: %s\n", $mysqli-&gt;error);
+}
+}
+?&gt;</code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+
+<p>gives this error</p>
+<pre data-hljs="" data-s9e-livepreview-postprocess="if('undefined'!==typeof hljs)hljs._hb(this)"><code>arning: mysqli_stmt::bind_param() [&lt;a href='mysqli-stmt.bind-param'&gt;mysqli-stmt.bind-param&lt;/a&gt;]: Number of elements in type definition string doesn't match number of bind variables in</code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+                </div>
+            </div>
+
+            <hr>
+                    <div>
+                                <h3>kender</h3>
+                <div class="Post-body">
+                    <p>fixed it, here is the function if you would like to look at it<br>
+Any improvements or suggestions would be welcome!</p>
+
+<p>Thanks</p>
+
+<pre data-hljs="" data-s9e-livepreview-postprocess="if('undefined'!==typeof hljs)hljs._hb(this)"><code class="language-php">&lt;?php
+function bindParameters(&amp;$statement, &amp;$params) {
+  $args   = array();
+  $args[] = implode('', array_values($params));
+
+  foreach ($params as $paramName =&gt; $paramType) {
+    $args[] = &amp;$params[$paramName];
+    $params[$paramName] = null;
+  }
+
+  call_user_func_array(array(&amp;$statement, 'bind_param'), $args);
+}
+
+function sql_insert ($data, $typeDef, $table) {
+	$mysqli = mysqli_con();
+	$keys = array_keys($data);
+	$vals = array_values($data);
+
+$key = '';
+$val = '';
+$type = '';
+foreach($keys AS $key_value) {
+	if($key == '') {
+		$key = $key_value;
+		$val = '?';
+	} else {
+		$key .= ', '.$key_value;
+		$val .= ', ?';
+	}
+}
+
+if ($stmt = $mysqli-&gt;prepare("INSERT INTO $table ($key) values ($val)")) {
+
+	for($i = 0; $i &lt; count($typeDef); $i++) {
+		/* Set params value for binding */
+		$params[$keys[$i]] = $typeDef[$i];
+	}
+
+	/* Bind our params */
+	bindParameters($stmt, $params);
+
+	for($i = 0; $i &lt; count($typeDef); $i++) {
+		/* Set params for query */
+		$params[$keys[$i]] = $vals[$i];
+	}
+
+	/* Execute the prepared Statement */
+	if(!$stmt-&gt;execute() ) { printf("Execute Statement Error: %s\n", $stmt-&gt;error); exit; }
+
+	/* Echo results */
+	$insert = "Success";
+
+	/* Close the statement */
+	$stmt-&gt;close(); 
+} else {
+	/* Error */
+	$insert = "Failure";
+}
+return $insert;
+}
+?&gt;</code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+                </div>
+            </div>
+
+            <hr>
+                    <div>
+                                <h3>PepoSkateSnow</h3>
+                <div class="Post-body">
+                    <p>Hi Kender,</p>
+
+<p>Your functions was a great help for me!</p>   
+
+<p>I have added an improvement to the sql_insert function that makes it easier to add the types to bindparam, since within the same foreach we can evaluate the field type and add the value to the array $ typeDef</p>
+
+<pre data-hljs="" data-s9e-livepreview-postprocess="if('undefined'!==typeof hljs)hljs._hb(this)"><code>        foreach ($data AS $k=&gt;$value) {
+                  
+            if($key == '') {
+
+                $key = $k;
+                $val = '?';
+
+            } else {
+
+                $key .= ', '.$k;
+                $val .= ', ?';
+                        
+            }
+
+            $typeDef[]= is_int($value)==true ? 'i' : 's';
+                    
+        } </code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+
+
+<p>Finally the script was like this</p>
+
+
+<p>function sql_insert ($data, $typeDef, $table) {<br>
+	$mysqli = mysqli_con();<br>
+	$keys = array_keys($data);<br>
+	$vals = array_values($data);</p>
+
+<p>$key = '';<br>
+$val = '';<br>
+$type = '';<br>
+            foreach ($data AS $k=&gt;$value) {</p>
+                      <br>
+<pre data-hljs="" data-s9e-livepreview-postprocess="if('undefined'!==typeof hljs)hljs._hb(this)"><code>            if($key == '') {
+
+                $key = $k;
+                $val = '?';
+
+            } else {
+
+                $key .= ', '.$k;
+                $val .= ', ?';
+                        
+            }
+
+            $typeDef[]= is_int($value)==true ? 'i' : 's';
+             
+        } </code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+
+<p>if ($stmt = $mysqli-&gt;prepare("INSERT INTO $table ($key) values ($val)")) {</p>
+
+<pre data-hljs="" data-s9e-livepreview-postprocess="if('undefined'!==typeof hljs)hljs._hb(this)"><code>for($i = 0; $i &lt; count($typeDef); $i++) {
+	/* Set params value for binding */
+	$params[$keys[$i]] = $typeDef[$i];
+}
+
+/* Bind our params */
+bindParameters($stmt, $params);
+
+for($i = 0; $i &lt; count($typeDef); $i++) {
+	/* Set params for query */
+	$params[$keys[$i]] = $vals[$i];
+}
+
+/* Execute the prepared Statement */
+if(!$stmt-&gt;execute() ) { printf("Execute Statement Error: %s\n", $stmt-&gt;error); exit; }
+
+/* Echo results */
+$insert = "Success";
+
+/* Close the statement */
+$stmt-&gt;close(); </code></pre><script>if("undefined"!==typeof hljs)hljs._ha();else if("undefined"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName("head")[0],e=document.createElement("link");e.type="text/css";e.rel="stylesheet";e.href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css";a.appendChild(e);e=document.createElement("script");e.type="text/javascript";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute("data-hljs");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll("pre[data-hljs]"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js";a.appendChild(e)}</script>
+<p>} else {<br>
+	/<em> Error </em>/<br>
+	$insert = "Failure";<br>
+}<br>
+return $insert;<br>
+}<br>
+?&gt;</p>
+
+
+<p>Thanks a lot for your help!</p>
+                </div>
+            </div>
+
+            <hr>
+            </div>
+
+    
+    </div>
+
+  </noscript>
+
+
+    <div class="App-composer">
+      <div class="container">
+        <div id="composer"><div class="Composer " style="display: none; bottom: -300px; height: 300px;"><div class="Composer-handle" style="cursor: row-resize;"></div><ul class="Composer-controls"><li class="item-minimize App-backControl"><button title="Minimize" itemclassname="App-backControl" class="Button Button--icon Button--link hasIcon" type="button"><i class="icon fa fa-minus minimize Button-icon"></i></button></li><li class="item-fullScreen"><button title="Full Screen" class="Button Button--icon Button--link hasIcon" type="button"><i class="icon fa fa-expand Button-icon"></i></button></li><li class="item-close"><button title="Close" class="Button Button--icon Button--link hasIcon" type="button"><i class="icon fa fa-times Button-icon"></i></button></li></ul><div class="Composer-content"></div></div></div>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+
+    <div id="modal"><div class="ModalManager modal fade"></div></div>
+    <div id="alerts"><div class="AlertManager"></div></div>
+
+          <script>
+        document.getElementById('flarum-loading').style.display = 'block';
+      </script>
+
+              <script src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/forum-a0f6e638.js.download"></script>
+              <script src="file:///C:/Users/Hostalite/Downloads/[RESOLVED]%20mysqli%20with%20prepare,%20bind_param%20and%20arrays%20for%20an%20insert%20class%20-%20PHPBuilder%20Forums_files/forum-en-df77f08d.js.download"></script>
+      
+      <script>
+        document.getElementById('flarum-loading').style.display = 'none';
+                  var app = System.get('flarum/app').default;
+          var modules = ["locale","Davis\/CustomFooter\/main","Davis\/SecureHttps\/main","Davis\/SocialProfile\/main","vingle\/share\/social\/main","flarum\/akismet\/main","flarum\/approval\/main","flarum\/emoji\/main","flagrow\/byobu\/main","flagrow\/canned-messages\/main","flagrow\/impersonate\/main","flagrow\/upload\/main","flarum\/flags\/main","flarum\/likes\/main","flarum\/lock\/main","flarum\/mentions\/main","flarum\/sticky\/main","flarum\/subscriptions\/main","flarum\/suspend\/main","flarum\/tags\/main"];
+
+          for (var i in modules) {
+            var module = System.get(modules[i]);
+            if (module.default) module.default(app);
+          }
+
+          app.boot({"resources":[{"type":"forums","id":"1","attributes":{"title":"PHPBuilder Forums","description":"The energetic, vibrant community of developers that are passionate and dedicated to sharing and learning more about PHP.","showLanguageSelector":true,"baseUrl":"https:\/\/board.phpbuilder.com","basePath":"","debug":true,"apiUrl":"https:\/\/board.phpbuilder.com\/api","welcomeTitle":"Welcome to the PHPBuilder Forums!","welcomeMessage":"","themePrimaryColor":"#60bf0a","themeSecondaryColor":"#444444","logoUrl":"https:\/\/board.phpbuilder.com\/assets\/logo-2amzebql.png","faviconUrl":"https:\/\/board.phpbuilder.com\/assets\/favicon-khe81s1e.ico","headerHtml":"<div class=\"native-js\">\n  <a href=\"#native_link#\" class=\"native-flex container\">\n    <style>\n      .native-js {\n        background: linear-gradient(-30deg, #native_bg_color#E5, #native_bg_color#E5 45%, #native_bg_color# 45%) #fff;border-bottom:1px solid #ededed;\n      }\n\n      .native-details {\n        color: #native_color# !important;\n      }\n\n      .native-details:hover {\n        color: #native_color_hover# !important;\n      }\n\n      .native-cta {\n        color: #native_cta_color#;\n        background-color: #native_cta_bg_color#;\n      }\n\n      .native-cta:hover {\n        color: #native_cta_color_hover;\n        background-color: #native_cta_bg_color_hover#;\n      }\n    <\/style>\n    <div class=\"native-main\">\n      <img class=\"native-img\" src=\"#native_logo#\">\n      <div class=\"native-details\">\n        <span class=\"native-company\">#native_company#<\/span>\n        <span class=\"native-desc\">#native_desc#<\/span>\n      <\/div>\n    <\/div>\n    <span class=\"native-cta\">#native_cta#<\/span>\n  <\/a>\n<\/div>\n\n<script src=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/cookieconsent2\/3.0.3\/cookieconsent.min.js\"><\/script>\n<script>\nwindow.addEventListener(\"load\", function(){\nwindow.cookieconsent.initialise({\n  \"palette\": {\n    \"popup\": {\n      \"background\": \"#edeff5\",\n      \"text\": \"#444444\"\n    },\n    \"button\": {\n      \"background\": \"#444444\",\n      \"text\": \"#ffffff\"\n    }\n  },\n  \"content\": {\n    \"message\": \"By using PHPBuilder.com you accept our cookies and agree to our\",\n\t\"dismiss\": \"OK!\",\n    \"link\": \"privacy policy.\",\n    \"href\": \"https:\/\/phpbuilder.com\/privacy\/\"\n  }\n})});\n<\/script>","allowSignUp":true,"defaultRoute":"\/all","canViewDiscussions":true,"canStartDiscussion":false,"canViewUserList":false,"davis-customfooter.customtext":"\u00a9 2018 PHPBuilder.com<span style=\"padding:0 10px; color:#ccc;font-weight:400\">|<\/span><a href=\"http:\/\/phpbuilder.com\/about\/\">About<\/a><span style=\"padding:0 10px; color:#ccc;font-weight:400\">|<\/span><a href=\"http:\/\/phpbuilder.com\/community-rules\/\">Community Rules<\/a><span style=\"padding:0 10px; color:#ccc;font-weight:400\">|<\/span><a href=\"http:\/\/phpbuilder.com\/privacy\/\">Privacy<\/a><span style=\"padding:0 10px; color:#ccc;font-weight:400\">|<\/span><a href=\"http:\/\/phpbuilder.com\/\">Articles<\/a>","davis-customfooter.heightofheader":"40","davis-customfooter.jsofheader":"","davis-customfooter.cssofheader":"","canStartPrivateDiscussion":false,"canStartPrivateDiscussionWithUsers":false,"canStartPrivateDiscussionWithGroups":false,"canUpload":false,"canDownload":false,"canViewFlags":false,"guidelinesUrl":null,"davis-securehttps.proxy":"1","davis.socialprofile.test":null,"minPrimaryTags":"1","maxPrimaryTags":"1","minSecondaryTags":"0","maxSecondaryTags":"3","vingle.share.social":"Share this post"},"relationships":{"groups":{"data":[{"type":"groups","id":"1"},{"type":"groups","id":"2"},{"type":"groups","id":"3"},{"type":"groups","id":"4"},{"type":"groups","id":"5"}]},"flagrow-canned-messages":{"data":[{"type":"flagrow-canned-message","id":"1"}]},"tags":{"data":[{"type":"tags","id":"2"},{"type":"tags","id":"3"},{"type":"tags","id":"4"},{"type":"tags","id":"5"},{"type":"tags","id":"6"},{"type":"tags","id":"7"},{"type":"tags","id":"8"},{"type":"tags","id":"9"},{"type":"tags","id":"10"},{"type":"tags","id":"11"},{"type":"tags","id":"12"},{"type":"tags","id":"13"},{"type":"tags","id":"18"},{"type":"tags","id":"19"},{"type":"tags","id":"20"},{"type":"tags","id":"22"},{"type":"tags","id":"24"},{"type":"tags","id":"25"},{"type":"tags","id":"26"},{"type":"tags","id":"28"},{"type":"tags","id":"31"}]}}},{"type":"groups","id":"1","attributes":{"nameSingular":"Admin","namePlural":"Admins","color":"#B72A2A","icon":"wrench","vingle.share.social":"Share this post"}},{"type":"groups","id":"2","attributes":{"nameSingular":"Guest","namePlural":"Guests","color":null,"icon":null,"vingle.share.social":"Share this post"}},{"type":"groups","id":"3","attributes":{"nameSingular":"Member","namePlural":"Members","color":null,"icon":null,"vingle.share.social":"Share this post"}},{"type":"groups","id":"4","attributes":{"nameSingular":"Mod","namePlural":"Mods","color":"#80349E","icon":"bolt","vingle.share.social":"Share this post"}},{"type":"groups","id":"5","attributes":{"nameSingular":"Assistant Admin","namePlural":"Assistant Admins","color":null,"icon":null,"vingle.share.social":"Share this post"}},{"type":"flagrow-canned-message","id":"1","attributes":{"key":"attachments-removed-during-migration","locale":null,"style":null,"content":"The attachments of this post were removed during the platform migration in 2018","vingle.share.social":"Share this post"}},{"type":"tags","id":"2","attributes":{"name":"PHP Help","description":"Discussion and technical help covering all areas of PHP development.","slug":"php-help","color":"#5CB40D","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":228369,"position":0,"defaultSort":null,"isChild":false,"isHidden":false,"lastTime":"2019-04-29T13:47:06+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402324"}}}},{"type":"tags","id":"3","attributes":{"name":"General Help","description":"Discussion and support for general help questions pertaining to PHP development.","slug":"general-help","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":55917,"position":0,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-04-18T23:00:19+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402316"}},"parent":{"data":{"type":"tags","id":"2"}}}},{"type":"tags","id":"4","attributes":{"name":"PHP Newbies","description":"Discussion and technical support for those who are just getting started with PHP.","slug":"php-newbies","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":31678,"position":5,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-04-18T23:00:19+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402316"}},"parent":{"data":{"type":"tags","id":"2"}}}},{"type":"tags","id":"5","attributes":{"name":"Discussion","description":"","slug":"discussion","color":"#5CB40D","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":5900,"position":1,"defaultSort":null,"isChild":false,"isHidden":false,"lastTime":"2019-04-26T07:14:27+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402306"}}}},{"type":"tags","id":"6","attributes":{"name":"Feedback","description":"You can speak directly with the PHPBuilder staff here.","slug":"feedback","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":542,"position":2,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-03-18T10:29:42+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402277"}},"parent":{"data":{"type":"tags","id":"5"}}}},{"type":"tags","id":"7","attributes":{"name":"PHP Databases","description":"Conversation and technical support regarding PHP and SQL.","slug":"php-databases","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":35902,"position":4,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-04-10T01:42:47+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402304"}},"parent":{"data":{"type":"tags","id":"2"}}}},{"type":"tags","id":"8","attributes":{"name":"Installing PHP","description":"Conversation and technical support regarding installing and upgrading PHP.","slug":"installing-php","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":8783,"position":1,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-04-05T01:00:27+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10339599"}},"parent":{"data":{"type":"tags","id":"2"}}}},{"type":"tags","id":"9","attributes":{"name":"Misc Help","description":"","slug":"d4b5e5fc-ef3f-4b53-abf1-98ac5d1ff5d1","color":"#5CB40D","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":6524,"position":2,"defaultSort":null,"isChild":false,"isHidden":false,"lastTime":"2019-04-29T16:47:22+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402323"}}}},{"type":"tags","id":"10","attributes":{"name":"Windows Help","description":"Help with the Windows operating system","slug":"windows-help","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":3224,"position":2,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-04-08T14:33:04+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402280"}},"parent":{"data":{"type":"tags","id":"9"}}}},{"type":"tags","id":"11","attributes":{"name":"PHP Coding","description":"Discussion and technical support covering all areas of PHP coding.","slug":"php-coding","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":94396,"position":3,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-04-22T08:54:21+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402319"}},"parent":{"data":{"type":"tags","id":"2"}}}},{"type":"tags","id":"12","attributes":{"name":"Echo Lounge","description":"General Chat and Introductions. A catch-all for any topic.","slug":"echo-lounge","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":4988,"position":1,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-04-26T07:14:27+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402306"}},"parent":{"data":{"type":"tags","id":"5"}}}},{"type":"tags","id":"13","attributes":{"name":"Linux\/Unix Help","description":"Help with server-side Linux and Unix issues.","slug":"linux-unix-help","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":894,"position":1,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2018-10-03T18:45:37+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402145"}},"parent":{"data":{"type":"tags","id":"9"}}}},{"type":"tags","id":"18","attributes":{"name":"PHP Tools","description":"","slug":"php-tools","color":"#5CB40D","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":568,"position":3,"defaultSort":null,"isChild":false,"isHidden":false,"lastTime":"2019-02-14T04:20:58+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402248"}}}},{"type":"tags","id":"19","attributes":{"name":"Zend Studio","description":"Discussion and technical support for Zend Studio users.","slug":"zend-studio","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":120,"position":2,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2016-12-21T08:35:58+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10394073"}},"parent":{"data":{"type":"tags","id":"18"}}}},{"type":"tags","id":"20","attributes":{"name":"Dreamweaver","description":"Discussion and technical support for Adobe Dreamweaver users.","slug":"dreamweaver","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":226,"position":0,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2017-10-15T09:56:06+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10393997"}},"parent":{"data":{"type":"tags","id":"18"}}}},{"type":"tags","id":"22","attributes":{"name":"Misc Tools","description":"Discussion and technical support regarding tools that don't have their own forum.","slug":"misc-tools","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":219,"position":1,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2018-12-02T08:58:27+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402178"}},"parent":{"data":{"type":"tags","id":"18"}}}},{"type":"tags","id":"24","attributes":{"name":"Mods' Bods","description":"We're living creatures and can prove it! Stop in and meet the glue that holds our community together.","slug":"mods-bods","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":26,"position":3,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2018-11-12T16:28:37+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10246989"}},"parent":{"data":{"type":"tags","id":"5"}}}},{"type":"tags","id":"25","attributes":{"name":"PHP Code Critique","description":"Having someone critique your code is always a great way to hone the skills. Stop in and post your code to see what your peers may have done differently.","slug":"php-code-critique","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":893,"position":2,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-03-21T21:42:06+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402274"}},"parent":{"data":{"type":"tags","id":"2"}}}},{"type":"tags","id":"26","attributes":{"name":"Upgrading PHP","description":"Discussion and technical support covering issues concerning PHP version upgrades and future releases.","slug":"upgrading-php","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":805,"position":6,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-02-18T22:22:23+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10344146"}},"parent":{"data":{"type":"tags","id":"2"}}}},{"type":"tags","id":"28","attributes":{"name":"ClientSide Technologies","description":"Discuss HTML\/CSS\/Javascript, and any other client-side technologies, here.","slug":"7bfc3f5f-bce0-47a5-bca4-becd5cebb41f","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":2267,"position":0,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-03-30T02:56:18+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402293"}},"parent":{"data":{"type":"tags","id":"9"}}}},{"type":"tags","id":"31","attributes":{"name":"Available positions","description":"You can post positions pertaining to PHP here. All other job types will be removed.","slug":"df2e2ba2-7ffd-45e8-b942-c1856c832c5d","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":128,"position":0,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-04-03T13:18:19+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"},"relationships":{"lastDiscussion":{"data":{"type":"discussions","id":"10402297"}},"parent":{"data":{"type":"tags","id":"5"}}}},{"type":"discussions","id":"10402324","attributes":{"title":"Data output ","slug":"data-output","commentsCount":3,"participantsCount":2,"startTime":"2019-04-28T20:00:17+00:00","lastTime":"2019-04-29T22:19:59+00:00","lastPostNumber":3,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402316","attributes":{"title":"Utilize webhook using PHP Webhook Listener","slug":"utilize-webhook-using-php-webhook-listener","commentsCount":5,"participantsCount":4,"startTime":"2019-04-18T14:58:15+00:00","lastTime":"2019-04-19T17:53:53+00:00","lastPostNumber":5,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402306","attributes":{"title":"Black hole","slug":"black-hole","commentsCount":10,"participantsCount":4,"startTime":"2019-04-11T14:01:38+00:00","lastTime":"2019-04-26T10:30:04+00:00","lastPostNumber":10,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402277","attributes":{"title":"iTunes Error 0xe8000015","slug":"itunes-error-0xe8000015","commentsCount":0,"participantsCount":1,"startTime":"2019-03-18T10:29:42+00:00","lastTime":"2019-03-18T10:29:42+00:00","lastPostNumber":1,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isHidden":true,"hideTime":"2019-03-19T23:29:07+00:00","isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402304","attributes":{"title":"i have problem please help me i can't update my database  ","slug":"i-have-problem-please-help-me-i-can-t-update-my-database","commentsCount":4,"participantsCount":4,"startTime":"2019-04-09T17:51:08+00:00","lastTime":"2019-04-10T15:00:05+00:00","lastPostNumber":4,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10339599","attributes":{"title":"[RESOLVED] Your PHP installation appears to be missing the MySQL which is required for WordPress","slug":"resolved-your-php-installation-appears-to-be-missing-the-mysql-which-is-required-for-wordpress","commentsCount":4,"participantsCount":3,"startTime":"2007-04-29T17:01:11+00:00","lastTime":"2019-04-05T05:54:20+00:00","lastPostNumber":4,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402323","attributes":{"title":"SQL - Exclude customer who bought certain products.","slug":"sql-exclude-customer-who-bought-certain-products","commentsCount":5,"participantsCount":2,"startTime":"2019-04-26T20:43:44+00:00","lastTime":"2019-04-29T20:01:59+00:00","lastPostNumber":5,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402280","attributes":{"title":"Good music player for Windows 10 with fluent design?","slug":"good-music-player-for-windows-10-with-fluent-design","commentsCount":2,"participantsCount":3,"startTime":"2019-03-20T06:02:59+00:00","lastTime":"2019-04-03T16:41:36+00:00","lastPostNumber":2,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402319","attributes":{"title":"phpquery Issue ","slug":"phpquery-issue","commentsCount":4,"participantsCount":3,"startTime":"2019-04-21T23:48:44+00:00","lastTime":"2019-04-22T14:26:50+00:00","lastPostNumber":4,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402145","attributes":{"title":"mystery performance bottleneck","slug":"mystery-performance-bottleneck","commentsCount":12,"participantsCount":2,"startTime":"2018-09-20T21:24:53+00:00","lastTime":"2018-10-17T20:15:21+00:00","lastPostNumber":12,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402248","attributes":{"title":"SMProxy,A MySQL database connection pool based on MySQL protocol and Swoole.","slug":"smproxy-a-mysql-database-connection-pool-based-on-mysql-protocol-and-swoole","commentsCount":1,"participantsCount":1,"startTime":"2019-02-14T04:20:58+00:00","lastTime":"2019-02-14T04:20:58+00:00","lastPostNumber":1,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10394073","attributes":{"title":"Android apps with Zend studio","slug":"android-apps-with-zend-studio","commentsCount":3,"participantsCount":3,"startTime":"2015-09-19T08:50:06+00:00","lastTime":"2016-12-21T08:35:58+00:00","lastPostNumber":3,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10393997","attributes":{"title":"When will dreamweaver update to mysqli","slug":"when-will-dreamweaver-update-to-mysqli","commentsCount":17,"participantsCount":8,"startTime":"2015-08-21T18:46:31+00:00","lastTime":"2017-10-15T09:56:06+00:00","lastPostNumber":17,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402178","attributes":{"title":" A Telegram Channel to share great PHP resources","slug":"a-telegram-channel-to-share-great-php-resources","commentsCount":0,"participantsCount":1,"startTime":"2018-12-02T08:58:27+00:00","lastTime":"2018-12-02T08:58:27+00:00","lastPostNumber":1,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10246989","attributes":{"title":"Something About Elizabeth","slug":"something-about-elizabeth","commentsCount":44,"participantsCount":12,"startTime":"2003-07-11T18:49:09+00:00","lastTime":"2018-11-13T12:24:38+00:00","lastPostNumber":45,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":true,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402274","attributes":{"title":"Sanity check?","slug":"sanity-check","commentsCount":9,"participantsCount":5,"startTime":"2019-03-12T23:24:34+00:00","lastTime":"2019-03-21T23:05:24+00:00","lastPostNumber":9,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10344146","attributes":{"title":"[RESOLVED] Try\/Catch with File_get_contents","slug":"resolved-trycatch-with-file-get-contents","commentsCount":10,"participantsCount":7,"startTime":"2007-08-16T18:47:40+00:00","lastTime":"2019-02-20T18:16:37+00:00","lastPostNumber":10,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402293","attributes":{"title":"Multiple CSS files, or One to rule them all?","slug":"multiple-css-files-or-one-to-rule-them-all","commentsCount":6,"participantsCount":4,"startTime":"2019-03-29T20:56:10+00:00","lastTime":"2019-04-01T18:15:20+00:00","lastPostNumber":6,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}},{"type":"discussions","id":"10402297","attributes":{"title":"Cheapest dedicated hosting","slug":"cheapest-dedicated-hosting","commentsCount":0,"participantsCount":1,"startTime":"2019-04-03T13:18:19+00:00","lastTime":"2019-04-03T13:18:19+00:00","lastPostNumber":1,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isHidden":true,"hideTime":"2019-04-03T23:26:56+00:00","isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"}}],"session":{"userId":0,"csrfToken":"RuDL6S7XYdYpcZ6wf01L2hy4CP4HdTUlnuyHK1tO"},"document":{"data":{"type":"discussions","id":"10388707","attributes":{"title":"[RESOLVED] mysqli with prepare, bind_param and arrays for an insert class","slug":"resolved-mysqli-with-prepare-bind-param-and-arrays-for-an-insert-class","commentsCount":9,"participantsCount":3,"startTime":"2013-01-24T03:52:00+00:00","lastTime":"2019-04-19T05:16:30+00:00","lastPostNumber":9,"canReply":false,"canRename":false,"canDelete":false,"canHide":false,"isApproved":true,"canEditRecipients":false,"canEditUserRecipients":false,"canEditGroupRecipients":false,"isLocked":false,"canLock":false,"isSticky":false,"canSticky":false,"canTag":false,"vingle.share.social":"Share this post"},"relationships":{"posts":{"data":[{"type":"posts","id":"11022981"},{"type":"posts","id":"11022983"},{"type":"posts","id":"11022989"},{"type":"posts","id":"11022991"},{"type":"posts","id":"11023015"},{"type":"posts","id":"11023017"},{"type":"posts","id":"11023019"},{"type":"posts","id":"11023035"},{"type":"posts","id":"11093612"}]},"recipientUsers":{"data":[]},"oldRecipientUsers":{"data":[]},"recipientGroups":{"data":[]},"oldRecipientGroups":{"data":[]},"tags":{"data":[{"type":"tags","id":"2"},{"type":"tags","id":"7"}]}}},"included":[{"type":"posts","id":"11022981","attributes":{"id":11022981,"number":1,"time":"2013-01-24T03:52:00+00:00","contentType":"comment","contentHtml":"<p>Hopefully the title says it all<\/p>\n\n<p>I am trying to find a class that will perform a mysqli based insert with prepare &amp; bind_param<br>\nactually, a class or combination of that would perform INSERT, DELETE, SELECT and UPDATE...<\/p>\n\n<p>I have searched php.net (several functions that seem to be incomplete) and general google searches (lmgtfy is not necessary - unless you can word the query better than I have been able to)<\/p>\n\n<p>I would like to use bind_param for the type specifications (ensuring I get the results I want), not just a generic real_query INSERT statement<\/p>\n\n<p>The functionality is there, just not perfect, and if i could limit it to a string value i would be fine, but with an array of indefinite length it makes it harder (darn near impossible from my testing)<\/p>\n\n<p>any help, even a point in the right direction, would be appreciated!<\/p>\n\n<p>Thanks in advance<\/p>","canEdit":false,"canDelete":false,"isApproved":true,"canApprove":false,"canFlag":false,"canLike":false,"vingle.share.social":"Share this post"},"relationships":{"discussion":{"data":{"type":"discussions","id":"10388707"}},"user":{"data":{"type":"users","id":"159334"}},"likes":{"data":[]},"mentionedBy":{"data":[]}}},{"type":"posts","id":"11022983","attributes":{"id":11022983,"number":2,"time":"2013-01-24T04:18:16+00:00","contentType":"comment","contentHtml":"<p>It's not clear what you want - of course, if you could specify what you want precisely enough you'd be able to write it yourself: all the machinery is provided (it's called programming). For example [man]mysqli_stmt_bind_param[\/man] allows you to specify the types of supplied values.<\/p>","canEdit":false,"canDelete":false,"isApproved":true,"canApprove":false,"canFlag":false,"canLike":false,"vingle.share.social":"Share this post"},"relationships":{"discussion":{"data":{"type":"discussions","id":"10388707"}},"user":{"data":{"type":"users","id":"132315"}},"likes":{"data":[]},"mentionedBy":{"data":[]}}},{"type":"posts","id":"11022989","attributes":{"id":11022989,"number":3,"time":"2013-01-24T04:35:37+00:00","contentType":"comment","contentHtml":"<p>I am looking for a function that will connect to a database, perform an insert with an array as the input values.. something like<\/p>\n\n<p>forgive the poor quality of the example, I'm headed to bed and wanted to get this out before i went.. but you should get the idea of what i want.. (which is the functiont that actually does the work with an array of variable sizes not a set value<\/p>\n<pre data-hljs=\"\" data-s9e-livepreview-postprocess=\"if('undefined'!==typeof hljs)hljs._hb(this)\"><code class=\"language-php\">$link = new mysqli('db_server', 'db_user', 'db_pass', 'db_name');\n$param_array = array(\"i\",\"s\",\"s\",\"s\");\n$insert_array = array(\"Id\" =&gt; \"1\", \"first_name\" =&gt; \"John\", \"last_name\" =&gt; \"Smith\", \"state\" =&gt; \"New York\");\ninsert_query_function($insert_array,$param_array,$link)\n$sql = \"INSERT INTO db_table ($arr1) VALUES($arr_of_question_marks_matching_length_of_arr1)\";\n<\/code><\/pre><script>if(\"undefined\"!==typeof hljs)hljs._ha();else if(\"undefined\"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName(\"head\")[0],e=document.createElement(\"link\");e.type=\"text\/css\";e.rel=\"stylesheet\";e.href=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/styles\/default.min.css\";a.appendChild(e);e=document.createElement(\"script\");e.type=\"text\/javascript\";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute(\"data-hljs\");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll(\"pre[data-hljs]\"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/highlight.min.js\";a.appendChild(e)}<\/script>","canEdit":false,"canDelete":false,"isApproved":true,"canApprove":false,"canFlag":false,"canLike":false,"vingle.share.social":"Share this post"},"relationships":{"discussion":{"data":{"type":"discussions","id":"10388707"}},"user":{"data":{"type":"users","id":"159334"}},"likes":{"data":[]},"mentionedBy":{"data":[]}}},{"type":"posts","id":"11022991","attributes":{"id":11022991,"number":4,"time":"2013-01-24T06:07:06+00:00","contentType":"comment","contentHtml":"<p>So ... which bit is the part causing you problems? [font=monospace]$arr1 = join(',', array_keys($insert_array));[\/font]? [font=monospace]$arr_of_question_marks_matching_length_of_arr1 = join(',', array_fill(0, count($arr1), '?'));[\/font]?<\/p>","canEdit":false,"canDelete":false,"isApproved":true,"canApprove":false,"canFlag":false,"canLike":false,"vingle.share.social":"Share this post"},"relationships":{"discussion":{"data":{"type":"discussions","id":"10388707"}},"user":{"data":{"type":"users","id":"132315"}},"likes":{"data":[]},"mentionedBy":{"data":[]}}},{"type":"posts","id":"11023015","attributes":{"id":11023015,"number":5,"time":"2013-01-24T11:58:28+00:00","contentType":"comment","contentHtml":"<p>the bind_param section, assigning variables, then defining them below it<br>\nthe documentation on the function doesn't give me enough info to be able to figure that part out<\/p>","canEdit":false,"canDelete":false,"isApproved":true,"canApprove":false,"canFlag":false,"canLike":false,"vingle.share.social":"Share this post"},"relationships":{"discussion":{"data":{"type":"discussions","id":"10388707"}},"user":{"data":{"type":"users","id":"159334"}},"likes":{"data":[]},"mentionedBy":{"data":[]}}},{"type":"posts","id":"11023017","attributes":{"id":11023017,"number":6,"time":"2013-01-24T12:35:41+00:00","contentType":"comment","contentHtml":"<p>You mean like with [man]call_user_func_array[\/man], as used for example with the class given in <a href=\"http:\/\/www.php.net\/manual\/en\/mysqli-stmt.bind-param.php#109256\" target=\"_blank\" rel=\"nofollow noreferrer\">http:\/\/www.php.net\/manual\/en\/mysqli-stmt.bind-param.php#109256<\/a> or <a href=\"http:\/\/www.php.net\/manual\/en\/mysqli-stmt.bind-param.php#89171\" target=\"_blank\" rel=\"nofollow noreferrer\">http:\/\/www.php.net\/manual\/en\/mysqli-stmt.bind-param.php#89171<\/a> then?<\/p>","canEdit":false,"canDelete":false,"isApproved":true,"canApprove":false,"canFlag":false,"canLike":false,"vingle.share.social":"Share this post"},"relationships":{"discussion":{"data":{"type":"discussions","id":"10388707"}},"user":{"data":{"type":"users","id":"132315"}},"likes":{"data":[]},"mentionedBy":{"data":[]}}},{"type":"posts","id":"11023019","attributes":{"id":11023019,"number":7,"time":"2013-01-24T15:56:29+00:00","contentType":"comment","contentHtml":"<p>something like this<\/p>\n\n<pre data-hljs=\"\" data-s9e-livepreview-postprocess=\"if('undefined'!==typeof hljs)hljs._hb(this)\"><code class=\"language-php\">&lt;?php\n$table \t= 'user';\n$typeDef \t= array(\"s\",\"s\");\n$data \t= array(\"first_name\"=&gt;\"Jim\", \"last_name\"=&gt;\"Jones\");\n$insert \t= sql_insert($data, $typeDef, $table);\n\nfunction sql_insert ($data, $typeDef, $table) {\n\t$mysqli = mysqli_con();\n\t$data = cleanseArray($data);\n\t$keys = array_keys($data);\n\t$vals = array_values($data);\n\n$key = '';\n$val = '';\n$type = '';\n$params = '';\nforeach($keys AS $key_value) {\n\tif($key == '') {\n\t\t$key = $key_value;\n\t\t$val = '?';\n\t} else {\n\t\t$key .= ', '.$key_value;\n\t\t$val .= ', ?';\n\t}\n}\nforeach($typeDef AS $value) {\n\t$type .= $value;\n}\nif ($stmt = $mysqli-&gt;prepare(\"INSERT INTO $table ($key) values ($val)\")) {\n\n\t\/* Set our params *\/\n\tfor($i = 0; $i &lt; count($vals); $i++) {\n\t\t$param_key[$i] = $vals[$i];\n\t\tif($params == '') {\n\t\t\t$params = \"$$keys[$i]\";\n\t\t} else {\n\t\t\t$params .= \", $$keys[$i]\";\n\t\t}\n\t}\n\n\t\/* Bind our params *\/\n\t$stmt-&gt;bind_param($type, $params);\n\n\t\/* Execute the prepared Statement *\/\n\t$stmt-&gt;execute();\n\n\t\/* Echo results *\/\n\techo \"Success\";\n\n\t\/* Close the statement *\/\n\t$stmt-&gt;close(); \n} else {\n\t\/* Error *\/\n\tprintf(\"Prepared Statement Error: %s\\n\", $mysqli-&gt;error);\n}\n}\n?&gt;<\/code><\/pre><script>if(\"undefined\"!==typeof hljs)hljs._ha();else if(\"undefined\"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName(\"head\")[0],e=document.createElement(\"link\");e.type=\"text\/css\";e.rel=\"stylesheet\";e.href=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/styles\/default.min.css\";a.appendChild(e);e=document.createElement(\"script\");e.type=\"text\/javascript\";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute(\"data-hljs\");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll(\"pre[data-hljs]\"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/highlight.min.js\";a.appendChild(e)}<\/script>\n\n<p>gives this error<\/p>\n<pre data-hljs=\"\" data-s9e-livepreview-postprocess=\"if('undefined'!==typeof hljs)hljs._hb(this)\"><code>arning: mysqli_stmt::bind_param() [&lt;a href='mysqli-stmt.bind-param'&gt;mysqli-stmt.bind-param&lt;\/a&gt;]: Number of elements in type definition string doesn't match number of bind variables in<\/code><\/pre><script>if(\"undefined\"!==typeof hljs)hljs._ha();else if(\"undefined\"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName(\"head\")[0],e=document.createElement(\"link\");e.type=\"text\/css\";e.rel=\"stylesheet\";e.href=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/styles\/default.min.css\";a.appendChild(e);e=document.createElement(\"script\");e.type=\"text\/javascript\";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute(\"data-hljs\");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll(\"pre[data-hljs]\"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/highlight.min.js\";a.appendChild(e)}<\/script>","canEdit":false,"canDelete":false,"isApproved":true,"canApprove":false,"canFlag":false,"canLike":false,"vingle.share.social":"Share this post"},"relationships":{"discussion":{"data":{"type":"discussions","id":"10388707"}},"user":{"data":{"type":"users","id":"159334"}},"likes":{"data":[]},"mentionedBy":{"data":[]}}},{"type":"posts","id":"11023035","attributes":{"id":11023035,"number":8,"time":"2013-01-24T19:44:07+00:00","contentType":"comment","contentHtml":"<p>fixed it, here is the function if you would like to look at it<br>\nAny improvements or suggestions would be welcome!<\/p>\n\n<p>Thanks<\/p>\n\n<pre data-hljs=\"\" data-s9e-livepreview-postprocess=\"if('undefined'!==typeof hljs)hljs._hb(this)\"><code class=\"language-php\">&lt;?php\nfunction bindParameters(&amp;$statement, &amp;$params) {\n  $args   = array();\n  $args[] = implode('', array_values($params));\n\n  foreach ($params as $paramName =&gt; $paramType) {\n    $args[] = &amp;$params[$paramName];\n    $params[$paramName] = null;\n  }\n\n  call_user_func_array(array(&amp;$statement, 'bind_param'), $args);\n}\n\nfunction sql_insert ($data, $typeDef, $table) {\n\t$mysqli = mysqli_con();\n\t$keys = array_keys($data);\n\t$vals = array_values($data);\n\n$key = '';\n$val = '';\n$type = '';\nforeach($keys AS $key_value) {\n\tif($key == '') {\n\t\t$key = $key_value;\n\t\t$val = '?';\n\t} else {\n\t\t$key .= ', '.$key_value;\n\t\t$val .= ', ?';\n\t}\n}\n\nif ($stmt = $mysqli-&gt;prepare(\"INSERT INTO $table ($key) values ($val)\")) {\n\n\tfor($i = 0; $i &lt; count($typeDef); $i++) {\n\t\t\/* Set params value for binding *\/\n\t\t$params[$keys[$i]] = $typeDef[$i];\n\t}\n\n\t\/* Bind our params *\/\n\tbindParameters($stmt, $params);\n\n\tfor($i = 0; $i &lt; count($typeDef); $i++) {\n\t\t\/* Set params for query *\/\n\t\t$params[$keys[$i]] = $vals[$i];\n\t}\n\n\t\/* Execute the prepared Statement *\/\n\tif(!$stmt-&gt;execute() ) { printf(\"Execute Statement Error: %s\\n\", $stmt-&gt;error); exit; }\n\n\t\/* Echo results *\/\n\t$insert = \"Success\";\n\n\t\/* Close the statement *\/\n\t$stmt-&gt;close(); \n} else {\n\t\/* Error *\/\n\t$insert = \"Failure\";\n}\nreturn $insert;\n}\n?&gt;<\/code><\/pre><script>if(\"undefined\"!==typeof hljs)hljs._ha();else if(\"undefined\"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName(\"head\")[0],e=document.createElement(\"link\");e.type=\"text\/css\";e.rel=\"stylesheet\";e.href=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/styles\/default.min.css\";a.appendChild(e);e=document.createElement(\"script\");e.type=\"text\/javascript\";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute(\"data-hljs\");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll(\"pre[data-hljs]\"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/highlight.min.js\";a.appendChild(e)}<\/script>","canEdit":false,"canDelete":false,"isApproved":true,"canApprove":false,"canFlag":false,"canLike":false,"vingle.share.social":"Share this post"},"relationships":{"discussion":{"data":{"type":"discussions","id":"10388707"}},"user":{"data":{"type":"users","id":"159334"}},"likes":{"data":[]},"mentionedBy":{"data":[]}}},{"type":"posts","id":"11093612","attributes":{"id":11093612,"number":9,"time":"2019-04-19T05:16:30+00:00","contentType":"comment","contentHtml":"<p>Hi Kender,<\/p>\n\n<p>Your functions was a great help for me!<\/p>   \n\n<p>I have added an improvement to the sql_insert function that makes it easier to add the types to bindparam, since within the same foreach we can evaluate the field type and add the value to the array $ typeDef<\/p>\n\n<pre data-hljs=\"\" data-s9e-livepreview-postprocess=\"if('undefined'!==typeof hljs)hljs._hb(this)\"><code>        foreach ($data AS $k=&gt;$value) {\n                  \n            if($key == '') {\n\n                $key = $k;\n                $val = '?';\n\n            } else {\n\n                $key .= ', '.$k;\n                $val .= ', ?';\n                        \n            }\n\n            $typeDef[]= is_int($value)==true ? 'i' : 's';\n                    \n        } <\/code><\/pre><script>if(\"undefined\"!==typeof hljs)hljs._ha();else if(\"undefined\"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName(\"head\")[0],e=document.createElement(\"link\");e.type=\"text\/css\";e.rel=\"stylesheet\";e.href=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/styles\/default.min.css\";a.appendChild(e);e=document.createElement(\"script\");e.type=\"text\/javascript\";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute(\"data-hljs\");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll(\"pre[data-hljs]\"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/highlight.min.js\";a.appendChild(e)}<\/script>\n\n\n<p>Finally the script was like this<\/p>\n\n\n<p>function sql_insert ($data, $typeDef, $table) {<br>\n\t$mysqli = mysqli_con();<br>\n\t$keys = array_keys($data);<br>\n\t$vals = array_values($data);<\/p>\n\n<p>$key = '';<br>\n$val = '';<br>\n$type = '';<br>\n            foreach ($data AS $k=&gt;$value) {<\/p>\n                      <br>\n<pre data-hljs=\"\" data-s9e-livepreview-postprocess=\"if('undefined'!==typeof hljs)hljs._hb(this)\"><code>            if($key == '') {\n\n                $key = $k;\n                $val = '?';\n\n            } else {\n\n                $key .= ', '.$k;\n                $val .= ', ?';\n                        \n            }\n\n            $typeDef[]= is_int($value)==true ? 'i' : 's';\n             \n        } <\/code><\/pre><script>if(\"undefined\"!==typeof hljs)hljs._ha();else if(\"undefined\"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName(\"head\")[0],e=document.createElement(\"link\");e.type=\"text\/css\";e.rel=\"stylesheet\";e.href=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/styles\/default.min.css\";a.appendChild(e);e=document.createElement(\"script\");e.type=\"text\/javascript\";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute(\"data-hljs\");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll(\"pre[data-hljs]\"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/highlight.min.js\";a.appendChild(e)}<\/script>\n\n<p>if ($stmt = $mysqli-&gt;prepare(\"INSERT INTO $table ($key) values ($val)\")) {<\/p>\n\n<pre data-hljs=\"\" data-s9e-livepreview-postprocess=\"if('undefined'!==typeof hljs)hljs._hb(this)\"><code>for($i = 0; $i &lt; count($typeDef); $i++) {\n\t\/* Set params value for binding *\/\n\t$params[$keys[$i]] = $typeDef[$i];\n}\n\n\/* Bind our params *\/\nbindParameters($stmt, $params);\n\nfor($i = 0; $i &lt; count($typeDef); $i++) {\n\t\/* Set params for query *\/\n\t$params[$keys[$i]] = $vals[$i];\n}\n\n\/* Execute the prepared Statement *\/\nif(!$stmt-&gt;execute() ) { printf(\"Execute Statement Error: %s\\n\", $stmt-&gt;error); exit; }\n\n\/* Echo results *\/\n$insert = \"Success\";\n\n\/* Close the statement *\/\n$stmt-&gt;close(); <\/code><\/pre><script>if(\"undefined\"!==typeof hljs)hljs._ha();else if(\"undefined\"===typeof hljsLoading){hljsLoading=1;var a=document.getElementsByTagName(\"head\")[0],e=document.createElement(\"link\");e.type=\"text\/css\";e.rel=\"stylesheet\";e.href=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/styles\/default.min.css\";a.appendChild(e);e=document.createElement(\"script\");e.type=\"text\/javascript\";e.onload=function(){var d={},f=0;hljs._hb=function(b){b.removeAttribute(\"data-hljs\");var c=b.innerHTML;c in d?b.innerHTML=d[c]:(7<++f&&(d={},f=0),hljs.highlightBlock(b.firstChild),d[c]=b.innerHTML)};hljs._ha=function(){for(var b=document.querySelectorAll(\"pre[data-hljs]\"),c=b.length;0<c;)hljs._hb(b.item(--c))};hljs._ha()};e.async=!0;e.src=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/highlight.js\/9.7.0\/highlight.min.js\";a.appendChild(e)}<\/script>\n<p>} else {<br>\n\t\/<em> Error <\/em>\/<br>\n\t$insert = \"Failure\";<br>\n}<br>\nreturn $insert;<br>\n}<br>\n?&gt;<\/p>\n\n\n<p>Thanks a lot for your help!<\/p>","canEdit":false,"canDelete":false,"isApproved":true,"canApprove":false,"canFlag":false,"canLike":false,"vingle.share.social":"Share this post"},"relationships":{"discussion":{"data":{"type":"discussions","id":"10388707"}},"user":{"data":{"type":"users","id":"236233"}},"likes":{"data":[]},"mentionedBy":{"data":[]}}},{"type":"users","id":"159334","attributes":{"username":"kender","avatarUrl":null,"bio":null,"joinTime":"2004-05-04T05:38:45+00:00","discussionsCount":54,"commentsCount":322,"canEdit":false,"canDelete":false,"lastSeenTime":"2013-05-12T07:45:51+00:00","flagrowCanImpersonate":false,"socialButtons":null,"canSuspend":false,"vingle.share.social":"Share this post"},"relationships":{"groups":{"data":[]}}},{"type":"users","id":"132315","attributes":{"username":"Weedpacket","avatarUrl":"https:\/\/board.phpbuilder.com\/assets\/avatars\/09zd1blak7gpmglq.png","bio":"Individually wrapped for your convenience.","joinTime":"2002-08-13T16:00:00+00:00","discussionsCount":92,"commentsCount":23455,"canEdit":false,"canDelete":false,"lastSeenTime":"2019-04-30T08:32:36+00:00","flagrowCanImpersonate":false,"socialButtons":null,"canSuspend":false,"vingle.share.social":"Share this post"},"relationships":{"groups":{"data":[{"type":"groups","id":"4"}]}}},{"type":"users","id":"236233","attributes":{"username":"PepoSkateSnow","avatarUrl":null,"bio":null,"joinTime":"2019-04-19T05:04:17+00:00","discussionsCount":0,"commentsCount":1,"canEdit":false,"canDelete":false,"lastSeenTime":"2019-04-19T05:16:29+00:00","flagrowCanImpersonate":false,"socialButtons":null,"canSuspend":false,"vingle.share.social":"Share this post"},"relationships":{"groups":{"data":[]}}},{"type":"groups","id":"4","attributes":{"nameSingular":"Mod","namePlural":"Mods","color":"#80349E","icon":"bolt","vingle.share.social":"Share this post"}},{"type":"tags","id":"2","attributes":{"name":"PHP Help","description":"Discussion and technical help covering all areas of PHP development.","slug":"php-help","color":"#5CB40D","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":228369,"position":0,"defaultSort":null,"isChild":false,"isHidden":false,"lastTime":"2019-04-29T13:47:06+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"}},{"type":"tags","id":"7","attributes":{"name":"PHP Databases","description":"Conversation and technical support regarding PHP and SQL.","slug":"php-databases","color":"#60BF0A","backgroundUrl":null,"backgroundMode":null,"iconUrl":null,"discussionsCount":35902,"position":4,"defaultSort":null,"isChild":true,"isHidden":false,"lastTime":"2019-04-10T01:42:47+00:00","canStartDiscussion":false,"canAddToDiscussion":false,"vingle.share.social":"Share this post"}}]},"locales":{"en":"English"},"locale":"en"});
+              </script><div id="customFooter" style="position: fixed; bottom: 0; width: 100%;"><div style="position: relative;left: 93%;"><i id="footershow" style="color:#7088a9;cursor:pointer;font-size: 1.5em;" class="fa fa-info-circle"></i><i id="footerhide" style="color:#7088a9;font-size: 1.5em;cursor:pointer;display:none;" class="fa fa-caret-down"></i></div><div class="footercontent" style="display: none;height:40px;">© 2018 PHPBuilder.com<span style="padding:0 10px; color:#ccc;font-weight:400">|</span><a href="http://phpbuilder.com/about/">About</a><span style="padding:0 10px; color:#ccc;font-weight:400">|</span><a href="http://phpbuilder.com/community-rules/">Community Rules</a><span style="padding:0 10px; color:#ccc;font-weight:400">|</span><a href="http://phpbuilder.com/privacy/">Privacy</a><span style="padding:0 10px; color:#ccc;font-weight:400">|</span><a href="http://phpbuilder.com/">Articles</a></div></div><div id="customFooter" style="position: fixed; bottom: 0; width: 100%;"><div style="position: relative;left: 93%;"><i id="footershow" style="color:#7088a9;cursor:pointer;font-size: 1.5em;" class="fa fa-info-circle"></i><i id="footerhide" style="color:#7088a9;font-size: 1.5em;cursor:pointer;display:none;" class="fa fa-caret-down"></i></div><div class="footercontent" style="display: none;height:40px;">© 2018 PHPBuilder.com<span style="padding:0 10px; color:#ccc;font-weight:400">|</span><a href="http://phpbuilder.com/about/">About</a><span style="padding:0 10px; color:#ccc;font-weight:400">|</span><a href="http://phpbuilder.com/community-rules/">Community Rules</a><span style="padding:0 10px; color:#ccc;font-weight:400">|</span><a href="http://phpbuilder.com/privacy/">Privacy</a><span style="padding:0 10px; color:#ccc;font-weight:400">|</span><a href="http://phpbuilder.com/">Articles</a></div></div>
+    
+    
+  
+
+</body></html>

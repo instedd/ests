@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://www.php.net/manual/en/mysqli-stmt.fetch.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class=" js flexbox flexboxlegacy datauri"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP: mysqli_stmt::fetch - Manual </title>
+
+ <link rel="shortcut icon" href="https://www.php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php">
+ <link rel="shorturl" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php">
+ <link rel="alternate" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php" hreflang="x-default">
+
+ <link rel="contents" href="https://www.php.net/manual/en/index.php">
+ <link rel="index" href="https://www.php.net/manual/en/class.mysqli-stmt.php">
+ <link rel="prev" href="https://www.php.net/manual/en/mysqli-stmt.execute.php">
+ <link rel="next" href="https://www.php.net/manual/en/mysqli-stmt.field-count.php">
+
+ <link rel="alternate" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php" hreflang="en">
+ <link rel="alternate" href="https://www.php.net/manual/pt_BR/mysqli-stmt.fetch.php" hreflang="pt_BR">
+ <link rel="alternate" href="https://www.php.net/manual/zh/mysqli-stmt.fetch.php" hreflang="zh">
+ <link rel="alternate" href="https://www.php.net/manual/fr/mysqli-stmt.fetch.php" hreflang="fr">
+ <link rel="alternate" href="https://www.php.net/manual/de/mysqli-stmt.fetch.php" hreflang="de">
+ <link rel="alternate" href="https://www.php.net/manual/ja/mysqli-stmt.fetch.php" hreflang="ja">
+ <link rel="alternate" href="https://www.php.net/manual/ro/mysqli-stmt.fetch.php" hreflang="ro">
+ <link rel="alternate" href="https://www.php.net/manual/ru/mysqli-stmt.fetch.php" hreflang="ru">
+ <link rel="alternate" href="https://www.php.net/manual/es/mysqli-stmt.fetch.php" hreflang="es">
+ <link rel="alternate" href="https://www.php.net/manual/tr/mysqli-stmt.fetch.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="./PHP_ mysqli_stmt__fetch - Manual_files/cached.php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ mysqli_stmt__fetch - Manual_files/cached(1).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ mysqli_stmt__fetch - Manual_files/cached(2).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ mysqli_stmt__fetch - Manual_files/cached(3).php" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="https://www.php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script>
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="https://www.php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script src="https://www.php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <!--<base href="https://www.php.net/manual/en/mysqli-stmt.fetch.php">--><base href=".">
+
+</head>
+<body class="docs " style="">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="https://www.php.net/" class="brand"><img src="./PHP_ mysqli_stmt__fetch - Manual_files/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="https://www.php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="https://www.php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="https://www.php.net/get-involved">Get Involved</a></li>
+      <li class=""><a href="https://www.php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="https://www.php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="tt-hint search-query" type="text" autocomplete="off" spellcheck="off" disabled="" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input type="search" name="pattern" class="search-query tt-query" placeholder="Search" accesskey="s" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><input type="submit" style="visibility: hidden; position: fixed"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: &quot;Fira Sans&quot;, &quot;Source Sans Pro&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></span><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"></span></span>
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<div class="headsup"><a href="https://www.php.net/index.php#id2019-05-02-2">PHP 7.2.18 Released</a></div>
+<nav id="trick"><div><dl>
+<dt><a href="https://www.php.net/manual/en/getting-started.php">Getting Started</a></dt>
+	<dd><a href="https://www.php.net/manual/en/introduction.php">Introduction</a></dd>
+	<dd><a href="https://www.php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="https://www.php.net/manual/en/langref.php">Language Reference</a></dt>
+	<dd><a href="https://www.php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.types.php">Types</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.variables.php">Variables</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.constants.php">Constants</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.expressions.php">Expressions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.operators.php">Operators</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.functions.php">Functions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.errors.php">Errors</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.generators.php">Generators</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.references.php">References Explained</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/context.php">Context options and parameters</a></dd>
+	<dd><a href="https://www.php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="https://www.php.net/manual/en/security.php">Security</a></dt>
+	<dd><a href="https://www.php.net/manual/en/security.intro.php">Introduction</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.general.php">General considerations</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.sessions.php">Session Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.database.php">Database Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.globals.php">Using Register Globals</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.magicquotes.php">Magic Quotes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="https://www.php.net/manual/en/features.php">Features</a></dt>
+	<dd><a href="https://www.php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.cookies.php">Cookies</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.sessions.php">Sessions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.safe-mode.php">Safe Mode</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="https://www.php.net/manual/en/funcref.php">Function Reference</a></dt>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.creditcard.php">Credit Card Processing</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.ui.php">GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="https://www.php.net/manual/en/mysqli-stmt.field-count.php">
+          mysqli_stmt::$field_count »
+        </a>
+      </div>
+              <div class="prev">
+        <a href="https://www.php.net/manual/en/mysqli-stmt.execute.php">
+          « mysqli_stmt::execute        </a>
+      </div>
+          <ul>
+            <li><a href="https://www.php.net/manual/en/index.php">PHP Manual</a></li>      <li><a href="https://www.php.net/manual/en/funcref.php">Function Reference</a></li>      <li><a href="https://www.php.net/manual/en/refs.database.php">Database Extensions</a></li>      <li><a href="https://www.php.net/manual/en/refs.database.vendors.php">Vendor Specific Database Extensions</a></li>      <li><a href="https://www.php.net/manual/en/set.mysqlinfo.php">MySQL</a></li>      <li><a href="https://www.php.net/manual/en/book.mysqli.php">MySQLi</a></li>      <li><a href="https://www.php.net/manual/en/class.mysqli-stmt.php">mysqli_stmt</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="https://www.php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value="en/mysqli-stmt.fetch.php" selected="selected">English</option>
+            <option value="pt_BR/mysqli-stmt.fetch.php">Brazilian Portuguese</option>
+            <option value="zh/mysqli-stmt.fetch.php">Chinese (Simplified)</option>
+            <option value="fr/mysqli-stmt.fetch.php">French</option>
+            <option value="de/mysqli-stmt.fetch.php">German</option>
+            <option value="ja/mysqli-stmt.fetch.php">Japanese</option>
+            <option value="ro/mysqli-stmt.fetch.php">Romanian</option>
+            <option value="ru/mysqli-stmt.fetch.php">Russian</option>
+            <option value="es/mysqli-stmt.fetch.php">Spanish</option>
+            <option value="tr/mysqli-stmt.fetch.php">Turkish</option>
+            <option value="help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/mysqli-stmt.fetch.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=mysqli-stmt.fetch">Report a Bug</a>
+    </div>
+  </div><div id="mysqli-stmt.fetch" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mysqli_stmt::fetch</h1>
+  <h1 class="refname">mysqli_stmt_fetch</h1>
+  <p class="verinfo">(PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">mysqli_stmt::fetch</span> -- <span class="refname">mysqli_stmt_fetch</span> — <span class="dc-title">Fetch results from a prepared statement into the bound variables</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysqli-stmt.fetch-description">
+  <h3 class="title">Description<a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#refsect1-mysqli-stmt.fetch-description"> ¶</a></h3>
+  <p class="para">Object oriented style</p>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>mysqli_stmt::fetch</strong></span>
+    ( <span class="methodparam">void</span>
+   ) : <span class="type">bool</span></div>
+
+  <p class="para rdfs-comment">Procedural style</p>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>mysqli_stmt_fetch</strong></span>
+    ( <span class="methodparam"><span class="type"><a href="https://www.php.net/manual/en/class.mysqli-stmt.php" class="type mysqli_stmt">mysqli_stmt</a></span> <code class="parameter">$stmt</code></span>
+   ) : <span class="type">bool</span></div>
+
+  <p class="para rdfs-comment">
+   Fetch the result from a prepared statement into the variables bound by
+   <span class="function"><a href="https://www.php.net/manual/en/mysqli-stmt.bind-result.php" class="function">mysqli_stmt_bind_result()</a></span>.
+  </p>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   </p><p class="para">
+    Note that all columns must be bound by the application before calling
+    <span class="function"><strong>mysqli_stmt_fetch()</strong></span>.
+   </p>
+  </blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   </p><p class="para">
+    Data are transferred unbuffered without calling
+    <span class="function"><a href="https://www.php.net/manual/en/mysqli-stmt.store-result.php" class="function">mysqli_stmt_store_result()</a></span> which can decrease
+    performance (but reduces memory cost).
+   </p>
+  </blockquote>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysqli-stmt.fetch-parameters">
+  <h3 class="title">Parameters<a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#refsect1-mysqli-stmt.fetch-parameters"> ¶</a></h3>
+  <dl>
+
+    <dt>
+<code class="parameter">
+stmt</code></dt>
+<dd>
+<p class="para">Procedural style only: A statement identifier
+returned by <span class="function"><a href="https://www.php.net/manual/en/mysqli.stmt-init.php" class="function">mysqli_stmt_init()</a></span>.</p></dd>
+
+   </dl>
+
+  
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysqli-stmt.fetch-returnvalues">
+  <h3 class="title">Return Values<a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#refsect1-mysqli-stmt.fetch-returnvalues"> ¶</a></h3>
+  <table class="doctable table">
+   <caption><strong>Return Values</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Value</th>
+      <th>Description</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><strong><code>TRUE</code></strong></td>
+      <td>Success. Data has been fetched</td>
+     </tr>
+
+     <tr>
+      <td><strong><code>FALSE</code></strong></td>
+      <td>Error occurred</td>
+     </tr>
+
+     <tr>
+      <td><strong><code>NULL</code></strong></td>
+      <td>No more rows/data exists or data truncation occurred</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysqli-stmt.fetch-examples">
+  <h3 class="title">Examples<a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#refsect1-mysqli-stmt.fetch-examples"> ¶</a></h3>
+  <div class="example" id="example-1928">
+   <p><strong>Example #1 Object oriented style</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>$mysqli&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">mysqli</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"my_user"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"my_password"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"world"</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">/*&nbsp;check&nbsp;connection&nbsp;*/<br></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">mysqli_connect_errno</span><span style="color: #007700">())&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Connect&nbsp;failed:&nbsp;%s\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mysqli_connect_error</span><span style="color: #007700">());<br>&nbsp;&nbsp;&nbsp;&nbsp;exit();<br>}<br><br></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;Name,&nbsp;CountryCode&nbsp;FROM&nbsp;City&nbsp;ORDER&nbsp;by&nbsp;ID&nbsp;DESC&nbsp;LIMIT&nbsp;150,5"</span><span style="color: #007700">;<br><br>if&nbsp;(</span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$query</span><span style="color: #007700">))&nbsp;{<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;execute&nbsp;statement&nbsp;*/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;bind&nbsp;result&nbsp;variables&nbsp;*/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bind_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$code</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;fetch&nbsp;values&nbsp;*/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">while&nbsp;(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetch</span><span style="color: #007700">())&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"%s&nbsp;(%s)\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$code</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;close&nbsp;statement&nbsp;*/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">close</span><span style="color: #007700">();<br>}<br><br></span><span style="color: #FF8000">/*&nbsp;close&nbsp;connection&nbsp;*/<br></span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">close</span><span style="color: #007700">();<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+  <div class="example" id="example-1929">
+   <p><strong>Example #2 Procedural style</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysqli_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"my_user"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"my_password"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"world"</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">/*&nbsp;check&nbsp;connection&nbsp;*/<br></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">mysqli_connect_errno</span><span style="color: #007700">())&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Connect&nbsp;failed:&nbsp;%s\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mysqli_connect_error</span><span style="color: #007700">());<br>&nbsp;&nbsp;&nbsp;&nbsp;exit();<br>}<br><br></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;Name,&nbsp;CountryCode&nbsp;FROM&nbsp;City&nbsp;ORDER&nbsp;by&nbsp;ID&nbsp;DESC&nbsp;LIMIT&nbsp;150,5"</span><span style="color: #007700">;<br><br>if&nbsp;(</span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysqli_prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$query</span><span style="color: #007700">))&nbsp;{<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;execute&nbsp;statement&nbsp;*/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mysqli_stmt_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;bind&nbsp;result&nbsp;variables&nbsp;*/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mysqli_stmt_bind_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$code</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;fetch&nbsp;values&nbsp;*/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">while&nbsp;(</span><span style="color: #0000BB">mysqli_stmt_fetch</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">))&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"%s&nbsp;(%s)\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$code</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;close&nbsp;statement&nbsp;*/<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mysqli_stmt_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">);<br>}<br><br></span><span style="color: #FF8000">/*&nbsp;close&nbsp;connection&nbsp;*/<br></span><span style="color: #0000BB">mysqli_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>The above examples will output:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>Rockford (USA)
+Tallahassee (USA)
+Salinas (USA)
+Santa Clarita (USA)
+Springfield (USA)
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-mysqli-stmt.fetch-seealso">
+  <h3 class="title">See Also<a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#refsect1-mysqli-stmt.fetch-seealso"> ¶</a></h3>
+  <ul class="simplelist">
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/mysqli.prepare.php" class="function" rel="rdfs-seeAlso">mysqli_prepare()</a> - Prepare an SQL statement for execution</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/mysqli-stmt.errno.php" class="function" rel="rdfs-seeAlso">mysqli_stmt_errno()</a> - Returns the error code for the most recent statement call</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/mysqli-stmt.error.php" class="function" rel="rdfs-seeAlso">mysqli_stmt_error()</a> - Returns a string description for last statement error</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/mysqli-stmt.bind-result.php" class="function" rel="rdfs-seeAlso">mysqli_stmt_bind_result()</a> - Binds variables to a prepared statement for result storage</span></li>
+   </ul>
+  
+ </div>
+
+
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="https://www.php.net/manual/add-note.php?sect=mysqli-stmt.fetch&amp;redirect=https://www.php.net/manual/en/mysqli-stmt.fetch.php"><img src="./PHP_ mysqli_stmt__fetch - Manual_files/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">13 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="107034">  <div class="votes">
+    <div id="Vu107034">
+    <a href="https://www.php.net/manual/vote-note.php?id=107034&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd107034">
+    <a href="https://www.php.net/manual/vote-note.php?id=107034&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V107034" title="62% like this...">
+    12
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#107034" class="name">
+  <strong class="user"><em>Bruce Martin</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#107034"> ¶</a><div class="date" title="2011-12-30 09:51"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom107034" style="opacity: 1;">
+<div class="phpcode"><code><span class="html">
+I was trying to use a generic select * from table statment and have the results returned in an array. I finally came up with this solution, others have similar solutions, but they where not working for me. <br><span class="default">&lt;?php<br>&nbsp; &nbsp; </span><span class="comment">//Snip use normal methods to get to this point<br>&nbsp; &nbsp; </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">execute</span><span class="keyword">();<br>&nbsp; &nbsp; </span><span class="default">$metaResults </span><span class="keyword">= </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">result_metadata</span><span class="keyword">();<br>&nbsp; &nbsp; </span><span class="default">$fields </span><span class="keyword">= </span><span class="default">$metaResults</span><span class="keyword">-&gt;</span><span class="default">fetch_fields</span><span class="keyword">();<br>&nbsp; &nbsp; </span><span class="default">$statementParams</span><span class="keyword">=</span><span class="string">''</span><span class="keyword">;<br>&nbsp; &nbsp;&nbsp; </span><span class="comment">//build the bind_results statement dynamically so I can get the results in an array<br>&nbsp; &nbsp;&nbsp; </span><span class="keyword">foreach(</span><span class="default">$fields </span><span class="keyword">as </span><span class="default">$field</span><span class="keyword">){<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; if(empty(</span><span class="default">$statementParams</span><span class="keyword">)){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$statementParams</span><span class="keyword">.=</span><span class="string">"\$column['"</span><span class="keyword">.</span><span class="default">$field</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">.</span><span class="string">"']"</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; }else{<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$statementParams</span><span class="keyword">.=</span><span class="string">", \$column['"</span><span class="keyword">.</span><span class="default">$field</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">.</span><span class="string">"']"</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; }<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; </span><span class="default">$statment</span><span class="keyword">=</span><span class="string">"\$stmt-&gt;bind_result(</span><span class="default">$statementParams</span><span class="string">);"</span><span class="keyword">;<br>&nbsp; &nbsp; eval(</span><span class="default">$statment</span><span class="keyword">);<br>&nbsp; &nbsp; while(</span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">fetch</span><span class="keyword">()){<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//Now the data is contained in the assoc array $column. Useful if you need to do a foreach, or <br>&nbsp; &nbsp; &nbsp; &nbsp; //if your lazy and didn't want to write out each param to bind.<br>&nbsp; &nbsp; </span><span class="keyword">}<br>&nbsp; &nbsp; </span><span class="comment">// Continue on as usual.<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="77141">  <div class="votes">
+    <div id="Vu77141">
+    <a href="https://www.php.net/manual/vote-note.php?id=77141&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd77141">
+    <a href="https://www.php.net/manual/vote-note.php?id=77141&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V77141" title="63% like this...">
+    3
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#77141" class="name">
+  <strong class="user"><em>dan dot latter at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#77141"> ¶</a><div class="date" title="2007-08-16 12:14"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom77141" style="opacity: 1;">
+<div class="phpcode"><code><span class="html">
+The following function taken from PHP Cookbook 2, returns an associative array of a row in the resultset, place in while loop to iterate through whole result set.<br><br><span class="default">&lt;?php<br></span><span class="keyword">public function </span><span class="default">fetchArray </span><span class="keyword">() {<br>&nbsp;&nbsp; </span><span class="default">$data </span><span class="keyword">= </span><span class="default">mysqli_stmt_result_metadata</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">stmt</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$fields </span><span class="keyword">= array();<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$out </span><span class="keyword">= array();<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$fields</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">] = &amp;</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">stmt</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$count </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br><br>&nbsp; &nbsp; &nbsp; &nbsp; while(</span><span class="default">$field </span><span class="keyword">= </span><span class="default">mysqli_fetch_field</span><span class="keyword">(</span><span class="default">$data</span><span class="keyword">)) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$fields</span><span class="keyword">[</span><span class="default">$count</span><span class="keyword">] = &amp;</span><span class="default">$out</span><span class="keyword">[</span><span class="default">$field</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">];<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$count</span><span class="keyword">++;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">call_user_func_array</span><span class="keyword">(</span><span class="default">mysqli_stmt_bind_result</span><span class="keyword">, </span><span class="default">$fields</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">mysqli_stmt_fetch</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">stmt</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; return (</span><span class="default">count</span><span class="keyword">(</span><span class="default">$out</span><span class="keyword">) == </span><span class="default">0</span><span class="keyword">) ? </span><span class="default">false </span><span class="keyword">: </span><span class="default">$out</span><span class="keyword">;<br><br>&nbsp; &nbsp; }<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="82742">  <div class="votes">
+    <div id="Vu82742">
+    <a href="https://www.php.net/manual/vote-note.php?id=82742&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd82742">
+    <a href="https://www.php.net/manual/vote-note.php?id=82742&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V82742" title="60% like this...">
+    4
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#82742" class="name">
+  <strong class="user"><em>Lyndon</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#82742"> ¶</a><div class="date" title="2008-04-23 05:38"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom82742" style="opacity: 1;">
+<div class="phpcode"><code><span class="html">
+This function uses the same idea as the last, but instead binds the fields to a given array. <br><span class="default">&lt;?php<br></span><span class="keyword">function </span><span class="default">stmt_bind_assoc </span><span class="keyword">(&amp;</span><span class="default">$stmt</span><span class="keyword">, &amp;</span><span class="default">$out</span><span class="keyword">) {<br>&nbsp; &nbsp; </span><span class="default">$data </span><span class="keyword">= </span><span class="default">mysqli_stmt_result_metadata</span><span class="keyword">(</span><span class="default">$stmt</span><span class="keyword">);<br>&nbsp; &nbsp; </span><span class="default">$fields </span><span class="keyword">= array();<br>&nbsp; &nbsp; </span><span class="default">$out </span><span class="keyword">= array();<br><br>&nbsp; &nbsp; </span><span class="default">$fields</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">] = </span><span class="default">$stmt</span><span class="keyword">;<br>&nbsp; &nbsp; </span><span class="default">$count </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br><br>&nbsp; &nbsp; while(</span><span class="default">$field </span><span class="keyword">= </span><span class="default">mysqli_fetch_field</span><span class="keyword">(</span><span class="default">$data</span><span class="keyword">)) {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$fields</span><span class="keyword">[</span><span class="default">$count</span><span class="keyword">] = &amp;</span><span class="default">$out</span><span class="keyword">[</span><span class="default">$field</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">];<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$count</span><span class="keyword">++;<br>&nbsp; &nbsp; }&nbsp; &nbsp; <br>&nbsp; &nbsp; </span><span class="default">call_user_func_array</span><span class="keyword">(</span><span class="default">mysqli_stmt_bind_result</span><span class="keyword">, </span><span class="default">$fields</span><span class="keyword">);<br>}<br><br></span><span class="comment">// example<br><br></span><span class="default">$stmt </span><span class="keyword">= </span><span class="default">$mysqli</span><span class="keyword">-&gt;</span><span class="default">prepare</span><span class="keyword">(</span><span class="string">"SELECT name, userid FROM somewhere"</span><span class="keyword">);<br></span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">execute</span><span class="keyword">();<br><br></span><span class="default">$row </span><span class="keyword">= array();<br></span><span class="default">stmt_bind_assoc</span><span class="keyword">(</span><span class="default">$stmt</span><span class="keyword">, </span><span class="default">$row</span><span class="keyword">);<br><br></span><span class="comment">// loop through all result rows<br></span><span class="keyword">while (</span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">fetch</span><span class="keyword">()) {<br>&nbsp; &nbsp; </span><span class="default">print_r</span><span class="keyword">(</span><span class="default">$row</span><span class="keyword">);<br>}<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="83284">  <div class="votes">
+    <div id="Vu83284">
+    <a href="https://www.php.net/manual/vote-note.php?id=83284&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd83284">
+    <a href="https://www.php.net/manual/vote-note.php?id=83284&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V83284" title="58% like this...">
+    3
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#83284" class="name">
+  <strong class="user"><em>denath2 at yahoo dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#83284"> ¶</a><div class="date" title="2008-05-19 12:27"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom83284">
+<div class="phpcode"><code><span class="html">
+As php at johnbaldock dot co dot uk mentioned the problem is that the $row returned is reference and not data. So, when you write&nbsp; $array[] = $row, the $array will be filled up with the last element of the dataset. To come up with this you can write the following hack:<br><br>// loop through all result rows<br>while ($stmt-&gt;fetch()) {<br><br>&nbsp; &nbsp; foreach( $row as $key=&gt;$value )<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; $row_tmb[ $key ] = $value;<br>&nbsp; &nbsp; } <br>&nbsp; &nbsp; $array[] = $row_tmb;<br>&nbsp; &nbsp; <br>}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="52316">  <div class="votes">
+    <div id="Vu52316">
+    <a href="https://www.php.net/manual/vote-note.php?id=52316&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd52316">
+    <a href="https://www.php.net/manual/vote-note.php?id=52316&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V52316" title="58% like this...">
+    2
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#52316" class="name">
+  <strong class="user"><em>andrey at php dot net</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#52316"> ¶</a><div class="date" title="2005-04-27 11:37"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom52316">
+<div class="phpcode"><code><span class="html">
+IMPORTANT note: Be careful when you use this function with big result sets or with BLOB/TEXT columns. When one or more columns are of type (MEDIUM|LONG)(BLOB|TEXT) and ::store_result() was not called mysqli_stmt_fetch() will try to allocate at least 16MB for every such column. It _doesn't_ matter that the longest value in the result set is for example 30 bytes, 16MB will be allocated. Therefore it is not the best idea ot use binding of parameters whenever fetching big data. Why? Because once the data is in the mysql result set stored in memory and then second time in the PHP variable.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="71056">  <div class="votes">
+    <div id="Vu71056">
+    <a href="https://www.php.net/manual/vote-note.php?id=71056&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd71056">
+    <a href="https://www.php.net/manual/vote-note.php?id=71056&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V71056" title="55% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#71056" class="name">
+  <strong class="user"><em>php at johnbaldock dot co dot uk</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#71056"> ¶</a><div class="date" title="2006-11-09 01:33"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom71056">
+<div class="phpcode"><code><span class="html">
+Having just learned about call_user_func_array I reworked my fetch_assoc example. Swapping the following code makes for a more elegant (and faster) solution.<br><br>Using:<br><span class="default">&lt;?php<br></span><span class="keyword">while (</span><span class="default">$columnName </span><span class="keyword">= </span><span class="default">$meta</span><span class="keyword">-&gt;</span><span class="default">fetch_field</span><span class="keyword">()) {<br>&nbsp; &nbsp; </span><span class="default">$columns</span><span class="keyword">[] = &amp;</span><span class="default">$results</span><span class="keyword">[</span><span class="default">$columnName</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">];<br>}&nbsp; &nbsp; &nbsp; &nbsp; <br></span><span class="default">call_user_func_array</span><span class="keyword">(array(</span><span class="default">$stmt</span><span class="keyword">, </span><span class="string">'bind_result'</span><span class="keyword">), </span><span class="default">$columns</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span><br>Instead of this code from my example below:<br><span class="default">&lt;?php<br>$bindResult </span><span class="keyword">= </span><span class="string">'$stmt-&gt;bind_result('</span><span class="keyword">;<br>while (</span><span class="default">$columnName </span><span class="keyword">= </span><span class="default">$meta</span><span class="keyword">-&gt;</span><span class="default">fetch_field</span><span class="keyword">()) {<br>&nbsp;&nbsp; </span><span class="default">$bindResult </span><span class="keyword">.= </span><span class="string">'$results["'</span><span class="keyword">.</span><span class="default">$columnName</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">.</span><span class="string">'"],'</span><span class="keyword">;<br>}<br></span><span class="default">$bindResult </span><span class="keyword">= </span><span class="default">rtrim</span><span class="keyword">(</span><span class="default">$bindResult</span><span class="keyword">, </span><span class="string">','</span><span class="keyword">) . </span><span class="string">');'</span><span class="keyword">;<br>eval(</span><span class="default">$bindResult</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span><br>The full reworked fetch_assoc code for reference:<br><span class="default">&lt;?php<br>$mysqli </span><span class="keyword">= new </span><span class="default">mysqli</span><span class="keyword">(</span><span class="default">$dbHost</span><span class="keyword">, </span><span class="default">$dbUsername</span><span class="keyword">, </span><span class="default">$dbPassword</span><span class="keyword">, </span><span class="default">$dbDatabase</span><span class="keyword">);<br></span><span class="default">$stmt </span><span class="keyword">= </span><span class="default">$mysqli</span><span class="keyword">-&gt;</span><span class="default">prepare</span><span class="keyword">(</span><span class="string">'select * from foobar'</span><span class="keyword">);<br></span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">execute</span><span class="keyword">();<br></span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">store_result</span><span class="keyword">();<br></span><span class="default">$meta </span><span class="keyword">= </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">result_metadata</span><span class="keyword">();<br><br>while (</span><span class="default">$column </span><span class="keyword">= </span><span class="default">$meta</span><span class="keyword">-&gt;</span><span class="default">fetch_field</span><span class="keyword">()) {<br>&nbsp;&nbsp; </span><span class="default">$bindVarsArray</span><span class="keyword">[] = &amp;</span><span class="default">$results</span><span class="keyword">[</span><span class="default">$column</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">];<br>}&nbsp; &nbsp; &nbsp; &nbsp; <br></span><span class="default">call_user_func_array</span><span class="keyword">(array(</span><span class="default">$stmt</span><span class="keyword">, </span><span class="string">'bind_result'</span><span class="keyword">), </span><span class="default">$bindVarsArray</span><span class="keyword">);<br><br></span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">fetch</span><span class="keyword">();<br><br>echo </span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$results</span><span class="keyword">);<br></span><span class="comment">// outputs:<br>// <br>// array(3) {<br>//&nbsp; ["id"]=&gt;<br>//&nbsp; &amp;int(1)<br>//&nbsp; ["foo"]=&gt;<br>//&nbsp; &amp;string(11) "This is Foo"<br>//&nbsp; ["bar"]=&gt;<br>//&nbsp; &amp;string(11) "This is Bar"<br>// }<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="83073">  <div class="votes">
+    <div id="Vu83073">
+    <a href="https://www.php.net/manual/vote-note.php?id=83073&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd83073">
+    <a href="https://www.php.net/manual/vote-note.php?id=83073&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V83073" title="100% like this...">
+    2
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#83073" class="name">
+  <strong class="user"><em>piedone at pyrocenter dot hu</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#83073"> ¶</a><div class="date" title="2008-05-08 12:57"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom83073">
+<div class="phpcode"><code><span class="html">
+I tried the mentioned stmt_bind_assoc() function, but somehow, very strangely it doesn't allow the values to be written in an array! In the while loop, the row is fetched correctly, but if I write $array[] = $row;, the array will be filled up with the last element of the dataset... Unfortunately I couldn't find a solution.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="123114">  <div class="votes">
+    <div id="Vu123114">
+    <a href="https://www.php.net/manual/vote-note.php?id=123114&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd123114">
+    <a href="https://www.php.net/manual/vote-note.php?id=123114&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V123114" title="100% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#123114" class="name">
+  <strong class="user"><em>admin at akchauhan2 dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#123114"> ¶</a><div class="date" title="2018-09-06 10:48"><strong>7 months ago</strong></div>
+  <div class="text" id="Hcom123114">
+<div class="phpcode"><code><span class="html">
+I'm creating a pagination system, here i am fetching some data in whileloop from the db, The problem is that i want to open a<br><br>Tag after every 3rd fetching from the database so that it will look like this:<br><br>1st time:<br><br>&lt;div class="row no-collapse-1"&gt;<br>&lt;section class="4u border"&gt;<br>&lt;a href="video.php?video_id=1" class="image featured"&gt;<br>&lt;img src="/images/image_imagename/hqdefault.jpg"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/a&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Video Title &lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="video.php?video_id=1" class="button"&gt;Watch&lt;/a&gt; &lt;/div&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/section&gt;<br> &lt;/div&gt;<br>2nd:<br><br>&nbsp; &lt;div class="row no-collapse-1"&gt;<br>&nbsp; &nbsp; &nbsp; &lt;section class="4u border"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="video.php?video_id=1" class="image featured"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="/images/image_imagename/hqdefault.jpg"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/a&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Video Title &lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="video.php?video_id=1" class="button"&gt;Watch&lt;/a&gt; &lt;/div&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/section&gt;<br>&nbsp; &nbsp; &lt;/div&gt;<br>3rd..4th. .and so on..<br><br>I am using this code, now how and where should i place the&nbsp; &lt;div class="row no-collapse-1"&gt; tag<br><br><span class="default">&lt;?php <br>&nbsp; &nbsp; </span><span class="keyword">if(isset(</span><span class="default">$_GET</span><span class="keyword">[</span><span class="string">'page'</span><span class="keyword">])){<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$page </span><span class="keyword">= </span><span class="default">$_GET</span><span class="keyword">[</span><span class="string">'page'</span><span class="keyword">];<br>&nbsp; &nbsp; }else{<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$page </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$l_s </span><span class="keyword">= (</span><span class="default">$page</span><span class="keyword">*</span><span class="default">9</span><span class="keyword">)-</span><span class="default">9</span><span class="keyword">;<br><br>&nbsp; &nbsp; </span><span class="default">$stmt </span><span class="keyword">= </span><span class="default">mysqli_prepare</span><span class="keyword">(</span><span class="default">$connection</span><span class="keyword">,</span><span class="string">"SELECT video_id, video_title, video_link FROM tubeVideos ORDER BY video_id DESC LIMIT </span><span class="default">$l_s</span><span class="string">,9"</span><span class="keyword">);<br>&nbsp; &nbsp; </span><span class="default">mysqli_stmt_execute</span><span class="keyword">(</span><span class="default">$stmt</span><span class="keyword">);<br>&nbsp; &nbsp; </span><span class="default">mysqli_stmt_bind_result</span><span class="keyword">(</span><span class="default">$stmt</span><span class="keyword">,</span><span class="default">$video_id</span><span class="keyword">, </span><span class="default">$video_title</span><span class="keyword">, </span><span class="default">$video_link</span><span class="keyword">);<br><br>&nbsp; &nbsp; while(</span><span class="default">mysqli_stmt_fetch</span><span class="keyword">(</span><span class="default">$stmt</span><span class="keyword">)){<br><br></span><span class="default">?&gt;<br></span><br>&lt;section class="4u border"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="video.php?video_id=<span class="default">&lt;?php </span><span class="keyword">echo </span><span class="default">$video_id</span><span class="keyword">; </span><span class="default">?&gt;</span>" class="image featured"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="/images/image_<span class="default">&lt;?php </span><span class="keyword">echo </span><span class="default">$video_image ?&gt;</span>/hqdefault.jpg"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/a&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="default">&lt;?php </span><span class="keyword">echo </span><span class="default">$video_title</span><span class="keyword">; </span><span class="default">?&gt;<br></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="video.php?video_id=<span class="default">&lt;?php </span><span class="keyword">echo </span><span class="default">$video_id</span><span class="keyword">; </span><span class="default">?&gt;</span>" class="button"&gt;Watch&lt;/a&gt; &lt;/div&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/section&gt;</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121169">  <div class="votes">
+    <div id="Vu121169">
+    <a href="https://www.php.net/manual/vote-note.php?id=121169&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121169">
+    <a href="https://www.php.net/manual/vote-note.php?id=121169&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121169" title="100% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#121169" class="name">
+  <strong class="user"><em>jjling2011 at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#121169"> ¶</a><div class="date" title="2017-05-31 07:36"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom121169">
+<div class="phpcode"><code><span class="html">
+Combind both ideas from Bruce Martin and dan, I come up with this code.<br>It will return an assoc array.<br><br>usage:<br>&nbsp; &nbsp; $data = fetch_assoc('select * from table1 where id=? and name=?','is',[1,'Sam']);<br>&nbsp; &nbsp; $data = fetch_assoc('select * from table2');<br>&nbsp; &nbsp; <br>result looks like this:<br>&nbsp;&nbsp; $data = [<br>&nbsp; &nbsp; &nbsp; 'id' =&gt; 1,<br>&nbsp; &nbsp; &nbsp; 'name' =&gt; 'Sam',<br>&nbsp; &nbsp; &nbsp; 'age' =&gt; ...<br>&nbsp; &nbsp; &nbsp; ...<br>&nbsp; &nbsp; &nbsp; ...<br>&nbsp;&nbsp; ];<br><br>Please forgive my poor coding ( and English)&nbsp; XD<br><br>code:<br><span class="default">&lt;?php<br>&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">fetch_assoc</span><span class="keyword">(</span><span class="default">$sql</span><span class="keyword">, </span><span class="default">$types </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">, </span><span class="default">$params </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">) {<br>&nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$db </span><span class="keyword">= new </span><span class="default">MySQLi</span><span class="keyword">(</span><span class="default">HOST</span><span class="keyword">, </span><span class="default">USER</span><span class="keyword">, </span><span class="default">PASS</span><span class="keyword">, </span><span class="default">DB_NAME</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$db</span><span class="keyword">-&gt;</span><span class="default">set_charset</span><span class="keyword">(</span><span class="string">'utf8'</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$stmt </span><span class="keyword">= </span><span class="default">$db</span><span class="keyword">-&gt;</span><span class="default">prepare</span><span class="keyword">(</span><span class="default">$sql</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// bind params<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if (</span><span class="default">is_string</span><span class="keyword">(</span><span class="default">$types</span><span class="keyword">) &amp;&amp; </span><span class="default">is_array</span><span class="keyword">(</span><span class="default">$params</span><span class="keyword">) &amp;&amp; </span><span class="default">count</span><span class="keyword">(</span><span class="default">$params</span><span class="keyword">) === </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$types</span><span class="keyword">)) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$p </span><span class="keyword">= [];<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(</span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">&lt;</span><span class="default">count</span><span class="keyword">(</span><span class="default">$params</span><span class="keyword">); </span><span class="default">$i</span><span class="keyword">++){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$p</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">] = &amp;</span><span class="default">$params</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">];<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">call_user_func_array</span><span class="keyword">(array(</span><span class="default">$stmt</span><span class="keyword">, </span><span class="string">'bind_param'</span><span class="keyword">), </span><span class="default">array_merge</span><span class="keyword">(array(</span><span class="default">$types</span><span class="keyword">), </span><span class="default">$p</span><span class="keyword">));<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br><br>&nbsp; &nbsp; &nbsp; &nbsp; if (!</span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">execute</span><span class="keyword">()) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// some thing goes wrong<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">false</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">store_result</span><span class="keyword">();<br>&nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// get column names <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$metadata </span><span class="keyword">= </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">result_metadata</span><span class="keyword">();<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$fields </span><span class="keyword">= </span><span class="default">$metadata</span><span class="keyword">-&gt;</span><span class="default">fetch_fields</span><span class="keyword">();<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$results </span><span class="keyword">= [];<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$ref_results </span><span class="keyword">= [];<br>&nbsp; &nbsp; &nbsp; &nbsp; foreach(</span><span class="default">$fields </span><span class="keyword">as </span><span class="default">$field</span><span class="keyword">){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$results</span><span class="keyword">[</span><span class="default">$field</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">]=</span><span class="default">null</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$ref_results</span><span class="keyword">[]=&amp;</span><span class="default">$results</span><span class="keyword">[</span><span class="default">$field</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">];<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">call_user_func_array</span><span class="keyword">(array(</span><span class="default">$stmt</span><span class="keyword">, </span><span class="string">'bind_result'</span><span class="keyword">), </span><span class="default">$ref_results</span><span class="keyword">);<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$data </span><span class="keyword">= [];<br>&nbsp; &nbsp; &nbsp; &nbsp; while (</span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">fetch</span><span class="keyword">()) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$data</span><span class="keyword">[] = </span><span class="default">$results</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">free_result</span><span class="keyword">();<br>&nbsp; &nbsp; &nbsp; &nbsp; return&nbsp; </span><span class="default">$data</span><span class="keyword">;<br>&nbsp; &nbsp; }</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120129">  <div class="votes">
+    <div id="Vu120129">
+    <a href="https://www.php.net/manual/vote-note.php?id=120129&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120129">
+    <a href="https://www.php.net/manual/vote-note.php?id=120129&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120129" title="100% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#120129" class="name">
+  <strong class="user"><em>asimileac at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#120129"> ¶</a><div class="date" title="2016-11-07 11:05"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom120129">
+<div class="phpcode"><code><span class="html">
+There is a bug - <a href="https://bugs.php.net/bug.php?id=64638" rel="nofollow" target="_blank">https://bugs.php.net/bug.php?id=64638</a><br><br>Don't use cursors in stored procedures which are called from PHP. You will receive PHP Warning:<br><br>PHP Warning:&nbsp; Packets out of order. Expected xxx received yyy. Packet size=zzz</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="117275">  <div class="votes">
+    <div id="Vu117275">
+    <a href="https://www.php.net/manual/vote-note.php?id=117275&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd117275">
+    <a href="https://www.php.net/manual/vote-note.php?id=117275&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V117275" title="45% like this...">
+    -1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#117275" class="name">
+  <strong class="user"><em>Brian</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#117275"> ¶</a><div class="date" title="2015-05-14 06:09"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom117275" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+Same as everyone else, I was looking for a way NOT to have to duplicate the amount of code it takes to fetch the results of a prepared statement as an associative array.<br><br>Some of the other methods didn't work as written, and this one is packaged into a simple function to reduce code repetition.<br><br>Adapted from code others have posted.<br><span class="default">&lt;?php<br></span><span class="comment">// Example usage:<br></span><span class="default">$id </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br></span><span class="default">$stmt </span><span class="keyword">= </span><span class="default">$dbc</span><span class="keyword">-&gt;</span><span class="default">prepare</span><span class="keyword">(</span><span class="string">"SELECT * FROM table WHERE id=?"</span><span class="keyword">);<br>if (!</span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">bind_param</span><span class="keyword">(</span><span class="string">'i'</span><span class="keyword">, </span><span class="default">$id</span><span class="keyword">) || !</span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">execute</span><span class="keyword">()) {<br>&nbsp; &nbsp; throw new \</span><span class="default">Exception</span><span class="keyword">(</span><span class="string">"Database error: </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">errno</span><span class="string"> - </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">error</span><span class="string">"</span><span class="keyword">);<br>}<br></span><span class="default">$results </span><span class="keyword">= </span><span class="default">fetch_assoc_stmt</span><span class="keyword">(</span><span class="default">$stmt</span><span class="keyword">);<br></span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">close</span><span class="keyword">();<br><br></span><span class="comment">/**<br> * Fetches the results of a prepared statement as an array of associative<br> * arrays such that each stored array is keyed by the result's column names.<br> * @param stmt&nbsp;&nbsp; Must have been successfully prepared and executed prior to calling this function<br> * @param buffer Whether to buffer the result set; if true, results are freed at end of function<br> * @return An array, possibly empty, containing one associative array per result row<br> */<br></span><span class="keyword">function </span><span class="default">fetch_assoc_stmt</span><span class="keyword">(\</span><span class="default">mysqli_stmt $stmt</span><span class="keyword">, </span><span class="default">$buffer </span><span class="keyword">= </span><span class="default">true</span><span class="keyword">) {<br>&nbsp; &nbsp; if (</span><span class="default">$buffer</span><span class="keyword">) {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">store_result</span><span class="keyword">();<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; </span><span class="default">$fields </span><span class="keyword">= </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">result_metadata</span><span class="keyword">()-&gt;</span><span class="default">fetch_fields</span><span class="keyword">();<br>&nbsp; &nbsp; </span><span class="default">$args </span><span class="keyword">= array();<br>&nbsp; &nbsp; foreach(</span><span class="default">$fields </span><span class="keyword">AS </span><span class="default">$field</span><span class="keyword">) {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$key </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">' '</span><span class="keyword">, </span><span class="string">'_'</span><span class="keyword">, </span><span class="default">$field</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">); </span><span class="comment">// space may be valid SQL, but not PHP<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$args</span><span class="keyword">[</span><span class="default">$key</span><span class="keyword">] = &amp;</span><span class="default">$field</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">; </span><span class="comment">// this way the array key is also preserved<br>&nbsp; &nbsp; </span><span class="keyword">}<br>&nbsp; &nbsp; </span><span class="default">call_user_func_array</span><span class="keyword">(array(</span><span class="default">$stmt</span><span class="keyword">, </span><span class="string">"bind_result"</span><span class="keyword">), </span><span class="default">$args</span><span class="keyword">);<br>&nbsp; &nbsp; </span><span class="default">$results </span><span class="keyword">= array();<br>&nbsp; &nbsp; while(</span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">fetch</span><span class="keyword">()) {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$results</span><span class="keyword">[] = </span><span class="default">array_map</span><span class="keyword">(</span><span class="string">"copy_value"</span><span class="keyword">, </span><span class="default">$args</span><span class="keyword">);<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; if (</span><span class="default">$buffer</span><span class="keyword">) {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">free_result</span><span class="keyword">();<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; return </span><span class="default">$results</span><span class="keyword">;<br>}<br><br></span><span class="comment">/**<br> * Copy value as value<br> */<br></span><span class="keyword">function </span><span class="default">copy_value</span><span class="keyword">(</span><span class="default">$v</span><span class="keyword">) {<br>&nbsp; &nbsp; return </span><span class="default">$v</span><span class="keyword">;<br>}<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="71994">  <div class="votes">
+    <div id="Vu71994">
+    <a href="https://www.php.net/manual/vote-note.php?id=71994&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd71994">
+    <a href="https://www.php.net/manual/vote-note.php?id=71994&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V71994" title="33% like this...">
+    -1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#71994" class="name">
+  <strong class="user"><em>Typer85 at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#71994"> ¶</a><div class="date" title="2006-12-27 05:55"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom71994" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+Just a side note,<br><br>I see many people are contributing in ways to help return result sets for prepared statements in ASSOSITAVE arrays the same as the mysqli_fetch_assos function might return from a normal query issued via mysqli_query.<br><br>This is done, in all the examples I have seen, by dynamically getting the field names in the prepared statement and binding them using 'variable' variables, which are variables that are created dynamically with the name of the field names.<br><br>Some thing though you should take into consideration is illegal variable names in PHP. Assume that you have a field name in your database table named 'My Field' , notice the space between 'My' and 'Field'.<br><br>To dynamically create this variable is illegal in PHP as variables can not have spaces in them. Furthermore, you won't be able to access the binded data as you can not reference a variable like so:<br><br><span class="default">&lt;?php<br><br></span><span class="comment">// Syntax Error.<br><br></span><span class="keyword">echo </span><span class="default">$My Table</span><span class="keyword">;<br><br></span><span class="default">?&gt;<br></span><br>The only suitable solution I find now is to replace all spaces in a field name with an underscore so that you can use the binded variable like so:<br><br><span class="default">&lt;?php<br><br></span><span class="comment">// This Works.<br><br></span><span class="keyword">echo </span><span class="default">$My_Table</span><span class="keyword">;<br><br></span><span class="comment">// Notice the space is now replaced with an underscore.<br><br></span><span class="default">?&gt;<br></span><br>All you simply have to do is before you dynamically bind the data, so a string search for any spaces in the table name, replace them with an underscore, THEN bind the variable.<br><br>That way you should not run into problems.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="70673">  <div class="votes">
+    <div id="Vu70673">
+    <a href="https://www.php.net/manual/vote-note.php?id=70673&amp;page=mysqli-stmt.fetch&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd70673">
+    <a href="https://www.php.net/manual/vote-note.php?id=70673&amp;page=mysqli-stmt.fetch&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V70673" title="0% like this...">
+    -3
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#70673" class="name">
+  <strong class="user"><em>php at johnbaldock dot co dot uk</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/mysqli-stmt.fetch.php#70673"> ¶</a><div class="date" title="2006-10-23 01:07"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom70673" style="opacity: 0.55;">
+<div class="phpcode"><code><span class="html">
+I wanted a simple way to get the equivalent of fetch_assoc when using a prepared statement. I came up with the following:<br><br><span class="default">&lt;?php<br>$mysqli </span><span class="keyword">= new </span><span class="default">mysqli</span><span class="keyword">(</span><span class="default">$dbHost</span><span class="keyword">, </span><span class="default">$dbUsername</span><span class="keyword">, </span><span class="default">$dbPassword</span><span class="keyword">, </span><span class="default">$dbDatabase</span><span class="keyword">);<br></span><span class="default">$stmt </span><span class="keyword">= </span><span class="default">$mysqli</span><span class="keyword">-&gt;</span><span class="default">prepare</span><span class="keyword">(</span><span class="string">'select * from foobar'</span><span class="keyword">);<br></span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">execute</span><span class="keyword">();<br></span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">store_result</span><span class="keyword">();<br></span><span class="default">$meta </span><span class="keyword">= </span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">result_metadata</span><span class="keyword">();<br><br></span><span class="comment">// the following creates a bind_result string with an argument for each column in the query<br>// e.g. $stmt-&gt;bind_result($results["id"], $results["foo"], $results["bar"]);<br></span><span class="default">$bindResult </span><span class="keyword">= </span><span class="string">'$stmt-&gt;bind_result('</span><span class="keyword">;<br>while (</span><span class="default">$columnName </span><span class="keyword">= </span><span class="default">$meta</span><span class="keyword">-&gt;</span><span class="default">fetch_field</span><span class="keyword">()) {<br>&nbsp; &nbsp; </span><span class="default">$bindResult </span><span class="keyword">.= </span><span class="string">'$results["'</span><span class="keyword">.</span><span class="default">$columnName</span><span class="keyword">-&gt;</span><span class="default">name</span><span class="keyword">.</span><span class="string">'"],'</span><span class="keyword">;<br>}<br></span><span class="default">$bindResult </span><span class="keyword">= </span><span class="default">rtrim</span><span class="keyword">(</span><span class="default">$bindResult</span><span class="keyword">, </span><span class="string">','</span><span class="keyword">) . </span><span class="string">');'</span><span class="keyword">;<br><br></span><span class="comment">// executes the bind_result string<br></span><span class="keyword">eval(</span><span class="default">$bindResult</span><span class="keyword">);<br></span><span class="default">$stmt</span><span class="keyword">-&gt;</span><span class="default">fetch</span><span class="keyword">();<br><br>echo </span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$results</span><span class="keyword">);<br></span><span class="comment">// outputs:<br>// <br>// array(3) {<br>//&nbsp;&nbsp; ["id"]=&gt;<br>//&nbsp;&nbsp; &amp;int(1)<br>//&nbsp;&nbsp; ["foo"]=&gt;<br>//&nbsp;&nbsp; &amp;string(11) "This is Foo"<br>//&nbsp;&nbsp; ["bar"]=&gt;<br>//&nbsp;&nbsp; &amp;string(11) "This is Bar"<br>// }<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="https://www.php.net/manual/add-note.php?sect=mysqli-stmt.fetch&amp;redirect=https://www.php.net/manual/en/mysqli-stmt.fetch.php"><img src="./PHP_ mysqli_stmt__fetch - Manual_files/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class="layout-menu">
+
+        <ul class="parent-menu-list">
+                                    <li>
+                <a href="https://www.php.net/manual/en/class.mysqli-stmt.php">mysqli_stmt</a>
+
+                                    <ul class="child-menu-list">
+
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.affected-rows.php" title="$affected_​rows">$affected_​rows</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.attr-get.php" title="attr_​get">attr_​get</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.attr-set.php" title="attr_​set">attr_​set</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.bind-param.php" title="bind_​param">bind_​param</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.bind-result.php" title="bind_​result">bind_​result</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.close.php" title="close">close</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.construct.php" title="_​_​construct">_​_​construct</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.data-seek.php" title="data_​seek">data_​seek</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.errno.php" title="$errno">$errno</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.error-list.php" title="$error_​list">$error_​list</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.error.php" title="$error">$error</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.execute.php" title="execute">execute</a>
+                        </li>
+                                                <li class="current">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.fetch.php" title="fetch">fetch</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.field-count.php" title="$field_​count">$field_​count</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.free-result.php" title="free_​result">free_​result</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.get-result.php" title="get_​result">get_​result</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.get-warnings.php" title="get_​warnings">get_​warnings</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.insert-id.php" title="$insert_​id">$insert_​id</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.more-results.php" title="more_​results">more_​results</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.next-result.php" title="next_​result">next_​result</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.num-rows.php" title="$num_​rows">$num_​rows</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.param-count.php" title="$param_​count">$param_​count</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.prepare.php" title="prepare">prepare</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.reset.php" title="reset">reset</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.result-metadata.php" title="result_​metadata">result_​metadata</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.send-long-data.php" title="send_​long_​data">send_​long_​data</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.sqlstate.php" title="$sqlstate">$sqlstate</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/mysqli-stmt.store-result.php" title="store_​result">store_​result</a>
+                        </li>
+                        
+                    </ul>
+                
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="https://www.php.net/copyright.php">Copyright © 2001-2019 The PHP Group</a></li>
+        <li><a href="https://www.php.net/my.php">My PHP.net</a></li>
+        <li><a href="https://www.php.net/contact.php">Contact</a></li>
+        <li><a href="https://www.php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="https://www.php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script src="./PHP_ mysqli_stmt__fetch - Manual_files/jquery.min.js.download"></script>
+<script src="./PHP_ mysqli_stmt__fetch - Manual_files/cached(4).php"></script>
+<script src="./PHP_ mysqli_stmt__fetch - Manual_files/cached(5).php"></script>
+<script src="./PHP_ mysqli_stmt__fetch - Manual_files/cached(6).php"></script>
+<script src="./PHP_ mysqli_stmt__fetch - Manual_files/cached(7).php"></script>
+<script src="./PHP_ mysqli_stmt__fetch - Manual_files/cached(8).php"></script>
+<script src="./PHP_ mysqli_stmt__fetch - Manual_files/cached(9).php"></script>
+
+<a id="toTop" href="javascript:;" style="display: inline;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="./PHP_ mysqli_stmt__fetch - Manual_files/to-top@2x.png"></a>
+
+
+
+</body></html>

@@ -36,58 +36,58 @@ function get_received_sample_details($sample_id)
     }
      function get_district_name($id)
     {
-        $this->db->select("districtName FROM `tbl_district` WHERE 1 and id=" . $id . "", FALSE);
+        $this->db->select("districtName FROM `tbl_district` WHERE 1 and id='".$id."'", FALSE);
         return $this->db->get()->row()->districtName;
     }
     function get_health_facility($id)
     {
-        $this->db->select("name FROM `tbl_facility_codes` WHERE 1 and id=" . $id . "", FALSE);
+        $this->db->select("name FROM `tbl_facility_codes` WHERE 1 and id='".$id."'", FALSE);
         return $this->db->get()->row()->name;
     }
      function get_destinations($id)
     {
-        $this->db->select("name FROM `tbl_destination` WHERE 1 and id=" . $id . "", FALSE);
+        $this->db->select("name FROM `tbl_destination` WHERE 1 and id='".$id."'", FALSE);
         return $this->db->get()->row()->name;
     }
    function get_sample_registration_date($id)
     {
-        $this->db->select("initialSampleDate FROM `tbl_registered_samples` WHERE 1 and sample_id=" . $id . "", FALSE);
+        $this->db->select("initialSampleDate FROM `tbl_registered_samples` WHERE 1 and sample_id='".$id."'", FALSE);
         return $this->db->get()->row()->initialSampleDate;
     }
     function get_district($id)
     {
-        $this->db->select("district FROM `tbl_facility_codes` WHERE 1 and id=" . $id . "", FALSE);
+        $this->db->select("district FROM `tbl_facility_codes` WHERE 1 and id='".$id."'", FALSE);
         return $this->db->get()->row()->district;
     }
     function get_district_code($id)
     {
-        $this->db->select("code FROM `tbl_facility_codes` WHERE 1 and id=" . $id . "", FALSE);
+        $this->db->select("code FROM `tbl_facility_codes` WHERE 1 and id='".$id."'", FALSE);
         return $this->db->get()->row()->code;
     }
     function get_disease($id)
     {
-        $this->db->select("name FROM `tbl_diseases` WHERE 1 and id=" . $id . "", FALSE);
+        $this->db->select("name FROM `tbl_diseases` WHERE 1 and id='".$id."'", FALSE);
         return $this->db->get()->row()->name;
     }
     function get_sample_type($id)
     {
-        $this->db->select("name FROM `tbl_sample_type` WHERE 1 and id=" . $id . "", FALSE);
+        $this->db->select("name FROM `tbl_sample_type` WHERE 1 and id='".$id."'", FALSE);
         return $this->db->get()->row()->name;
     }
         function get_transporter_name($id)
     {
-        $this->db->select(" name FROM `tbl_sample_transporters` WHERE 1 and id=" . $id . "", FALSE);
+        $this->db->select(" name FROM `tbl_sample_transporters` WHERE 1 and id='".$id."'", FALSE);
         return $this->db->get()->row()->name;
     }
  function get_suspected_disease($id)
     {
-        $this->db->select("disease_id FROM `tbl_registered_samples` WHERE 1 and sample_id=" . $id . "", FALSE);
+        $this->db->select("disease_id FROM `tbl_registered_samples` WHERE sample_id='".$id."'", FALSE);
         return $this->db->get()->row()->disease_id;
     }
 
     function get_transporter_contact($id)
     {
-        $this->db->select("phone FROM `tbl_sample_transporters` WHERE 1 and id=" . $id . "", FALSE);
+        $this->db->select("phone FROM `tbl_sample_transporters` WHERE 1 and id='".$id."'", FALSE);
         return $this->db->get()->row()->phone;
     }
     function get_org_name($grp_id, $user_id, $org_id)
@@ -112,7 +112,7 @@ function get_received_sample_details($sample_id)
 
     function get_user_group_name($id)
     {
-        $this->db->select("name FROM `tbl_roles` WHERE 1 and id=" . $id . "", FALSE);
+        $this->db->select("name FROM `tbl_roles` WHERE 1 and id='".$id."'", FALSE);
         return $this->db->get()->row()->name;
     }
 

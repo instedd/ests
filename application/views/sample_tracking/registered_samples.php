@@ -54,7 +54,7 @@
                         ?>
                         <tr>
                             <td><?= $app; ?>.</td>
-                            <td><?= $row_registered_samples->sample_id; ?></td>
+                            <td><a href="<?=base_url();?>/barcode/<?=$row_registered_samples->sample_id;?>.gif"><?= $row_registered_samples->sample_id; ?></a></td>
                             <td><?= $row_registered_samples->facility_code_id; ?></td>
                              <td><?= $row_registered_samples->disease_id; ?></td>
                             <td><?= $row_registered_samples->sample_type_id; ?></td>

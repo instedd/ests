@@ -137,12 +137,12 @@
              if(isset($rel_cases)){
               // var_dump($rel_cases); 
              foreach ($rel_cases as $row) {
-              if(($row->disease_id)=="Ebola"){$icon="Ebola.png";}
-              if(($row->disease_id)=="TB"){$icon="tb.png";}
-              if(($row->disease_id)=="Murburg"){$icon="marburg.jpg";}
-              if(($row->disease_id)=="HIV"){$icon="hiv.png";}
-              if(($row->disease_id)=="Rota virus"){$icon="rota_virus.jpg";}
-              if(($row->disease_id)=="Chicken pox"){$icon="chicken_pox.png";}
+              if(($row->disease_id)=="Ebola"){$icon="Ebola.PNG";}
+              if(($row->disease_id)=="TB"){$icon="tb.PNG";}
+              if(($row->disease_id)=="Marburg"){$icon="marburg.JPG";}
+              if(($row->disease_id)=="HIV"){$icon="hiv.PNG";}
+              if(($row->disease_id)=="Rota virus"){$icon="rota_virus.JPG";}
+              if(($row->disease_id)=="Chicken pox"){$icon="chicken_pox.PNG";}
               ?>
 
             <tr>

@@ -408,7 +408,7 @@ class Useradministration_model extends CI_Model
 
   function get_sample_details($sample_id){
        // get sample status
-        $this->db->select("received_status FROM `tbl_registered_samples` WHERE 1 and sample_id=" . $sample_id . "", FALSE);
+        $this->db->select("received_status FROM `tbl_registered_samples` WHERE 1 and sample_id='" . $sample_id . "'", FALSE);
         $received_status=$this->db->get()->row()->received_status;
       if($received_status=='received'){
 
@@ -436,7 +436,7 @@ class Useradministration_model extends CI_Model
                             FROM `tbl_registered_samples` as `s`
                             left join `tbl_received_sample` as `r`
                             on (s.`sample_id`=r.`sample_id`)
-                            WHERE s.`sample_id`=".$sample_id." and r.date_received !='1970-01-01'
+                            WHERE s.`sample_id`='".$sample_id."' and r.date_received !='1970-01-01'
                             order by s.`initialSampleDate` DESC", FALSE);
   }else{
    $this->db->select(" s.`id`,
@@ -452,7 +452,7 @@ class Useradministration_model extends CI_Model
                             s.`received_status`,
                             s.`clinical_notes`
                             FROM `tbl_registered_samples` as `s`
-                            WHERE s.`sample_id`=".$sample_id." 
+                            WHERE s.`sample_id`='".$sample_id."' 
                             order by s.`initialSampleDate` DESC", FALSE);
   }
      $db_rows = $this->db->get();

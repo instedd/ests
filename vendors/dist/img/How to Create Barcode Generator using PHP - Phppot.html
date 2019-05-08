@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://phppot.com/php/how-to-create-barcode-generator-using-php/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>How to Create Barcode Generator using PHP - Phppot</title>
+<meta name="description" content="Barcode is a machine-readable ident bundled with data about an entity. It is particularly used to store product-related data like price, cod">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="How to Create Barcode Generator using PHP - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="Barcode is a machine-readable ident bundled with data about an entity. It is particularly used to store product-related data like price, cod"><meta property="og:url" content="https://phppot.com/php/how-to-create-barcode-generator-using-php/">
+<meta property="twitter:title" content="How to Create Barcode Generator using PHP - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2018/09/how-to-create-barcode-generator-using-php.jpg"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="Barcode is a machine-readable ident bundled with data about an entity. It is particularly used to store product-related data like price, cod"><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2018/09/how-to-create-barcode-generator-using-php.jpg"><script type="text/javascript" async="" src="./How to Create Barcode Generator using PHP - Phppot_files/ga.js.download"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="./How to Create Barcode Generator using PHP - Phppot_files/papers_16219.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/how-to-create-barcode-generator-using-php/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="./How to Create Barcode Generator using PHP - Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="https://phppot.com/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span> <a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a> <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>How to Create Barcode Generator using PHP</h1>
+                <div class="modified-on">Last modified on September 30th, 2018 by Vincy.</div>
+<p>Barcode is a machine-readable ident bundled with data about an entity. It is particularly used to store product-related data like price, code, manufacturing date, and similar data.&nbsp;</p>
+<p>In this tutorial, we are going to create PHP code for generating barcodes. I used&nbsp;<strong>the tc-lib-barcode&nbsp;</strong>library for creating barcodes using PHP.</p>
+<p>If you are looking for a QR&nbsp;code generator, in a previous tutorial, we have seen <a href="https://phppot.com/php/how-to-generate-qr-code-in-php/">how to create QR code</a> using this library.</p>
+<p><img class="alignnone size-full wp-image-8148" src="./How to Create Barcode Generator using PHP - Phppot_files/how-to-create-barcode-generator-using-php.jpg" alt="how-to-create-barcode-generator-using-php" width="550" height="340" srcset="https://phppot.com/wp-content/uploads/2018/09/how-to-create-barcode-generator-using-php.jpg 550w, https://phppot.com/wp-content/uploads/2018/09/how-to-create-barcode-generator-using-php-300x185.jpg 300w" sizes="(max-width: 550px) 100vw, 550px"></p>
+<p>In this example, the product price, MFG and EXP dates are bundled in the form of&nbsp;Barcode. By scanning the generated barcode image with a barcode reader app, these data can be revealed.</p>
+<p>We can add this PHP code for a <a href="https://phppot.com/php/simple-php-shopping-cart/">shopping cart application</a> to generate the barcode&nbsp;for products as unique identification reference.</p>
+<p>An HTML form is used to <a href="https://phppot.com/php/add-multiple-bulk-product-into-shopping-cart-using-php/">collect the product data</a>. On submitting this form, the data are validated and bundled in a right format. The formatted data will be passed to the library function to generate the&nbsp;barcode.</p>
+<p><a href="https://github.com/tecnickcom/tc-lib-barcode" target="_blank" rel="noopener">Download the library source code from the GitHub</a> to execute this example.</p>
+<p class="video-container"><iframe src="./How to Create Barcode Generator using PHP - Phppot_files/2OlzKFAZ4gc.html" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<h2>HTML Form to getting Product Data</h2>
+<p>This HTML form contains inputs for getting the product MRP, MFG and EXP date. These data are validated using JavaScript on the form submit.</p>
+<p>If anything goes wrong while validation, the function will return false and display the error below this form. On successful validation, the form data will be posted to PHP code to create the barcode.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"post"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"frmBarcodeGenerator"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"frmBarcodeGenerator"</span><span class="pln">
+    </span><span class="atn">onSubmit</span><span class="pun">=</span><span class="atv">"</span><span class="kwd">return</span><span class="pln"> validate</span><span class="pun">();</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-row"</span><span class="tag">&gt;</span><span class="pln">
+        MRP:
+        </span><span class="tag">&lt;div&gt;</span><span class="pln">
+            </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"mrp"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"mrp"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-field"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-row"</span><span class="tag">&gt;</span><span class="pln">
+        MFG Date:
+        </span><span class="tag">&lt;div&gt;</span><span class="pln">
+            </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"date"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"mfg_date"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"mfg_date"</span><span class="pln">
+                </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-field"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-row"</span><span class="tag">&gt;</span><span class="pln">
+        EXP Date:
+        </span><span class="tag">&lt;div&gt;</span><span class="pln">
+            </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"date"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"exp_date"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"exp_date"</span><span class="pln">
+                </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-field"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;div&gt;</span><span class="pln">
+        </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"generate"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"submit-button"</span><span class="pln">
+            </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Generate Barcode"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;/form&gt;</span></pre>
+<p>This is the JavaScript contains the validation function. It checks the not-empty validation on each form data and also checks if the product MRP is numeric.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="tag">&lt;script&gt;</span><span class="pln">
+    </span><span class="kwd">function</span><span class="pln"> validate</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        	</span><span class="kwd">var</span><span class="pln"> valid </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">var</span><span class="pln"> message</span><span class="pun">;</span><span class="pln">
+    	    
+        $</span><span class="pun">(</span><span class="str">"#validation-info"</span><span class="pun">).</span><span class="pln">hide</span><span class="pun">();</span><span class="pln">
+        	$</span><span class="pun">(</span><span class="str">"#validation-info"</span><span class="pun">).</span><span class="pln">html</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$</span><span class="pun">(</span><span class="str">"#mrp"</span><span class="pun">).</span><span class="pln">val</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">""</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            message </span><span class="pun">=</span><span class="pln"> </span><span class="str">"All fields are required"</span><span class="pun">;</span><span class="pln">
+            	valid </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pun">(!</span><span class="pln">$</span><span class="pun">.</span><span class="pln">isNumeric</span><span class="pun">(</span><span class="pln">$</span><span class="pun">(</span><span class="str">"#mrp"</span><span class="pun">).</span><span class="pln">val</span><span class="pun">()))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            	message </span><span class="pun">=</span><span class="pln"> </span><span class="str">"MRP should be in numbers"</span><span class="pun">;</span><span class="pln">
+            	valid </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$</span><span class="pun">(</span><span class="str">"#mfg_date"</span><span class="pun">).</span><span class="pln">val</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">""</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            message </span><span class="pun">=</span><span class="pln"> </span><span class="str">"All fields are required"</span><span class="pun">;</span><span class="pln">
+            	valid </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$</span><span class="pun">(</span><span class="str">"#exp_date"</span><span class="pun">).</span><span class="pln">val</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">""</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                message </span><span class="pun">=</span><span class="pln"> </span><span class="str">"All fields are required"</span><span class="pun">;</span><span class="pln">
+                valid </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">valid </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        	   $</span><span class="pun">(</span><span class="str">"#validation-info"</span><span class="pun">).</span><span class="pln">show</span><span class="pun">();</span><span class="pln">
+           $</span><span class="pun">(</span><span class="str">"#validation-info"</span><span class="pun">).</span><span class="pln">html</span><span class="pun">(</span><span class="pln">message</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> valid</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="tag">&lt;/script&gt;</span></pre>
+<h2>PHP Code Forms Product Data to Generate BarCode</h2>
+<p>In this PHP code, the <em>tc-lib-barcode</em> library autoload file is included at the beginning. Then the form data is received by using the POST request data array. The MFG and EXP dates are converted into a timestamp.</p>
+<p>Then, the product MRP and MFG/EXP timestamps are bundled into a string format. This formatted product data will be passed to the getBarcodeObj. This function will return barcode object based on the type specified.</p>
+<p>With the reference of the barcode object, the barcode png image will be created and displayed to the browser. In a previous tutorial, we have seen <a href="https://phppot.com/php/php-watermark/">how to create an image dynamically by using PHP</a>.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln"> empty</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">"generate"</span><span class="pun">]))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">require</span><span class="pln"> </span><span class="pun">(</span><span class="str">'tc-lib-barcode/vendor/autoload.php'</span><span class="pun">);</span><span class="pln">
+    $barcode </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> \Com\Tecnick\Barcode\Barcode</span><span class="pun">();</span><span class="pln">
+    $targetPath </span><span class="pun">=</span><span class="pln"> </span><span class="str">"barcode/"</span><span class="pun">;</span><span class="pln">
+    
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln"> is_dir</span><span class="pun">(</span><span class="pln">$targetPath</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        mkdir</span><span class="pun">(</span><span class="pln">$targetPath</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0777</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    $MRP </span><span class="pun">=</span><span class="pln"> $_POST</span><span class="pun">[</span><span class="str">"mrp"</span><span class="pun">];</span><span class="pln">
+    $MFGDate </span><span class="pun">=</span><span class="pln"> strtotime</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">"mfg_date"</span><span class="pun">]);</span><span class="pln">
+    $EXPDate </span><span class="pun">=</span><span class="pln"> strtotime</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">"exp_date"</span><span class="pun">]);</span><span class="pln">
+    $productData </span><span class="pun">=</span><span class="pln"> </span><span class="str">"098{$MRP}10{$MFGDate}55{$EXPDate}"</span><span class="pun">;</span><span class="pln">
+    $barcode </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> \Com\Tecnick\Barcode\Barcode</span><span class="pun">();</span><span class="pln">
+    $bobj </span><span class="pun">=</span><span class="pln"> $barcode</span><span class="pun">-&gt;</span><span class="pln">getBarcodeObj</span><span class="pun">(</span><span class="str">'C128C'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"{$productData}"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">450</span><span class="pun">,</span><span class="pln"> </span><span class="lit">70</span><span class="pun">,</span><span class="pln"> </span><span class="str">'black'</span><span class="pun">,</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+        </span><span class="lit">0</span><span class="pun">,</span><span class="pln">
+        </span><span class="lit">0</span><span class="pun">,</span><span class="pln">
+        </span><span class="lit">0</span><span class="pun">,</span><span class="pln">
+        </span><span class="lit">0</span><span class="pln">
+    </span><span class="pun">));</span><span class="pln">
+    
+    $imageData </span><span class="pun">=</span><span class="pln"> $bobj</span><span class="pun">-&gt;</span><span class="pln">getPngData</span><span class="pun">();</span><span class="pln">
+    $timestamp </span><span class="pun">=</span><span class="pln"> time</span><span class="pun">();</span><span class="pln">
+    
+    file_put_contents</span><span class="pun">(</span><span class="pln">$targetPath </span><span class="pun">.</span><span class="pln"> $timestamp </span><span class="pun">.</span><span class="pln"> </span><span class="str">'.png'</span><span class="pun">,</span><span class="pln"> $imageData</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"result-heading"</span><span class="tag">&gt;</span><span class="pln">Output:</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+&lt;img src="</span><span class="pun">&lt;?</span><span class="pln">php echo $targetPath </span><span class="pun">.</span><span class="pln"> $timestamp </span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">.png"&gt;
+</span><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<h2>PHP Barcode Generator Output</h2>
+<p>This screenshot shows the generated barcode image created dynamically by using the barcode object reference.</p>
+<p><img class="alignnone size-full wp-image-8149" src="./How to Create Barcode Generator using PHP - Phppot_files/php-barcode-generator-output.jpg" alt="php-barcode-generator-output" width="550" height="489" srcset="https://phppot.com/wp-content/uploads/2018/09/php-barcode-generator-output.jpg 550w, https://phppot.com/wp-content/uploads/2018/09/php-barcode-generator-output-300x267.jpg 300w" sizes="(max-width: 550px) 100vw, 550px"></p>
+<p><a class="download" href="https://phppot.com/downloads/how-to-create-barcode-generator-using-php.zip">Download</a></p>
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/php-calendar-event-management-using-fullcalendar-javascript-library/">PHP Calendar Event Management using FullCalendar JavaScript Library</a></li>
+                        <li><a href="https://phppot.com/php/extracting-title-description-thumbnail-using-youtube-data-api/">Extracting Title Description Thumbnail using Youtube Data API</a></li>
+                        <li><a href="https://phppot.com/php/search-videos-by-keyword-using-php-youtube-data-api/">Search Videos by Keyword using PHP YouTube Data API</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="https://phppot.com/php/how-to-create-barcode-generator-using-php/#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/category/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 "><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-45 "><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a></li><li class="cat-item cat-item-12 "><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 taxonomy-active"><a href="https://phppot.com/category/php/library/">Library</a><ul class="post-list"><li><a class="post-menu" href="https://phppot.com/php/extracting-title-description-thumbnail-using-youtube-data-api/">Extracting Title Description Thumbnail using Youtube Data API</a></li><li><a class="post-menu" href="https://phppot.com/php/search-videos-by-keyword-using-php-youtube-data-api/">Search Videos by Keyword using PHP YouTube Data API</a></li><li><a class="post-menu" href="https://phppot.com/php/how-to-generate-qr-code-in-php/">How to Generate QR Code in PHP</a></li><li class="current-post">How to Create Barcode Generator using PHP</li><li><a class="post-menu" href="https://phppot.com/php/convert-html-to-pdf-with-docraptor/">Convert HTML to PDF with DocRaptor</a></li><li><a class="post-menu" href="https://phppot.com/php/php-calendar-event-management-using-fullcalendar-javascript-library/">PHP Calendar Event Management using FullCalendar JavaScript Library</a></li><li><a class="post-menu" href="https://phppot.com/php/how-to-render-attendance-graph-using-google-charts/">How to Render Attendance Graph using Google Charts</a></li><li><a class="post-menu" href="https://phppot.com/php/how-to-implement-otp-sms-mobile-verification-in-php-with-textlocal/">How to Implement OTP SMS Mobile Verification in PHP with TextLocal</a></li><li><a class="post-menu" href="https://phppot.com/php/forecast-weather-using-openweathermap-with-php/">Forecast Weather using OpenWeatherMap with PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/support-for-php-frameworks-in-the-codelobster-ide/">Support for PHP frameworks in the CodeLobster IDE</a></li><li><a class="post-menu" href="https://phppot.com/php/creating-dynamic-data-graph-using-php-and-chart-js/">Creating Dynamic Data Graph using PHP and Chart.js</a></li></ul></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/how-to-create-barcode-generator-using-php/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=How%20to%20Create%20Barcode%20Generator%20using%20PHP;url=https://phppot.com/php/how-to-create-barcode-generator-using-php/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/how-to-create-barcode-generator-using-php/&amp;media=How%20to%20Create%20Barcode%20Generator%20using%20PHP" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="./How to Create Barcode Generator using PHP - Phppot_files/Vincy.jpg" alt="Vincy" width="100" height="100" title="Vincy">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                Hi, I’m Vincy, PHP developer. If you have a project that
+                you want to get started, launch quickly, <a href="https://phppot.com/contact/">contact me</a>.
+            </p>
+            <p>I'm currently available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+      <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/php-contact-form/">PHP
+                    Contact Form</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p>"She is cooperative and able to quickly understand our needs behind different features. We kept the estimated budget and fit within the assumed timeline. ..."</p>
+    <p class="testimonials-sbar-by">Marcin Bialy, Grandmetric, Poland</p>
+    <div>
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="heading">Subscribe to stay in touch</div>
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#39;https://feedburner.google.com/fb/a/mailverify?uri=phppot&#39;,
+             &#39;popupwindow&#39;, &#39;scrollbars=yes,width=550,height=520&#39;);return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>|<span class="copyright">©
+                    2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="./How to Create Barcode Generator using PHP - Phppot_files/prettify.js.download"></script>
+
+</body></html>
