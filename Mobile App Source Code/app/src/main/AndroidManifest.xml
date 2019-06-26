@@ -26,7 +26,7 @@
         tools:replace="android:icon">
         <meta-data
             android:name="DATABASE"
-            android:value="ug_co_lafarge_mservices.db" />
+            android:value="ug.co.sampletracker_mservices.db" />
         <meta-data
             android:name="VERSION"
             android:value="6" />
@@ -35,7 +35,7 @@
             android:value="true" />
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
-            android:value="ug.co.lafarge.mservices.models" />
+            android:value="uug.co.sampletracker.mservices.models" />
 
         <activity
             android:name="ug.co.sampletracker.app.components.splash.Splash"
