@@ -7,7 +7,7 @@
     <section class="content-header">
       <h1>Dashboard</h1>
       <ol class="breadcrumb">
-        <li class="active"><a href="<?=base_url();?>Reports/map"><button class="btn btn-danger" >Map of outbreaks</button></a></li>
+        <li class="active"><a href="<?=base_url();?>Reports/map"><button class="btn btn-danger" >Map of Outbreaks</button></a></li>
       </ol>
     </section>
 
@@ -53,7 +53,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Samples in</span>
-              <span class="info-box-text">transit</span>
+              <span class="info-box-text">Transit</span>
               <span class="info-box-number"><?=$total_samples_in_transit;?></span>
             </div>
             <!-- /.info-box-content -->
@@ -68,7 +68,7 @@
             <div class="info-box-content">
               <!-- / <span class="info-box-text">Total Delivered</span> -->
               <span class="info-box-text">On-Time Samples</span>
-              <span class="info-box-text">at destination</span>
+              <span class="info-box-text">at Destination</span>
               <span class="info-box-number"><?=$total_undelayed_samples;?></span>
             </div>
             <!-- /.info-box-content -->
@@ -163,7 +163,7 @@
               <!-- USERS LIST -->
               <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Summary of received sample status</h3>
+              <h3 class="box-title">Status of Received Samples</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>

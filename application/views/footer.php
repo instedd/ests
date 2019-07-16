@@ -202,7 +202,7 @@
       <script>
          $(document).ready(function() {
             var title = {
-               text: 'Annual Sample Tracking Statistics of received Samples at final destination'   
+               text: 'Annual Sample Tracking Statistics of received Samples at Final Destination'   
             };
             var subtitle = {
                text: ''
@@ -232,7 +232,7 @@
                borderWidth: 0
             };
             var series =  [{
-                  name: 'Received delayed Samples at final destination',
+                  name: 'Samples Received at Final Destination but Delayed',
                   data: [<?=$monthly_delayed_samples_at_final_destination[0]->mon_delayed_samples_at_final_destination;?>, 
                   <?=$monthly_delayed_samples_at_final_destination[1]->mon_delayed_samples_at_final_destination;?>,
                    <?=$monthly_delayed_samples_at_final_destination[2]->mon_delayed_samples_at_final_destination;?>,
@@ -247,7 +247,7 @@
                    <?=$monthly_delayed_samples_at_final_destination[11]->mon_delayed_samples_at_final_destination;?>]
                },
                {
-                  name: 'Received un delayed Samples at final destination',
+                  name: 'Samples Received at Final Destination On Time',
                   data: [
                   <?=$monthly_undelayed_samples_at_final_destination[0]->mon_undelayed_samples_at_final_destination;?>, 
                   <?=$monthly_undelayed_samples_at_final_destination[1]->mon_undelayed_samples_at_final_destination;?>, 
@@ -371,7 +371,7 @@ $(document).ready(function(){
                      }
                 },
                 title: {
-                    text: '<h4>Bar graph showing suspected disease registered</h4>'
+                    text: '<h4>Bar graph showing Registered Suspected Diseases </h4>'
                 },
                 credits: {
                     enabled: false
@@ -387,7 +387,7 @@ $(document).ready(function(){
                 yAxis: {
                     min: 0,
                     title: {
-                        text: 'No of outbreaks (Count)'
+                        text: 'No of Outbreaks (Count)'
                     }
                 },
                 legend: {
